@@ -1,0 +1,4 @@
+site_name: "Appa LCA documentation"
+site_url: "https://appalca.github.io"
+theme:
+  name: material
