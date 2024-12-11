@@ -8,4 +8,4 @@ Peralta, M. (2024, March). Integrating Screening Life Cycle Assessment in Digita
 
 But please come back to check if journal paper DOI is available before submitting :)
 
-Please also send a mail to [_appalca@peralta.pm_](mailto:appalca@peralta.pm). It's always interesting to know how this work is used, and can also motivate us to dedicate more resources in development.
+Please also send a mail to [_appalca@cea.fr_](mailto:appalca@cea.fr). It's always interesting to know how this work is used, and can also motivate us to dedicate more resources in development.
