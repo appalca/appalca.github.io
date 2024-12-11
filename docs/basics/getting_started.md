@@ -1,5 +1,7 @@
 # Getting started
 
+**Warning**: Appa Build and Appa Run will not be available on PyPI on the next few days. To install it, you will need to build from the source code and not using `pip install`.
+
 ## Installation
 Appa Build and Appa Run are available on PyPI.
 Appa Build requires Python 3.9.X, where Appa Run can run on higher versions of Python.
@@ -16,10 +18,33 @@ pip install apparun
 We recommend using virtualenv to limit the risks of package dependencies conflicts, that are likely to happen with Appa Build, as Brightway requires specific version of numpy to run.
 
 ### Installation with source code
-If you intend to modify the source code, or change some package versions in requirements.txt, you can use:
+If you intend to modify the source code, or change some package versions in requirements.txt, you will need to clone both repositories first:
+
 ```
 git clone https://github.com/appalca/appabuild
+git clone https://github.com/appalca/apparun
+```
+
+It is recommended to use a virtualenv before installing the package dependencies, using:
+```
 pip install -r requirements.txt
+```
+
+You then need to build a package for Appa Run as it is a required package for Appa Build:
+
+```
+cd apparun
+python setup.py sdist bdist_wheel
+```
+
+If required, you can install wheel using `pip install wheel`.
+
+Then, you can go to Appa Build to install Appa Run:
+
+```
+cd ../appabuild
+pip install ../apparun/dist/apparun-0.2.0-py3-none-any.whl -r requirements.txt
+
 ```
 
 ## Usage
