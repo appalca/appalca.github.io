@@ -7,7 +7,7 @@ If on of those limit is a limiting problem for you, feel free to reach us to let
 
 ### Versions
 Appa Build is currently working with Brightway 2.4.3 and lca_algebraic 1.0.0.
-This involves working with Python 3.9.X.
+This involves working with Python above version 3.10.
 This limits EcoInvent version support up to version 3.9.1
 
 It is not trivial to solve those version requirements limits, as there appear to be some issues of non retro-compatibility.
