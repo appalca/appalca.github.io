@@ -1,6 +1,8 @@
 # Getting started
 
-**Warning**: Appa Build and Appa Run will not be available on PyPI on the next few days. To install it, you will need to build from the source code and not using `pip install`.
+**Warning**: Appa Build and Appa Run will not be available on PyPI until January. To install it, you will need to build from the source code and not using `pip install`.
+
+**Warning**: For the moment, EcoInvent is necessary to run Appa Build, even if you don't use it in your project. This will be fixed in January.
 
 ## Installation
 Appa Build and Appa Run are available on PyPI.
@@ -56,6 +58,11 @@ To test you Appa Build installation, you can set the project's directory with ``
 ```
 export BRIGHTWAY2_DIR=brightway2_project/
 ```
+
+You also need an EcoInvent database. Tested version is 3.9.1 cutoff.
+You must indicate the path of the folder containing the .spold datasets in `samples/conf/appalca_conf.yaml`.
+
+Further information can be found in [Appa Build Basics](appa_build_basics.md) section.
 
 Documentation about the CLI can be obtained by running the following command:
 ```
