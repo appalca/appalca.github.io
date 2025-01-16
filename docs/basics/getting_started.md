@@ -62,7 +62,7 @@ pip install ../apparun/dist/apparun-X.X.X-py3-none-any.whl -r requirements.txt
 
 Replacing `X.X.X` by the appropriate version. 
 
-If you want to use Appa Run to use the CLI of Appa Build, you need to build the package:
+If you want to use the CLI of Appa Build, you need to build the package:
 If required, you can install wheel using `pip install wheel`.
 
 ```
