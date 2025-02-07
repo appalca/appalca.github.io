@@ -1,56 +1,56 @@
 # Appa LCA framework
 
-Appa LCA (**A**utomatable, **P**ortable and **Pa**rametric **L**ife **C**ycle **A**ssessment) framework was developed to ease the usage of screening LCA in any workflow or software, in the perspective of easing ecodesign initiatives.
-It intends to bring the best of the LCA method, which is versatile, holistic and flexible, and of _ad hoc_ impact assessment tools, which are easy to use and integrate.
-It relies on the production and usage of impact models, which can be seen as standalone, parametric and modular LCA templates that operate at the impact level, i.e. after application of the LCIA methods.  
+The Appa LCA (**A**utomatable, **P**ortable and **Pa**rametric **L**ife **C**ycle **A**ssessment) framework has been developed to facilitate the use of screening LCA in any workflow or software, in the perspective of facilitating ecodesign initiatives.
+It aims to bring together the best of the LCA method, which is versatile, holistic and flexible, and the _ad hoc_ impact assessment tools, which are easy to use and integrate.
+It is based on the creation and use of impact models, which can be seen as stand-alone, parametric and modular LCA templates that operate at the impact level, i.e. after the application of LCIA methods.  
 
-Appa LCA's main particularity is to split the complexity of LCA in two distinct, asynchronous worlds, with their own dedicated tool:
+The main particularity of Appa LCA is that it divides the complexity of LCA into two different, asynchronous worlds, each with its own dedicated tool:
 
 - The LCA practitioner world, addressed in the Appa Build package.
 - The system designer world, addressed in the Appa Run package.
 
-Appa Build produces impact models, and offer different features that may be useful for an LCA practitioner. As an example, Appa Build allows to import impact data from other LCA software in the perspective of using background datasets from any LCA database.
-Appa Run imports Impact Models and provide interfaces to execute them easily from any workflow or software environment, as it is light, fast, requires just a few python packages dependencies with no major constraints in terms of package versions, and no LCA database dependencies.
+Appa Build produces impact models and offers several features that can be useful for an LCA practitioner. For example, Appa Build allows importing impact data from other LCA software in the perspective of using background datasets from any LCA database.
+Appa Run imports impact models and provides interfaces to run them easily from any workflow or software environment, as it is light, fast, requires only a few Python package dependencies with no major restrictions in terms of package versions and no LCA database dependencies.
 
 ![Appa LCA framework](assets/appalca_framework.svg){ width="600" }
 /// caption
-Appa LCA framework consists in two Python packages, Appa Build and Appa Run, which respectively produces impact models and run them. 
+Appa LCA framework consists of two Python packages, Appa Build and Appa Run, which build and run impact models respectively. 
 ///
 
 ## What problems does it solve?
-Commercial LCA tools are typically not easy to interface with design workflows. They are quite heavy piece of codes, requiring licenses for the software itself and for the LCI databases. They do not always provide API to interface them with another software.
-On the other hand, some tools can solve this problem but are typically computing carbon impact only, and are not thought to be dynamically connected with a LCA.
-Appa Run intend to solve all of those problems.
+Commercial LCA tools are typically not easy to integrate into design workflows. They are quite heavy pieces of code, they require licenses for the software itself and for the LCI databases. They do not always provide an API to interface with other software.
+On the other hand, some tools can solve this problem, but they typically only calculate the carbon impact, and are not designed to be dynamically connected with an LCA.
+Appa Run intends to solve all of these problems.
 
-On the LCA side, part of the complexity lays on the difficulties to conduct inventory, as LCI data are scarse and sometimes present in databases that cannot be accessed with the same LCA software. Another source of complexity is that some data may not be representative enough.
-Appa Build intend to solve those problems by enabling data import at the impact level, and by offering a powerful way to parameterize and model input LCI data (to interpolate, or extrapolate impacts of some dataset).
+On the LCA side, part of the complexity lies in the difficulty of doing the inventory, as LCI data is scarce and sometimes in databases that cannot be accessed by the same LCA software. Another source of complexity is that some data may not be representative enough.
+Appa Build intends to solve these problems by allowing data import at the impact level and by providing a powerful way to parameterize and model input LCI data.
 
 ## When can Appa LCA be useful?
 You may enjoy using Appa LCA if:
 
-- You want to bring LCA in the workflow of a product designer
-- You want to present LCA results using an interactive web app
-- You want to automate screening LCA of a catalog of products
-- You want an alternative way to use Brigthway and LCA algebraic
+- You want to integrate LCA into the workflow of a product designer
+- You want to present LCA results in an lightweight interactive web app
+- You want to automate screening LCA of product catalog
+- You want an alternative way to interact with Brightway and lca_algebraic
 
 ## How does it work?
-Appa Build relies on the excellent Brightway, a LCA Python library, and lca_algebraic, enabling symbolic LCA computation for Brightway.
-Appa Build relies on bw2data package to handle import of LCI database, LCIA methods and elementary flows.
-Appa Build uses LCA algebraic to partially compute LCA: every static activity (i.e. activity without parametric exchange) is computed to the impact level.
+Appa Build is based on the excellent Brightway, a LCA Python library, and lca_algebraic, wich allows symbolic LCA calculation for Brightway.
+Appa Build relies on the bw2data package to import the LCI database, LCIA methods and elementary flows.
+Appa Build uses lca_algebraic for partial LCA calculation: each static activity (i.e. activity without parametric exchange) is calculated up to the impact level.
 
-Appa Run executes impact models without needing any of those packages, nor LCI databases. Scipy and NumPy are used to execute parametric impact formulas.
+Appa Run executes impact models without needing any of these packages, nor LCI databases. Scipy and NumPy are used to run impact model's symbolic expressions.
 
-## How does an impact model looks like?
-Impact models are yaml files that are automatically produced by Appa Build, and that can be imported and ran by Appa Run.
-In a nushell, they contain:
+## What does an impact model look like?
+Impact models are yaml files that are automatically generated by Appa Build and can be imported and executed by Appa Run.
+In a nushell they contain:
 
 - Metadata about the LCA behind the impact model
-- Information about the parameters required to compute the impacts
-- A series of symbolic expressions for each LCIA method, the symbols being the impact model parameters
+- Information about the parameters needed to calculate the impacts
+- A set of symbolic expressions for each LCIA method, where the symbols are the parameters of the impact model.
 
-Their content and structure are extensively covered in the [impact models in depth](in_depth%2Fimpact_models_in_depth.md) section.
+Their contents and structure are described in details in the section [impact models in depth](in_depth%2Fimpact_models_in_depth.md).
 
-Here is a simplified view of how an impact model may look like:
+Here is a simplified view of what an impact model may look like:
 
 ``` { .yaml .no-copy }
 metadata:
@@ -60,7 +60,7 @@ metadata:
     mail: maxime.peralta@cea.fr
   report:
     link: https://github.com/appalca/appalca.github.io
-    description: A Nvidia-GPU based AI accelerator chip. Manufacturing and use phase only.
+    description: A Nvidia GPU-based AI accelerator chip. Manufacturing and use phase only.
     date: 03/11/2023
     version: '1'
     license: proprietary

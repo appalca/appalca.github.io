@@ -3,23 +3,23 @@
 ## Known limitations
 
 We are aware of some limitations and plan to address them.
-If on of those limit is a limiting problem for you, feel free to reach us to let us know so we can either prioritize solving the limitation, or help you doing so.
+If any of these limitations are limiting problem for you, please feel free to contact us to let us know so we can either prioritize fixing the limitation or help you fix it.
 
 ### Versions
-Appa Build is currently working with Brightway 2.4.3 and lca_algebraic 1.0.0.
-This involves working with Python above version 3.10.
-This limits EcoInvent version support up to version 3.9.1
+Appa Build currently works with Brightway 2.4.7 and lca_algebraic 1.0.0.
+This includes working with Python above version 3.10.
+This limits EcoInvent version support to version 3.9.1.
 
-It is not trivial to solve those version requirements limits, as there appear to be some issues of non retro-compatibility.
+It is not trivial to solve these version requirements limits, as there seem to be some problems with backward compatibility.
 
 ### Background databases
-For the moment, only EcoInvent background database is supported as we couldn't have access and test other databases supported by Brightway.
+At the moment only the EcoInvent background database is supported, as we haven't been able to access and test other databases supported by Brightway.
 
 ### Methods
-Appa Run uses Enum to link Brightway method names to comprehensive strings.
-We currently only implemented an Enum for PEF v3.0 LCIA methods and plan to also support other methods.
+Appa Run uses *Enum* to associate Brightway method names with comprehensive strings.
+We currently only implemented an Enum for PEF v3.0 LCIA methods and plan to support other methods as well.
 
-You can fairly easily extend the mapping to other LCIA methods. If you do so, it can be a good idea of contribution and could be integrated in Appa LCA's source code.
+You can easily extend the mapping to other LCIA methods. If you do so, it may be a good idea of contribution and could be integrated into Appa LCA's source code.
 
-## Known problems
-We are aware of some problems and bugs. We list them here to let you know, until we managed to solve them.
+## Known issues
+We are aware of some issues and bugs. We list them here to keep you informed until we manage to solve them.
