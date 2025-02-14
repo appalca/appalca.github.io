@@ -21,6 +21,7 @@ markdown_extensions:
   - admonition
   - tables
   - attr_list
+  - footnotes
   - pymdownx.blocks.caption
   - pymdownx.highlight:
       anchor_linenums: true
@@ -28,7 +29,12 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -42,7 +48,6 @@ nav:
       - Appa Build basics: basics/appa_build_basics.md
       - Appa Run basics: basics/appa_run_basics.md
   - In depth:
-      - in_depth/index.md
       - Appa Build in depth: in_depth/appa_build_in_depth.md
       - Impact models in depth: in_depth/impact_models_in_depth.md
       - Appa Run in depth: in_depth/appa_run_in_depth.md
