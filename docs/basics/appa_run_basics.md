@@ -63,8 +63,9 @@ The usage is really similar to the `apparun compute` command except that we use 
 
 ```apparun compute-nodes nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml```
 
-Result: 
-```[NodeScores(name='ai_use_phase', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [1.420092, 1.7041104000000002, 1.8461196000000002]})), NodeScores(name='nvidia_gpu_chip_manufacturing', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [6.742999152294716, 23.323186869554682, 124.68513902417065]})), NodeScores(name='nvidia_ai_gpu_chip', parent='', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [8.163091152294715, 25.027297269554683, 126.53125862417065]}))]
+Result:
+```
+[NodeScores(name='ai_use_phase', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [1.420092, 1.7041104000000002, 1.8461196000000002]})), NodeScores(name='nvidia_gpu_chip_manufacturing', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [6.742999152294716, 23.323186869554682, 124.68513902417065]})), NodeScores(name='nvidia_ai_gpu_chip', parent='', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [8.163091152294715, 25.027297269554683, 126.53125862417065]}))]
 ```
 
 
