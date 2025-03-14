@@ -5,24 +5,46 @@ const cross_icon = '<path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.34
 
 const icon_elem = '<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon" viewBox="0 0 16 16" aria-hidden="true">' + plus_icon + '</svg>';
 
+var selectedAnnotation = {
+    "icon": null,
+    "text": null
+}
+
 var selected_icon = null;
 var selected_text = null;
 
 /**
- * Hide the select code annotation if there is one, if not do nothing.
+ * Returns true if an annotation is selected, else false.
  */
-function hide_selected_annotation() {
-    if(selected_icon != null && selected_text != null) {
-        hide_annotation(selected_icon, selected_text);
+function areSelectedAnnotation() {
+    return selectedAnnotation != null;
+}
+
+/**
+ * Update the selected annotation.
+ */
+function selectAnnotation(icon, text) {
+    selectedAnnotation["icon"] = icon;
+    selectedAnnotation["text"] = text;
+}
+
+/**
+ * Hide and unselect the selected code annotation if there is one, if not do nothing.
+ *
+ */
+function hideSelectedAnnotation() {
+    if(areSelectedAnnotation()) {
+        hideAnnotation(selected_icon, selected_text);
+        selectedAnnotation["icon"] = null;
+        selectedAnnotation["text"] = null;
     }
 }
 
 /**
  * Hide a code annotation.
- * @param {*} icon - the icon of the code annotation.
- * @param {*} text - the text of the code annotation.
  */
-function hide_annotation(icon, text) {
+function hideAnnotation(annotation) {
+    const {icon, text} = annotation;
     icon.innerHTML = plus_icon;
     icon.classList.remove("sd-octicon-feed-plus");
     icon.classList.add("sd-octicon-x-circle-fill");
@@ -33,11 +55,10 @@ function hide_annotation(icon, text) {
 
 /**
  * Show a code annotation.
- * @param {*} icon - the icon of the code annotation. 
- * @param {*} text - the text of the code annotation. 
  */
-function show_annotation(icon, text) {
-    hide_selected_annotation();
+function show_annotation(annotation) {
+    hideSelectedAnnotation();
+    const {icon, text} = annotation;
 
     icon.classList.remove("sd-octicon-feed-plus");
     icon.classList.add("sd-octicon-x-circle-fill");
@@ -47,23 +68,13 @@ function show_annotation(icon, text) {
     text.style.display = "block";
     adjustTextPosition(icon, text);
     
-    selected_icon = icon;
-    selected_text = text;
+    selectAnnotation(icon, text);
 }
 
 function adjustTextPosition(icon, text) {
-    // let block = icon.closest('pre').getBoundingClientRect();
-    let iconRect = icon.getBoundingClientRect();
-    // let textRect = text.getBoundingClientRect();
-
-    let offsetX = iconRect.left + 'px';
-    let offsetY = (iconRect.top + window.scrollY) + 'px';
-    // if(iconRect.top + textRect.height + 30 > block.top + block.height) {
-    //     offsetY = 'calc(var(--code-annotation-offset) - ' + textRect.height + 'px)';
-    // } else {
-    //     offsetY = 'var(--code-annotation-offset: 0.5em)';
-    // }
-
+    const iconRect = icon.getBoundingClientRect();
+    const offsetX = iconRect.left + 'px';
+    const offsetY = (iconRect.top + window.scrollY) + 'px';
     text.style.left = 'calc(' + offsetX + ' + var(--code-annotation-offset))';
     text.style.top = 'calc(' + offsetY + ' + var(--code-annotation-offset))';
 }
@@ -120,7 +131,7 @@ function onClickAnnotation(id) {
     if(text.style.display == "none") {
         show_annotation(icon, text);
     } else {
-        hide_annotation(icon, text);
+        hideAnnotation(icon, text);
     }
 }
 
@@ -137,41 +148,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const lis = list.querySelectorAll('li');
             for(let j = 0; j < spans.length; j++) {
                 const span = spans[j];
-                //icon_elem + '<p class="code-annotation-text">' + lis[j].children[0].innerHTML  + '</p>';
-                // span.innerHTML = icon_elem;
-                // span.classList.add("code-annotation");
-
-                // const text = document.createElement('p');
-                // text.classList.add("code-annotation-text");
-                // text.innerHTML = lis[j].children[0].innerHTML;
-                // text.id = 'code-annotation-' + j;
-
                 const annotation = createAnnotation(id, lis[j].children[0].innerHTML);
-                id++;
-
                 span.parentNode.replaceChild(annotation, span);
-                // mainContainer.appendChild(text);
+                id++;
             }
 
             list.remove();
         }
 
     }
-
-    
-    // const annotations = document.querySelectorAll('.code-annotation');
-    // annotations.forEach(annotation => {
-    //     const icon = annotation.getElementsByClassName('sd-octicon')[0];
-    //     const text = annotation.getElementsByClassName('code-annotation-text')[0];
-    //     hide_annotation(icon, text);
-    //     icon.addEventListener('click', function() {
-    //         if(text.style.display == "none") {
-    //             show_annotation(icon, text);
-    //         } else {
-    //             hide_annotation(icon, text);
-    //         }
-    //     });
-    // });
 });
 
 window.addEventListener('resize', function() {

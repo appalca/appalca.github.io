@@ -1,3 +1,4 @@
+/* Hide the python api usage link the API section */
 .reference[href$="python_api_usage/index.html"] {
     display: none;
 }
