@@ -1,29 +1,42 @@
 name: ci
+
 on:
   push:
     branches:
       - master
       - main
-permissions:
-  contents: write
+
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+    build-deploy:
+        name: Build and deploy the documentation
+        runs-on: ubuntu-latest
+        permissions:
+          contents: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+              with: 
+                submodules: true
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.11'
+            
+            - name: Install dependencies
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y make
+                python -m pip install -U pip
+                pip install -r requirements.txt
+                pip install ghp-import
+            
+            - name: Build
+              run: |
+                cd docs
+                make html
+
+            - name: Deploy on the branch gh-pages
+              run: |
+                ghp-import -n -f -p ./docs/_build/html
+              

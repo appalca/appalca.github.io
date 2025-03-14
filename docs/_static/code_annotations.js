@@ -5,10 +5,7 @@ const cross_icon = '<path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.34
 
 const icon_elem = '<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon" viewBox="0 0 16 16" aria-hidden="true">' + plus_icon + '</svg>';
 
-var selectedAnnotation = {
-    "icon": null,
-    "text": null
-}
+var selectedAnnotation = null;
 
 var selected_icon = null;
 var selected_text = null;
@@ -24,8 +21,7 @@ function areSelectedAnnotation() {
  * Update the selected annotation.
  */
 function selectAnnotation(icon, text) {
-    selectedAnnotation["icon"] = icon;
-    selectedAnnotation["text"] = text;
+    selectedAnnotation = {icon, text};
 }
 
 /**
@@ -34,9 +30,8 @@ function selectAnnotation(icon, text) {
  */
 function hideSelectedAnnotation() {
     if(areSelectedAnnotation()) {
-        hideAnnotation(selected_icon, selected_text);
-        selectedAnnotation["icon"] = null;
-        selectedAnnotation["text"] = null;
+        hideAnnotation(selectedAnnotation);
+        selectedAnnotation = null;
     }
 }
 
@@ -129,9 +124,9 @@ function onClickAnnotation(id) {
     const text = document.getElementById('code-annotation-text-' + id);
 
     if(text.style.display == "none") {
-        show_annotation(icon, text);
+        show_annotation({icon, text});
     } else {
-        hideAnnotation(icon, text);
+        hideAnnotation({icon, text});
     }
 }
 
