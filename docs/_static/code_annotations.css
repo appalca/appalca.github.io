@@ -2,8 +2,8 @@
     --code-annotation-offset: 0.5em;
 }
 
-.code-annotation, .code-annotation-icon {
-    position: absolute;
+.code-annotation-icon {
+    position: relative;
 }
 
 .code-annotation-text {
