@@ -1,14 +1,11 @@
 const regex = /#\(\d+\)!/g;
             
-const plus_icon = '<path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm1.062 4.312a1 1 0 1 0-2 0v2.75h-2.75a1 1 0 0 0 0 2h2.75v2.75a1 1 0 1 0 2 0v-2.75h2.75a1 1 0 1 0 0-2h-2.75Z"></path>';
-const cross_icon = '<path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>';
+const plusIcon = '<path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm1.062 4.312a1 1 0 1 0-2 0v2.75h-2.75a1 1 0 0 0 0 2h2.75v2.75a1 1 0 1 0 2 0v-2.75h2.75a1 1 0 1 0 0-2h-2.75Z"></path>';
+const crossIcon = '<path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>';
 
-const icon_elem = '<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon" viewBox="0 0 16 16" aria-hidden="true">' + plus_icon + '</svg>';
+const iconTag = '<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon" viewBox="0 0 16 16" aria-hidden="true">' + plusIcon + '</svg>';
 
 var selectedAnnotation = null;
-
-var selected_icon = null;
-var selected_text = null;
 
 /**
  * Returns true if an annotation is selected, else false.
@@ -40,7 +37,7 @@ function hideSelectedAnnotation() {
  */
 function hideAnnotation(annotation) {
     const {icon, text} = annotation;
-    icon.innerHTML = plus_icon;
+    icon.innerHTML = plusIcon;
     icon.classList.remove("sd-octicon-feed-plus");
     icon.classList.add("sd-octicon-x-circle-fill");
     icon.style.zIndex = "0";
@@ -51,27 +48,38 @@ function hideAnnotation(annotation) {
 /**
  * Show a code annotation.
  */
-function show_annotation(annotation) {
+function showAnnotation(annotation) {
     hideSelectedAnnotation();
     const {icon, text} = annotation;
 
     icon.classList.remove("sd-octicon-feed-plus");
     icon.classList.add("sd-octicon-x-circle-fill");
     icon.style.zIndex = "2";
-    icon.innerHTML = cross_icon;
+    icon.innerHTML = crossIcon;
 
     text.style.display = "block";
     adjustTextPosition(icon, text);
+
+    const pre = icon.closest("pre");
+    pre.addEventListener("scroll", function() {
+        adjustTextPosition(icon, text);
+    });
     
     selectAnnotation(icon, text);
 }
 
 function adjustTextPosition(icon, text) {
     const iconRect = icon.getBoundingClientRect();
-    const offsetX = iconRect.left + 'px';
-    const offsetY = (iconRect.top + window.scrollY) + 'px';
-    text.style.left = 'calc(' + offsetX + ' + var(--code-annotation-offset))';
-    text.style.top = 'calc(' + offsetY + ' + var(--code-annotation-offset))';
+    const textRect = text.getBoundingClientRect();
+    let offsetX = iconRect.left;
+    let offsetY = (iconRect.top + window.scrollY);
+
+    if(iconRect.left + textRect.width > window.innerWidth) {
+        offsetX = iconRect.left - (iconRect.left + textRect.width - window.innerWidth + 50);
+    }
+
+    text.style.left = 'calc(' + offsetX + 'px + var(--code-annotation-offset))';
+    text.style.top = 'calc(' + offsetY + 'px + var(--code-annotation-offset))';
 }
 
 function findAssociatedList(block) {
@@ -96,7 +104,7 @@ function createAnnotation(id, text) {
     icon.setAttribute('viewBox', '0 0 16 16');
     icon.setAttribute('aria-hidden', 'true');
     icon.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
-    icon.innerHTML = plus_icon;
+    icon.innerHTML = plusIcon;
     icon.id = 'code-annotation-icon-' + id;
     
     annotation.appendChild(icon);
@@ -124,7 +132,7 @@ function onClickAnnotation(id) {
     const text = document.getElementById('code-annotation-text-' + id);
 
     if(text.style.display == "none") {
-        show_annotation({icon, text});
+        showAnnotation({icon, text});
     } else {
         hideAnnotation({icon, text});
     }
@@ -155,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.addEventListener('resize', function() {
-    if(selected_icon != null && selected_text != null) {
-        adjustTextPosition(selected_icon, selected_text);
+    if(areSelectedAnnotation()) {
+        const {icon, text} = selectedAnnotation;
+        adjustTextPosition(icon, text);
     } 
 });
