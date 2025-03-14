@@ -2,7 +2,7 @@
 
 This section describes some basic uses of Appa Run to run an impact model.
 The code and files presented in this section can be found in the `samples/` directory of Appa Run source code.
-Other usages are presented in section [Appa Run in depth](..%2Fin_depth%2Fappa_run_in_depth.md).
+Other usages are presented in section [Appa Run in depth](../in_depth/appa_run_in_depth.md).
 
 ## Get FU scores
 
@@ -13,11 +13,14 @@ To use the CLI, parameter values must be specified in a yaml file.
 The next example is a parameter file for the nvidia_ai_gpu_chip sample impact model.
 You can click on the :material-plus-circle: to get information about each field.
 
-``` { .yaml linenums="1" title="samples/conf/parameters.yaml" }
-lifespan: 3 # (1)!
-architecture: Maxwell # (2)!
-cuda_core: [256, 512, 1024] # (3)!
-energy_per_inference: [0.05, 0.06, 0.065] # (4)!
+```{code-block} yaml
+:caption: samples/conf/parameters.yaml
+:lineno-start: 1
+
+lifespan: 3 #(1)!
+architecture: Maxwell #(2)!
+cuda_core: [256, 512, 1024] #(3)!
+energy_per_inference: [0.05, 0.06, 0.065] #(4)!
 ```
 
 1. Float type parameter
@@ -42,7 +45,10 @@ Here is what the command should print (and optionally save):
 
 The equivalent using the Python API is as follows, and should produce the same result:
 
-``` { .python linenums="1" title="samples/conf/parameters.yaml" }
+```{code-block} python
+:caption: samples/conf/parameters.yaml
+:lineno-start: 1
+
 scores = impact_model.get_scores(lifespan=3,
                                  architecture="Maxwell",
                                  cuda_core=[256, 512, 1024],
@@ -73,7 +79,10 @@ Result:
 
 The equivalent using the Python API is as follows, and should produce the same result:
 
-``` { .python linenums="1" title="samples/conf/parameters.yaml" }
+```{code-block} python
+:caption: samples/conf/parameters.yaml
+:lineno-start: 1
+
 nodes_scores = impact_model.get_nodes_scores(lifespan=3,
                                              architecture="Maxwell",
                                              cuda_core=[256, 512, 1024],
@@ -93,24 +102,27 @@ In this example, we will illustrate how to use an already implemented result to 
 First we need a configuration file to tell Appa Run some information about the results to generate.
 You can click on the :material-plus-circle: to get information about each field.
 
-``` { .yaml linenums="1" title="samples/conf/all_results.yaml" }
-- result_name: tree_map # (1)!
+```{code-block} yaml
+:caption: samples/conf/all_results.yaml
+:lineno-start: 1
+
+- result_name: tree_map #(1)!
   args:
     impact_model:
-      name: nvidia_ai_gpu_chip # (2)!
-      parameters: # (3)!
+      name: nvidia_ai_gpu_chip #(2)!
+      parameters: #(3)!
         architecture: "Maxwell"
         cuda_core: 512
-    output_name: nvidia_ai_gpu_chip-Maxwell_512-tree_map # (4)!
-    html_save_path: "outputs/figures/" # (5)!
-    pdf_save_path: "outputs/figures/" # (6)!
-    table_save_path: "outputs/tables/" # (7)!
-    png_save_path: "outputs/figures/" # (8)!
-    width: 1000 # (9)!
-    height: 700 # (10)!
+    output_name: nvidia_ai_gpu_chip-Maxwell_512-tree_map #(4)!
+    html_save_path: "outputs/figures/" #(5)!
+    pdf_save_path: "outputs/figures/" #(6)!
+    table_save_path: "outputs/tables/" #(7)!
+    png_save_path: "outputs/figures/" #(8)!
+    width: 1000 #(9)!
+    height: 700 #(10)!
 ```
 
-1. Name of the result class. All options are covered in the [Appa Run in depth](..%2Fin_depth%2Fappa_run_in_depth.md) section.
+1. Name of the result class. All options are covered in the [Appa Run in depth](../in_depth/appa_run_in_depth.md) section.
 2. Name of the impact model to load and run.
 3. You can optionally specify new parameter values if you don't like the default values included in the impact model.
 4. Root name used for the output files (files and figures).
@@ -122,17 +134,19 @@ You can click on the :material-plus-circle: to get information about each field.
 
 Here is a figure we can obtain:
 
-![Sample Tree Map Figure](../assets/basics/tree_map-EFV3_CLIMATE_CHANGE.svg){ width="600" }
-/// caption
-Tree map result for the sample case. The area of each box corresponds to its relative contribution to climate change. 
-///
-
+<figure>
+  <img src="../_static/basics/tree_map-EFV3_CLIMATE_CHANGE.svg" alt="" width="600" />
+  <figcaption>Tree map result for the sample case. The area of each box corresponds to its relative contribution to climate change.</figcaption>
+</figure>
 
 ### Using Python API
 
 The same figure can be generated using the Python API:
 
-``` { .python linenums="1" title="samples/conf/parameters.yaml" }
+```{code-block} python
+:caption: samples/conf/parameters.yaml
+:lineno-start: 1
+
 tree_map_result = get_result("tree_map")(
     impact_model=impact_model,
     output_name="tree_map",

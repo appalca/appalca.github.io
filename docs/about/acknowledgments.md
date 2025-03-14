@@ -5,9 +5,11 @@ The development of Appa LCA has been funded by the [DEEPGREEN](https://deepgreen
 
 The authors would like to thank Bénédicte ROBIN for her participation in maturing Appa LCA. 
 
-![CEA List logo](../assets/about/list.jpg){ width="95" }
-![deep green logo](../assets/about/deepgreen.png){ width="70" }
-![france 2030 logo](../assets/about/france_2023.jpg){ width="50" }
+<img src="../_static/about/list.jpg" alt="" width="95"/>
+
+<img src="../_static/about/deepgreen.png" alt="" width="70">
+
+<img src="../_static/about/france_2023.jpg" alt="" width="50"/>
 
 ## Code contributors
 
