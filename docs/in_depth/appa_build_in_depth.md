@@ -5,7 +5,10 @@
 EcoInvent datasets in Brightway are identified by a random code (uuid).
 To find the code of the desired dataset, one solution can be to use the Activity Browser to search for it manually.
 
-``` { .yaml linenums="1" title="electricity.yaml" }
+```{code-block} yaml
+:caption: electricity.yaml
+:lineno-start: 1
+
 exchanges:
 - database: user_database
   name: electricity
@@ -29,7 +32,10 @@ The set of regexes should return exactly one activity.
 The following example is equivalent to the previous one.
 It looks for an activity that matches a regex for the name, and a strict match for the location.
 
-``` { .yaml linenums="1" title="electricity.yaml" }
+```{code-block} yaml
+:caption: electricity.yaml
+:lineno-start: 1
+
 exchanges:
 - database: user_database
   name: electricity
@@ -67,14 +73,17 @@ This mechanism allows to define very generic datasets at the leaves that are com
 
 Let's look at the structure of the example LCA:
 
-![Sample Tree Map Figure](../assets/in_depth/sample_diagram.svg){ width="500" }
-/// caption
-Diagram of the datasets and corresponding parameterization used in Appa Build to generate the example impact model. 
-///
+<figure>
+  <img src="../_static/in_depth/sample_diagram.svg" alt="" width="500" />
+  <figcaption>Diagram of the datasets and corresponding parameterization used in Appa Build to generate the example impact model.</figcaption>
+</figure>
 
 The `logic_wafer_manufacturing` dataset is generic and is parameterized by two parameters: _fab\_location_ and _masks_.
 
-``` { .yaml linenums="1" title="logic_wafer_manufacturing.yaml" }
+```{code-block} yaml
+:caption: logic_wafer_manufacturing.yaml
+:lineno-start: 1
+
 parameters:
 - fab_location
 - masks
@@ -86,7 +95,7 @@ exchanges:
     name: fab_location
     options:
     - name: TW
-      amount: "(0.049*masks + 0.3623) * 3.14159 * pow(15, 2)" # impact originally is per cm², and we want it per 300 mm wafer
+      amount: "(0.049*masks + 0.3623) * 3.14159 * pow(15, 2)" #impact originally is per cm², and we want it per 300 mm wafer
   input:
     database: impact_proxies
     uuid: "('EF v3.0', 'climate change', 'global warming potential (GWP100)')_technosphere_proxy"
@@ -94,7 +103,10 @@ exchanges:
 
 It is used as input to the `logic_die_manufacturing`, which introduces a new _area_ parameter in addition of the two parameters required by the wafer dataset.
 
-``` { .yaml linenums="1" title="logic_die_manufacturing.yaml" }
+```{code-block} yaml
+:caption: logic_die_manufacturing.yaml
+:lineno-start: 1
+
 parameters:
 - area
 - fab_location
@@ -114,10 +126,13 @@ It also takes advantage of the parameter matching feature to replace the _masks_
 As a result, to use the `functional_logic_die_manufacturing`, you don't need the _masks_ parameter anymore, but _technology\_node_ instead.
 In the context of embedded AI ecodesign, using technology node can be interesting because it is an information more easily accessible to embedded AI designers than the number of lithography masks, and the first can be used to estimate the second.
 
-``` { .yaml linenums="1" title="functional_logic_die_manufacturing.yaml" }
+```{code-block} yaml
+:caption: functional_logic_die_manufacturing.yaml
+:lineno-start: 1
+
 parameters:
 - area
-- defect_density # defect/mm²
+- defect_density #defect/mm²
 - fab_location
 - technology_node
 exchanges:
@@ -137,7 +152,10 @@ This dataset is highly specialized. Nvidia GPU dies of interest can be defined b
 For the two architectures of interest, we can set the _fab_location_ parameter to the _TW_ value, and the _technology\_node_ and _defect\_density_ parameters.
 The _area_ can also be reasonably estimated by the number of _cuda\_core_ for both architectures.
 
-``` { .yaml linenums="1" title="nvidia_gpu_die_manufacturing.yaml" }
+```{code-block} yaml
+:caption: nvidia_gpu_die_manufacturing.yaml
+:lineno-start: 1
+
 parameters:
 - cuda_core
 - architecture
@@ -152,11 +170,11 @@ exchanges:
     - name: Pascal
       parameters_matching:
         defect_density: 0.05
-        technology_node: 16 # is actually 14 for 2 chips, and 16 for 4 chips.
+        technology_node: 16 #is actually 14 for 2 chips, and 16 for 4 chips.
         fab_location:
           TW: 1
         area: 0.13184623155305694*cuda_core + 21.707425626610416
-    - name: Maxwell # also includes Maxwell 2.0
+    - name: Maxwell #also includes Maxwell 2.0
       parameters_matching:
         defect_density: 0.02
         technology_node: 28
@@ -983,14 +1001,17 @@ The list of available `bw_method_name` is as follows:
 
 An example of hwo to use the impact proxy is available in the `electricity_no_ei.yaml` sample dataset:
 
-``` { .yaml linenums="1" title="electricity_no_ei.yaml" }
+```{code-block} yaml
+:caption: electricity_no_ei.yaml
+:lineno-start: 1
+
 name: electricity_no_ei
 location: GLO
 type: process
 unit: kwh
 amount: 1
 parameters:
-- usage_location # Only FR or EU supported
+- usage_location #Only FR or EU supported
 comment: "Low voltage electricity using 2023 https://www.eea.europa.eu/ data."
 exchanges:
 - database: user_database
@@ -1035,15 +1056,18 @@ appabuild database generate-eime-v6 samples/exports/sample_eime_v6_export.xlsx s
 `samples/sample_eime_v6_export.xlsx` contains fake PEF impacts for two mock datasets.  
 `samples/gen_sample_eime_v6.yaml` contains the remaining information. This configuration has the following structure:
 
-``` { .yaml linenums="1" title="gen_sample_eime_v6.yaml" }
-default: # (1)!
+```{code-block} yaml
+:caption: gen_sample_eime_v6.yaml
+:lineno-start: 1
+
+default: #(1)!
   database: user_database
   unit: unit
   type: "technosphere"
   comment: "Negaoctet mock sample dataset exported from Eime V6."
   amount: 1
-datasets: # (2)!
-  - name_in_export: "    Mock dataset RER" # (3)!
+datasets: #(2)!
+  - name_in_export: "    Mock dataset RER" #(3)!
     location: RER
     name: mock_dataset_RER
     uuid: mock_dataset_RER

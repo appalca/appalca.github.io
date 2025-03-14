@@ -1,3 +1,6 @@
-.venv/
+venv/
 site/
 .obsidian/
+
+# Generated files for the documentation
+docs/_build/

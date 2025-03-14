@@ -1,0 +1,6 @@
+[submodule "apparun"]
+	path = apparun
+	url = https://github.com/appalca/apparun.git
+[submodule "appabuild"]
+	path = appabuild
+	url = https://github.com/appalca/appabuild.git

@@ -16,29 +16,32 @@ We recommend you to have a look at Brightway's documentation ('legacy' version) 
 The next example contains common fields that can be found in a dataset file.
 You can click the :material-plus-circle: to have information about each field.
 
-``` { .yaml linenums="1" title="logic_wafer_manufacturing.yaml" }
-name: logic_wafer_manufacturing # (1)!
-location: GLO # (2)!
-type: process # (3)!
-unit: unit # (4)! 
-amount: 1 # (5)!
-parameters: # (6)!
+```{code-block} yaml
+:caption: logic_wafer_manufacturing.yaml
+:lineno-start: 1
+
+name: logic_wafer_manufacturing #(1)!
+location: GLO #(2)!
+type: process #(3)!
+unit: unit #(4)! 
+amount: 1 #(5)!
+parameters: #(6)!
 - fab_location
 - masks
-comment: "[...]" # (7)!
-include_in_tree: True  # (8)!
-exchanges: # (9)!
-- database: user_database # (10)! 
-  name: cmos_wafer_production # (11)!
-  type: technosphere # (12)!
-  switch: # (13)!
-    name: fab_location # (14)!
-    options: # (15)!
-    - name: TW # (16)!
-      amount: "(0.049*masks + 0.3623) * 3.14159 * pow(15, 2)" # (17)!
+comment: "[...]" #(7)!
+include_in_tree: True  #(8)!
+exchanges: #(9)!
+- database: user_database #(10)! 
+  name: cmos_wafer_production #(11)!
+  type: technosphere #(12)!
+  switch: #(13)!
+    name: fab_location #(14)!
+    options: #(15)!
+    - name: TW #(16)!
+      amount: "(0.049*masks + 0.3623) * 3.14159 * pow(15, 2)" #(17)!
   input:
-    database: impact_proxies # (18)!
-    uuid: "('EF v3.0', 'climate change', 'global warming potential (GWP100)')_technosphere_proxy" # (19)!
+    database: impact_proxies #(18)!
+    uuid: "('EF v3.0', 'climate change', 'global warming potential (GWP100)')_technosphere_proxy" #(19)!
 ```
 
 1. Activity name. Not really used except to indicate which activity is the FU in the LCA conf file. 
@@ -69,15 +72,18 @@ You can click on the :material-plus-circle: to get information about each field.
 
 This file corresponds to the file required as the first argument by the _appabuild lca build_ CLI command. 
 
-``` { .yaml linenums="1" title="appabuild_conf.yaml" }
-project_name: 'sample_project' # (1)!
-databases: # (2)!
-  ecoinvent: # (3)!
-    name: ecoinvent_3.9.1_cutoff # (4)!
-    path: 'C:\\databases\\ecoinvent_3.9.1_cutoff\\datasets' # (5)!
-  foreground: # (6)!
-    name: user_database # (7)!
-    path: 'samples/datasets/user_database/' # (8)!
+```{code-block} yaml
+:caption: appabuild_conf.yaml
+:lineno-start: 1
+
+project_name: 'sample_project' #(1)!
+databases: #(2)!
+  ecoinvent: #(3)!
+    name: ecoinvent_3.9.1_cutoff #(4)!
+    path: 'C:\\databases\\ecoinvent_3.9.1_cutoff\\datasets' #(5)!
+  foreground: #(6)!
+    name: user_database #(7)!
+    path: 'samples/datasets/user_database/' #(8)!
 ```
 
 1. This name is used by Brightway to initialize the environment. The location of the environment is specified by the `BRIGHTWAY_DIR` environment variable.
@@ -99,19 +105,22 @@ You can click on the :material-plus-circle: to get information about each field.
 
 This file corresponds to the file required as the second argument by the `appabuild lca build` CLI command.
 
-``` { .yaml linenums="1" title="nvidia_ai_gpu_chip_lca_conf.yaml" }
+```{code-block} yaml
+:caption: nvidia_ai_gpu_chip_lca_conf.yaml
+:lineno-start: 1
+
 scope:
-  fu: # (1)!
-    name: "nvidia_ai_gpu_chip" # (2)!
+  fu: #(1)!
+    name: "nvidia_ai_gpu_chip" #(2)!
     database: "user_database"
-  methods: # (3)!
+  methods: #(3)!
     - "EFV3_CLIMATE_CHANGE"
 outputs:
   model:
-    path: "." # (4)!
-    name: "nvidia_ai_gpu_chip" # (5)!
-    compile: True # (6)!
-    metadata: # (7)!
+    path: "." #(4)!
+    name: "nvidia_ai_gpu_chip" #(5)!
+    compile: True #(6)!
+    metadata: #(7)!
       author:
         name: Maxime PERALTA
         organization: CEA
@@ -126,16 +135,16 @@ outputs:
         date: 03/11/2023
         version: "1"
         license: proprietary
-        appabuild_version: "0.2" # (8)!
-    parameters: # (9)!
-      - name: cuda_core # (10)!
-        type: float # (11)!
-        default: 512 # (12)!
-        pm_perc: 0.1 # (13)!
+        appabuild_version: "0.2" #(8)!
+    parameters: #(9)!
+      - name: cuda_core #(10)!
+        type: float #(11)!
+        default: 512 #(12)!
+        pm_perc: 0.1 #(13)!
       - name: architecture
-        type: enum # (14)!
+        type: enum #(14)!
         default: Maxwell
-        weights: # (15)!
+        weights: #(15)!
           Maxwell: 1
           Pascal: 1
       - name: usage_location
@@ -147,16 +156,16 @@ outputs:
       - name: energy_per_inference
         type: float
         default: 0.05
-        min: 0.01 # (16)!
-        max: 0.1 # (17)!
+        min: 0.01 #(16)!
+        max: 0.1 #(17)!
       - name: lifespan
         type: float
         default: 2
-        pm: 1 # (18)!
+        pm: 1 #(18)!
       - name: inference_per_day
         type: float
         default: 3600
-        pm_perc: 0 # (19)!
+        pm_perc: 0 #(19)!
 ```
 
 1. Functional Unit (FU) corresponds to the activity that produces the reference flow. The FU should be stored in the foreground database.
@@ -183,7 +192,7 @@ outputs:
 
 Background databases are databases than cannot be parameterized.
 Currently, only EcoInvent 3.9.1 is supported.
-Please refer to the [FAQ](..%2Fabout%2Ffaq.md) section for more information.
+Please refer to the [FAQ](../about/faq.md) section for more information.
 
 ## Let's build an impact model!
 
@@ -196,7 +205,7 @@ appabuild lca build PATH_TO_APPALCA_CONF PATH_TO_LCA_CONF
 Depending on how you installed the `appabuild` package, you may need to activate your virtual environment first.
 
 `lca build` is the command that tells Appa Build that you want to build an impact model.
-Other commands are covered in the section [Appa Build in depth](..%2Fin_depth%2Fappa_build_in_depth.md).
+Other commands are covered in the section [Appa Build in depth](../in_depth/appa_build_in_depth.md).
 
 `PATH_TO_APPALCA_CONF` is the path to your Appa LCA conf file. You can use `samples/conf/appalca_conf.yaml` to build the sample.
 
@@ -205,4 +214,4 @@ Other commands are covered in the section [Appa Build in depth](..%2Fin_depth%2F
 The first use of `appabuild` will be long because Brightway has to initialize a Brightway project. Next usage should be faster.
 
 This command should create an impact model at the location specified in the LCA configuration file.
-A complete breakdown of the fields of this impact model can be found in the section [Impact models in depth](..%2Fin_depth%2Fimpact_models_in_depth.md).
+A complete breakdown of the fields of this impact model can be found in the section [Impact models in depth](../in_depth/impact_models_in_depth.md).
