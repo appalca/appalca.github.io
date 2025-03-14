@@ -1,0 +1,41 @@
+app.cli.main
+============
+
+.. py:module:: app.cli.main
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   app.cli.main.cli_app
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   app.cli.main.compute
+   app.cli.main.compute_nodes
+   app.cli.main.model_params
+   app.cli.main.models
+   app.cli.main.results
+
+
+Module Contents
+---------------
+
+.. py:function:: compute(impact_model_name: str, params_file_path: str, output_file_path: Optional[str] = None)
+
+.. py:function:: compute_nodes(impact_model_name: str, params_file_path: str, output_file_path: Optional[str] = None)
+
+.. py:function:: model_params(impact_model_name: str)
+
+.. py:function:: models()
+
+.. py:function:: results(results_config_file_path: str)
+
+.. py:data:: cli_app
+

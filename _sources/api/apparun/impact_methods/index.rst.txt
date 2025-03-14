@@ -1,0 +1,365 @@
+apparun.impact_methods
+======================
+
+.. py:module:: apparun.impact_methods
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.impact_methods.MethodFullName
+   apparun.impact_methods.MethodShortName
+
+
+Module Contents
+---------------
+
+.. py:class:: MethodFullName
+
+   Bases: :py:obj:`str`, :py:obj:`aenum.Enum`
+
+
+   Enumeration of impact methods supported by Brightway.
+   So far, only some ReCiPe methods, and all EF v3.0 impact methods are supported.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:method:: to_short_name() -> MethodShortName
+
+      Convert a full impact name (as specified in Brightway) to its shorter version.
+      :return: short name version of full impact name.
+
+
+
+   .. py:attribute:: EFV3_ACIDIFICATION
+      :value: "('EF v3.0', 'acidification', 'accumulated exceedance (AE)')"
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE
+      :value: "('EF v3.0', 'climate change', 'global warming potential (GWP100)')"
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_BIOGENIC
+      :value: "('EF v3.0', 'climate change: biogenic', 'global warming potential (GWP100)')"
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_FOSSIL
+      :value: "('EF v3.0', 'climate change: fossil', 'global warming potential (GWP100)')"
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_LAND_USE
+      :value: "('EF v3.0', 'climate change: land use and land use change', 'global warming potential (GWP100)')"
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER
+      :value: "('EF v3.0', 'ecotoxicity: freshwater', 'comparative toxic unit for ecosystems (CTUe)')"
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_INORGANICS
+      :value: "('EF v3.0', 'ecotoxicity: freshwater, inorganics', 'comparative toxic unit for ecosystems (CTUe)')"
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_METALS
+      :value: "('EF v3.0', 'ecotoxicity: freshwater, metals', 'comparative toxic unit for ecosystems (CTUe)')"
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_ORGANICS
+      :value: "('EF v3.0', 'ecotoxicity: freshwater, organics', 'comparative toxic unit for ecosystems (CTUe)')"
+
+
+
+   .. py:attribute:: EFV3_ENERGY_RESOURCES
+      :value: "('EF v3.0', 'energy resources: non-renewable', 'abiotic depletion potential (ADP): fossil fuels')"
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_FRESHWATER
+      :value: "('EF v3.0', 'eutrophication: freshwater', 'fraction of nutrients reaching freshwater end...
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_MARINE
+      :value: "('EF v3.0', 'eutrophication: marine', 'fraction of nutrients reaching marine end compartment (N)')"
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_TERRESTRIAL
+      :value: "('EF v3.0', 'eutrophication: terrestrial', 'accumulated exceedance (AE)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC
+      :value: "('EF v3.0', 'human toxicity: carcinogenic', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_INORGANICS
+      :value: "('EF v3.0', 'human toxicity: carcinogenic, inorganics', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_METALS
+      :value: "('EF v3.0', 'human toxicity: carcinogenic, metals', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_ORGANICS
+      :value: "('EF v3.0', 'human toxicity: carcinogenic, organics', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC
+      :value: "('EF v3.0', 'human toxicity: non-carcinogenic', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_INORGANICS
+      :value: "('EF v3.0', 'human toxicity: non-carcinogenic, inorganics', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_METALS
+      :value: "('EF v3.0', 'human toxicity: non-carcinogenic, metals', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_ORGANICS
+      :value: "('EF v3.0', 'human toxicity: non-carcinogenic, organics', 'comparative toxic unit for human (CTUh)')"
+
+
+
+   .. py:attribute:: EFV3_IONISING_RADIATION
+      :value: "('EF v3.0', 'ionising radiation: human health', 'human exposure efficiency relative to u235')"
+
+
+
+   .. py:attribute:: EFV3_LAND_USE
+      :value: "('EF v3.0', 'land use', 'soil quality index')"
+
+
+
+   .. py:attribute:: EFV3_MATERIAL_RESOURCES
+      :value: "('EF v3.0', 'material resources: metals/minerals', 'abiotic depletion potential (ADP): elements...
+
+
+
+   .. py:attribute:: EFV3_OZONE_DEPLETION
+      :value: "('EF v3.0', 'ozone depletion', 'ozone depletion potential (ODP)')"
+
+
+
+   .. py:attribute:: EFV3_PARTICULATE_MATTER_FORMATION
+      :value: "('EF v3.0', 'particulate matter formation', 'impact on human health')"
+
+
+
+   .. py:attribute:: EFV3_PHOTOCHEMICAL_OZONE_FORMATION
+      :value: "('EF v3.0', 'photochemical oxidant formation: human health', 'tropospheric ozone concentration...
+
+
+
+   .. py:attribute:: EFV3_WATER_USE
+      :value: "('EF v3.0', 'water use', 'user deprivation potential (deprivation-weighted water consumption)')"
+
+
+
+.. py:class:: MethodShortName
+
+   Bases: :py:obj:`str`, :py:obj:`aenum.Enum`
+
+
+   Short version of impact methods supported by Brightway, to ease readability of
+   figures.
+   So far, only some ReCiPe methods, and all EF v3.0 impact methods are supported.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:method:: to_full_name() -> MethodFullName
+
+      Convert a short impact name to its full version (as specified in Brightway).
+      :return: full name version of short impact name.
+
+
+
+   .. py:attribute:: EFV3_ACIDIFICATION
+      :value: 'Acification (AE)'
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE
+      :value: 'Climate change (GWP100)'
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_BIOGENIC
+      :value: 'Climate change: biogenic (GWP100)'
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_FOSSIL
+      :value: 'Climate change: fossil (GWP100)'
+
+
+
+   .. py:attribute:: EFV3_CLIMATE_CHANGE_LAND_USE
+      :value: 'Climate change: land use/land use change (GWP100)'
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER
+      :value: 'Ecotoxicity: freshwater (CTUe)'
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_INORGANICS
+      :value: 'Ecotoxicity: freshwater, inorganics (CTUe)'
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_METALS
+      :value: 'Ecotoxicity: freshwater, metals (CTUe)'
+
+
+
+   .. py:attribute:: EFV3_ECOTOXICITY_FRESHWATER_ORGANICS
+      :value: 'Ecotoxicity: freshwater, organics (CTUe)'
+
+
+
+   .. py:attribute:: EFV3_ENERGY_RESOURCES
+      :value: 'Energy use, energy carriers (MJ)'
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_FRESHWATER
+      :value: 'Eutrophication: freshwater (kgPeq)'
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_MARINE
+      :value: 'Eutrophication: marine (N)'
+
+
+
+   .. py:attribute:: EFV3_EUTROPHICATION_TERRESTRIAL
+      :value: 'Eutrophication: terrestrial (AE)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC
+      :value: 'Human toxicity: carcinogenic (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_INORGANICS
+      :value: 'Human toxicity: carcinogenic, inorganics (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_METALS
+      :value: 'Human toxicity: carcinogenic, metals (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_CARCINOGENIC_ORGANICS
+      :value: 'Human toxicity: carcinogenic, organics (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC
+      :value: 'Human toxicity: non-carcinogenic (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_INORGANICS
+      :value: 'Human toxicity: non-carcinogenic, inorganics (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_METALS
+      :value: 'Human toxicity: non-carcinogenic, metals (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_ORGANICS
+      :value: 'Human toxicity: non-carcinogenic, organics (CTUh)'
+
+
+
+   .. py:attribute:: EFV3_IONISING_RADIATION
+      :value: 'Ionising radiation: human health (kBqU235)'
+
+
+
+   .. py:attribute:: EFV3_LAND_USE
+      :value: 'Land use (soil quality index)'
+
+
+
+   .. py:attribute:: EFV3_MATERIAL_RESOURCES
+      :value: 'Resource use, metals and minerals (kgSbeq)'
+
+
+
+   .. py:attribute:: EFV3_OZONE_DEPLETION
+      :value: 'Ozone depletion (ODP)'
+
+
+
+   .. py:attribute:: EFV3_PARTICULATE_MATTER_FORMATION
+      :value: 'Particulate matter formation: impact on human health (disease incidences)'
+
+
+
+   .. py:attribute:: EFV3_PHOTOCHEMICAL_OZONE_FORMATION
+      :value: 'Photochemical ozone formation (kgNMVOCeq)'
+
+
+
+   .. py:attribute:: EFV3_WATER_USE
+      :value: 'Depr.-weighted water cons. (kg world eq. deprived)'
+
+
+
+   .. py:attribute:: RECIPE_ENDPOINT_ECOSYSTEM_QUALITY
+      :value: 'Damage to ecosystems'
+
+
+
+   .. py:attribute:: RECIPE_ENDPOINT_HUMAN_HEALTH
+      :value: 'Damage to human health'
+
+
+
+   .. py:attribute:: RECIPE_ENDPOINT_RESOURCES
+      :value: 'Damage to resource availability'
+
+
+
+   .. py:attribute:: RECIPE_ENDPOINT_TOTAL
+      :value: 'Total damage'
+
+
+
+   .. py:attribute:: RECIPE_MIDPOINT_CLIMATE_CHANGE
+      :value: 'Climate change (GWP100)'
+
+
+
+   .. py:attribute:: RECIPE_MIDPOINT_TERRESTRIAL_ECOTOXICITY
+      :value: 'Terrestrial ecotoxicity (TETPinf)'
+
+
+

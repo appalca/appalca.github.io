@@ -1,0 +1,98 @@
+python_api_usage
+================
+
+.. py:module:: python_api_usage
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   python_api_usage.OUTPUT_FILES_PATH
+   python_api_usage.impact_model
+   python_api_usage.new_nodes_uncertainty_result
+   python_api_usage.new_nodes_uncertainty_table
+   python_api_usage.nodes_scores
+   python_api_usage.sankey_result
+   python_api_usage.sankey_table
+   python_api_usage.scores
+   python_api_usage.sobol_result
+   python_api_usage.sobol_table
+   python_api_usage.tree_map_result
+   python_api_usage.tree_map_table
+   python_api_usage.uncertainty_nodes_result
+   python_api_usage.uncertainty_nodes_table
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   python_api_usage.NewNodesUncertaintyResult
+   python_api_usage.UncertaintyResult
+
+
+Module Contents
+---------------
+
+.. py:class:: NewNodesUncertaintyResult
+
+   Bases: :py:obj:`apparun.results.NodesUncertaintyResult`
+
+
+   Generate uncertainty for each node using Monte Carlo. Result figure as a boxplot.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+
+.. py:class:: UncertaintyResult
+
+   Bases: :py:obj:`apparun.results.ImpactModelResult`
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+
+   .. py:attribute:: n
+      :type:  int
+
+      Generate uncertainty for each node using Monte Carlo. Result figure as a boxplot.
+
+
+
+.. py:data:: OUTPUT_FILES_PATH
+   :value: 'outputs/'
+
+
+.. py:data:: impact_model
+
+.. py:data:: new_nodes_uncertainty_result
+
+.. py:data:: new_nodes_uncertainty_table
+
+.. py:data:: nodes_scores
+
+.. py:data:: sankey_result
+
+.. py:data:: sankey_table
+
+.. py:data:: scores
+
+.. py:data:: sobol_result
+
+.. py:data:: sobol_table
+
+.. py:data:: tree_map_result
+
+.. py:data:: tree_map_table
+
+.. py:data:: uncertainty_nodes_result
+
+.. py:data:: uncertainty_nodes_table
+

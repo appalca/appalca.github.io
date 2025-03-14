@@ -1,0 +1,34 @@
+app.cli.lca
+===========
+
+.. py:module:: app.cli.lca
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   app.cli.lca.app
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   app.cli.lca.build
+
+
+Module Contents
+---------------
+
+.. py:function:: build(appabuild_config_path: Annotated[Optional[str], typer.Argument(help='AppaBuild environment configuration file, required unless --no-init is specified')], lca_config_path: Annotated[str, typer.Argument(help='LCA configuration file')], init: Annotated[bool, typer.Option(help='initialize AppaBuild environment')] = True)
+
+   Build an impact model and save it to the disk.
+   An AppaBuild environment is initialized (background and foreground databases), unless --no-init is specified.
+
+
+
+.. py:data:: app
+

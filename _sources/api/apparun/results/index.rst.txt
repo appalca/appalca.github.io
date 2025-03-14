@@ -1,0 +1,343 @@
+apparun.results
+===============
+
+.. py:module:: apparun.results
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.results.RESULTS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.results.ImpactModelResult
+   apparun.results.NodesSobolIndexResult
+   apparun.results.NodesUncertaintyResult
+   apparun.results.SankeyDiagramResult
+   apparun.results.SobolIndexResult
+   apparun.results.TreeMapResult
+   apparun.results.UncertaintyResult
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.results.get_result
+   apparun.results.register_result
+   apparun.results.registered_results
+
+
+Module Contents
+---------------
+
+.. py:class:: ImpactModelResult
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   An impact model result is one, or a collection of tables and/or figures generated
+   by executing an impact model.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Abstract method.
+      Generate the output as a figures, or a collection of figures, using the output
+      of the get_table method.
+      :param table: tabular result data.
+      :return: figure, or collection of figure generated.
+
+
+
+   .. py:method:: get_table() -> Union[pandas.DataFrame, pandas.Series]
+
+      Abstract method.
+      Generate the output as a table, or a collection of tables.
+      :return: tabular results as a pandas DataFrame.
+
+
+
+   .. py:method:: run()
+
+      Execute the result to generate wanted outputs.
+
+
+
+   .. py:method:: save_figure(fig, name_suffix=None)
+
+      Save a figure to disk, according to the configuration specified in result
+      attributes.
+      :param fig: figure to save
+      :param name_suffix: optional file name suffix.
+
+
+
+   .. py:attribute:: height
+      :type:  Optional[int]
+      :value: None
+
+
+
+   .. py:attribute:: html_save_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: impact_model
+      :type:  apparun.impact_model.ImpactModel
+
+
+   .. py:attribute:: output_name
+      :type:  str
+
+
+   .. py:attribute:: pdf_save_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: png_save_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: table_save_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: width
+      :type:  Optional[int]
+      :value: None
+
+
+
+.. py:class:: NodesSobolIndexResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Abstract method.
+      Generate the output as a figures, or a collection of figures, using the output
+      of the get_table method.
+      :param table: tabular result data.
+      :return: figure, or collection of figure generated.
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Abstract method.
+      Generate the output as a table, or a collection of tables.
+      :return: tabular results as a pandas DataFrame.
+
+
+
+   .. py:attribute:: n
+      :type:  int
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[dict[str, Union[float, str]]]
+      :value: None
+
+
+
+.. py:class:: NodesUncertaintyResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   Generate uncertainty for each node using Monte Carlo. Result figure as a boxplot.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Display uncertainty result of each node with boxplots, one figure per impact.
+      :param table: results of each draw for each node as a long format table
+      :return: all figures generated
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Run monte carlo simulation for each node, get all values as a long format table.
+      :return: results of each draw for each node as a long format table
+
+
+
+   .. py:attribute:: n
+      :type:  int
+
+
+.. py:class:: SankeyDiagramResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   Generate a Sankey diagram for each impact, representing the contribution of all
+   nodes to the root node result.
+   See https://plotly.com/python/sankey-diagram/ for more information.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame) -> List[plotly.graph_objects.Figure]
+
+      Generate one distinct Sankey diagram per impact method.
+      Save figure(s) to disk, according to the configuration specified in result
+      attributes.
+      :param table: tabular sankey result data.
+      :return: figure, or collection of figure generated.
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Generate Sankey output as a table, or a collection of tables.
+      Save it to disk according to configuration specified in result attributes.
+      :return: tabular results as a pandas DataFrame.
+
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[dict[str, Union[float, str]]]
+
+
+.. py:class:: SobolIndexResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   Generate sobol S1 index for each impact as a heatmap. Sobol S1 indices represent
+   the first order contribution of each model's parameter to the score variance.
+   See https://plotly.com/python/sankey-diagram/ for more information.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Generate a heatmap for S1 sobol indices of each model's parameter, and for each
+      impact method.
+      Save figure(s) to disk, according to the configuration specified in result
+      attributes.
+      :param table: tabular sankey result data.
+      :return: figure, or collection of figure generated.
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Generate sobol S1 indices.
+      Save it to disk according to configuration specified in result attributes.
+      :return: tabular results as a pandas DataFrame.
+
+
+
+   .. py:attribute:: n
+      :type:  int
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[dict[str, Union[float, str]]]
+      :value: None
+
+
+
+.. py:class:: TreeMapResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   Generate a TreeMap for each impact, representing the contribution of all nodes to
+   the root node result.
+   See https://plotly.com/python/treemaps/ for more information.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Generate one distinct treemap per impact method.
+      Save figure(s) to disk, according to the configuration specified in result
+      attributes.
+      :param table: tabular treemap result data.
+      :return: figure, or collection of figure generated.
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Generate treemap output as a table, or a collection of tables.
+      Save it to disk according to configuration specified in result attributes.
+      :return: tabular results as a pandas DataFrame.
+
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[dict[str, Union[float, str]]]
+
+
+.. py:class:: UncertaintyResult
+
+   Bases: :py:obj:`ImpactModelResult`
+
+
+   An impact model result is one, or a collection of tables and/or figures generated
+   by executing an impact model.
+
+
+   .. py:method:: get_figure(table: pandas.DataFrame)
+
+      Display uncertainty result of FU with boxplot, one figure per impact.
+      :param table: results of each draw for each node as a long format table
+      :return: all figures generated
+
+
+
+   .. py:method:: get_table() -> pandas.DataFrame
+
+      Run monte carlo simulation for FU, get all values as a long format table.
+      :return: results of each draw as a long format table
+
+
+
+   .. py:attribute:: n
+      :type:  int
+
+      Generate uncertainty for FU using Monte Carlo. Result figure as a boxplot.
+
+
+
+.. py:function:: get_result(result_name: str)
+
+   Get a registered ImpactModelResult class by name.
+   :param result_name: registered name of the desired ImpactModelResult.
+   :return: registered ImpactModelResult class corresponding to the name.
+
+
+.. py:function:: register_result(result_name)
+
+   This decorator registers a new ImpactModelResult class in RESULTS registry.
+   :param result_name: name of the new result to register
+   :return: new ImpactModelResult class
+
+
+.. py:function:: registered_results() -> List[str]
+
+   Get a list of registered ImpactModelResult names.
+   :return: list of registered ImpactModelResult names.
+
+
+.. py:data:: RESULTS
+

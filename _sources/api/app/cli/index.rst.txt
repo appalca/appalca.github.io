@@ -1,0 +1,17 @@
+app.cli
+=======
+
+.. py:module:: app.cli
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/app/cli/database/index
+   /api/app/cli/lca/index
+   /api/app/cli/main/index
+
+

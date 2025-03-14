@@ -1,0 +1,78 @@
+app
+===
+
+.. py:module:: app
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/app/cli/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   app.app
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   app.ComputeParams
+   app.GetModelParams
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   app.compute
+   app.compute_nodes
+   app.get_model_params
+   app.get_models
+
+
+Module Contents
+---------------
+
+.. py:class:: ComputeParams
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:attribute:: impact_model_name
+      :type:  str
+
+
+   .. py:attribute:: params
+      :type:  Dict[str, Union[str, float, List[Union[str, float]]]]
+
+
+.. py:class:: GetModelParams
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:attribute:: impact_model_name
+      :type:  str
+
+
+.. py:function:: compute(params: ComputeParams)
+
+.. py:function:: compute_nodes(params: ComputeParams)
+
+.. py:function:: get_model_params(params: GetModelParams)
+
+.. py:function:: get_models()
+
+.. py:data:: app
+
