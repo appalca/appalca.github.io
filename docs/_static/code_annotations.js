@@ -1,9 +1,4 @@
 const regex = /#\(\d+\)!/g;
-            
-const plusIcon = '<path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm1.062 4.312a1 1 0 1 0-2 0v2.75h-2.75a1 1 0 0 0 0 2h2.75v2.75a1 1 0 1 0 2 0v-2.75h2.75a1 1 0 1 0 0-2h-2.75Z"></path>';
-const crossIcon = '<path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>';
-
-const iconTag = '<svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon" viewBox="0 0 16 16" aria-hidden="true">' + plusIcon + '</svg>';
 
 var selectedAnnotation = null;
 
@@ -37,9 +32,7 @@ function hideSelectedAnnotation() {
  */
 function hideAnnotation(annotation) {
     const {icon, text} = annotation;
-    icon.innerHTML = plusIcon;
-    icon.classList.remove("sd-octicon-feed-plus");
-    icon.classList.add("sd-octicon-x-circle-fill");
+    icon.setAttribute('src', '../_static/plus.svg');
     icon.style.zIndex = "0";
     text.style.display = "none";
     text.style.left = "var(--code-annotation-offset)";
@@ -52,10 +45,8 @@ function showAnnotation(annotation) {
     hideSelectedAnnotation();
     const {icon, text} = annotation;
 
-    icon.classList.remove("sd-octicon-feed-plus");
-    icon.classList.add("sd-octicon-x-circle-fill");
+    icon.setAttribute('src', '../_static/cross.svg');
     icon.style.zIndex = "2";
-    icon.innerHTML = crossIcon;
 
     text.style.display = "block";
     adjustTextPosition(icon, text);
@@ -96,15 +87,11 @@ function createAnnotation(id, text) {
     const annotation = document.createElement('span');
 
     // Creation of the annotation's icon
-    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    icon.setAttribute('version', '1.1');
-    icon.setAttribute('width', '1.0em');
-    icon.setAttribute('height', '1.0em');
-    icon.setAttribute('class', 'sd-octicon sd-octicon-feed-plus sd-text-info code-annotation-icon');
-    icon.setAttribute('viewBox', '0 0 16 16');
-    icon.setAttribute('aria-hidden', 'true');
-    icon.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
-    icon.innerHTML = plusIcon;
+    const icon = document.createElement("img");
+    icon.setAttribute('src', '../_static/plus.svg');
+    icon.setAttribute('height', '16');
+    icon.setAttribute('width', '16');
+    icon.setAttribute('class', 'code-annotation-icon');
     icon.id = 'code-annotation-icon-' + id;
     
     annotation.appendChild(icon);

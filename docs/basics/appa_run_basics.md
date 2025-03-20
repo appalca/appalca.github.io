@@ -11,7 +11,7 @@ The most basic operation with impact models can be to compute FU impact scores w
 
 To use the CLI, parameter values must be specified in a yaml file.
 The next example is a parameter file for the nvidia_ai_gpu_chip sample impact model.
-You can click on the :material-plus-circle: to get information about each field.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
 ```{code-block} yaml
 :caption: samples/conf/parameters.yaml
@@ -100,7 +100,7 @@ In this example, we will illustrate how to use an already implemented result to 
 ### Using CLI
 
 First we need a configuration file to tell Appa Run some information about the results to generate.
-You can click on the :material-plus-circle: to get information about each field.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
 ```{code-block} yaml
 :caption: samples/conf/all_results.yaml
