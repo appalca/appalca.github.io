@@ -18,6 +18,10 @@ jobs:
               with: 
                 submodules: true
 
+            - name: update submodules
+              run: |
+                git submodule update --remote --recursive
+
             - name: Setup Python
               uses: actions/setup-python@v5
               with:
