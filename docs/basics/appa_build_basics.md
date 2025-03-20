@@ -14,7 +14,7 @@ The structure of these files is closely related to Brightway's representation of
 We recommend you to have a look at Brightway's documentation ('legacy' version) first.
 
 The next example contains common fields that can be found in a dataset file.
-You can click the :material-plus-circle: to have information about each field.
+You can click the <img src="../_static/plus.svg" height='16' width='16' /> to have information about each field.
 
 ```{code-block} yaml
 :caption: logic_wafer_manufacturing.yaml
@@ -68,7 +68,7 @@ The Appa LCA configuration file contains information that should be reused for m
 The information in this file is used to set up Brightway's environment and to specify the paths to the background and foreground databases.
 
 The next example breaks down sample's Appa LCA configuration file.
-You can click on the :material-plus-circle: to get information about each field.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
 This file corresponds to the file required as the first argument by the _appabuild lca build_ CLI command. 
 
@@ -101,7 +101,7 @@ The LCA configuration contains information about the LCA and its corresponding i
 You need one LCA configuration per LCA performed.
 
 The next example breaks down the Appa LCA sample configuration file.
-You can click on the :material-plus-circle: to get information about each field.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
 This file corresponds to the file required as the second argument by the `appabuild lca build` CLI command.
 

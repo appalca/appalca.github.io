@@ -52,6 +52,7 @@ html_css_files = ["style.css", "code_annotations.css"]
 html_js_files = ["code_annotations.js"]
 
 myst_number_code_blocks = ["yaml"]
+myst_enable_extensions = ["colon_fence"]
 
 # Disable the "Show source" link
 html_show_sourcelink = False
