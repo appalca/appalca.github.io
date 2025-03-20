@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
-      - main
+  repository_dispatch:
+    types:
+      - update_documentation
 
 jobs:
     build-deploy:
