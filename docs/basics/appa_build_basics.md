@@ -16,7 +16,7 @@ We recommend you to have a look at Brightway's documentation ('legacy' version) 
 The next example contains common fields that can be found in a dataset file.
 You can click the <img src="../_static/plus.svg" height='16' width='16' /> to have information about each field.
 
-```{code-block} yaml
+:::{code-block} yaml
 :caption: logic_wafer_manufacturing.yaml
 :lineno-start: 1
 
@@ -42,7 +42,7 @@ exchanges: #(9)!
   input:
     database: impact_proxies #(18)!
     uuid: "('EF v3.0', 'climate change', 'global warming potential (GWP100)')_technosphere_proxy" #(19)!
-```
+:::
 
 1. Activity name. Not really used except to indicate which activity is the FU in the LCA conf file. 
 2. Location of the activity. Purely informative.
@@ -72,7 +72,7 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
 
 This file corresponds to the file required as the first argument by the _appabuild lca build_ CLI command. 
 
-```{code-block} yaml
+:::{code-block} yaml
 :caption: appabuild_conf.yaml
 :lineno-start: 1
 
@@ -84,7 +84,7 @@ databases: #(2)!
   foreground: #(6)!
     name: user_database #(7)!
     path: 'samples/datasets/user_database/' #(8)!
-```
+:::
 
 1. This name is used by Brightway to initialize the environment. The location of the environment is specified by the `BRIGHTWAY_DIR` environment variable.
 2. Databases to import. At the moment this is quite static as you need one EcoInvent database and one foreground database.
@@ -105,7 +105,7 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
 
 This file corresponds to the file required as the second argument by the `appabuild lca build` CLI command.
 
-```{code-block} yaml
+:::{code-block} yaml
 :caption: nvidia_ai_gpu_chip_lca_conf.yaml
 :lineno-start: 1
 
@@ -166,7 +166,7 @@ outputs:
         type: float
         default: 3600
         pm_perc: 0 #(19)!
-```
+:::
 
 1. Functional Unit (FU) corresponds to the activity that produces the reference flow. The FU should be stored in the foreground database.
 2. Note that FU should be specified by name, not by UUID. Make sure that the FU name is unique.
