@@ -21,7 +21,14 @@ extensions = [
     "myst_parser",
     "sphinx_design",
     "sphinx_copybutton",
+    "sphinx_togglebutton"
 ]
+
+myst_enable_extensions = [
+    "colon_fence"
+]
+
+myst_number_code_blocks = ["python"]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]

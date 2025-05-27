@@ -13,7 +13,7 @@ To use the CLI, parameter values must be specified in a yaml file.
 The next example is a parameter file for the nvidia_ai_gpu_chip sample impact model.
 You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
-```{code-block} yaml
+:::{code-block} yaml
 :caption: samples/conf/parameters.yaml
 :lineno-start: 1
 
@@ -21,7 +21,7 @@ lifespan: 3 #(1)!
 architecture: Maxwell #(2)!
 cuda_core: [256, 512, 1024] #(3)!
 energy_per_inference: [0.05, 0.06, 0.065] #(4)!
-```
+:::
 
 1. Float type parameter
 2. Enum type parameter. The value must match with one of the possible options.
@@ -30,7 +30,9 @@ energy_per_inference: [0.05, 0.06, 0.065] #(4)!
 
 The following command calculates the scores. You need to tell Appa Run where the impact models are stored by setting the `APPARUN_IMPACT_MODELS_DIR` environment variable (here, to `samples/`).
 
-```apparun compute nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml```
+```
+apparun compute nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml
+```
 
 The `compute` argument corresponds to the name of the command. `nvidia_ai_gpu_chip`.
 The second argument is the impact model name (without file extension).
@@ -39,13 +41,15 @@ Finally, `--output-file-path outputs/scores.yaml` is an optional argument to sav
 
 Here is what the command should print (and optionally save):
 
-```{'scores': {'EFV3_CLIMATE_CHANGE': [6.814605183702477, 23.409114107243994, 124.77822686500075]}}```
+```
+{'scores': {'EFV3_CLIMATE_CHANGE': [6.814605183702477, 23.409114107243994, 124.77822686500075]}}
+```
 
 ### Using Python API
 
 The equivalent using the Python API is as follows, and should produce the same result:
 
-```{code-block} python
+:::{code-block} python
 :caption: samples/conf/parameters.yaml
 :lineno-start: 1
 
@@ -54,7 +58,7 @@ scores = impact_model.get_scores(lifespan=3,
                                  cuda_core=[256, 512, 1024],
                                  energy_per_inference=[0.05, 0.06, 0.065])
 print(scores)
-```
+:::
 
 ## Get nodes scores
 
@@ -67,7 +71,9 @@ In our sample model, we have intermediate nodes on an `ai_use_phase` and a `nvid
 
 The usage is really similar to the `apparun compute` command except that we use `apparun compute-nodes`: 
 
-```apparun compute-nodes nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml```
+```
+apparun compute-nodes nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml
+```
 
 Result:
 ```
@@ -79,7 +85,7 @@ Result:
 
 The equivalent using the Python API is as follows, and should produce the same result:
 
-```{code-block} python
+:::{code-block} python
 :caption: samples/conf/parameters.yaml
 :lineno-start: 1
 
@@ -88,7 +94,7 @@ nodes_scores = impact_model.get_nodes_scores(lifespan=3,
                                              cuda_core=[256, 512, 1024],
                                              energy_per_inference=[0.05, 0.06, 0.065])
 print(nodes_scores)
-```
+:::
 
 ## Generate uncertainty plots and tables
 
@@ -102,7 +108,7 @@ In this example, we will illustrate how to use an already implemented result to 
 First we need a configuration file to tell Appa Run some information about the results to generate.
 You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.
 
-```{code-block} yaml
+:::{code-block} yaml
 :caption: samples/conf/all_results.yaml
 :lineno-start: 1
 
@@ -120,7 +126,7 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
     png_save_path: "outputs/figures/" #(8)!
     width: 1000 #(9)!
     height: 700 #(10)!
-```
+:::
 
 1. Name of the result class. All options are covered in the [Appa Run in depth](../in_depth/appa_run_in_depth.md) section.
 2. Name of the impact model to load and run.
@@ -143,7 +149,7 @@ Here is a figure we can obtain:
 
 The same figure can be generated using the Python API:
 
-```{code-block} python
+:::{code-block} python
 :caption: samples/conf/parameters.yaml
 :lineno-start: 1
 
@@ -156,8 +162,10 @@ tree_map_result = get_result("tree_map")(
 )
 tree_map_table = tree_map_result.get_table()
 tree_map_result.get_figure(tree_map_table)
-```
+:::
 
 If the default values of your impact model don't match the tree map you want to generate, you can update them by calling the following method first:
 
-```impact_model.parameters.update_defaults({"cuda_core": 256, "architecture": "Maxwell"})```
+```
+impact_model.parameters.update_defaults({"cuda_core": 256, "architecture": "Maxwell"})
+```

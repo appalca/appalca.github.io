@@ -1,6 +1,8 @@
 # Getting started
 
-**Warning**: At the moment, EcoInvent is required to run Appa Build, even if you don't use it in your project. This will be fixed in February.
+:::{warning}
+At the moment, EcoInvent is required to run Appa Build, even if you don't use it in your project. This will be fixed in February.
+:::
 
 ## Installation
 Appa Build and Appa Run are available on PyPI.
