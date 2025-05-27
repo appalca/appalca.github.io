@@ -1,0 +1,102 @@
+apparun.tree_node
+=================
+
+.. py:module:: apparun.tree_node
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.tree_node.NodeProperties
+   apparun.tree_node.NodeScores
+
+
+Module Contents
+---------------
+
+.. py:class:: NodeProperties
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Properties of an impact model node. Can be used by to break the results down
+   according to life cycle phase, for exemple. Properties can be key/value
+   (ex: {"phase": "production"} or flags (ex: {production_phase: True}).
+
+
+   .. py:method:: from_dict(properties: Dict[str, Union[str, float, bool]]) -> NodeProperties
+      :classmethod:
+
+
+      Construct using dict.
+      :param properties: properties of the node.
+      :return: constructed NodeProperties
+
+
+
+   .. py:method:: get_property_value(property_name: str) -> Optional[Union[str, bool]]
+
+      Gives the value of a property by name, returns None if property doesn't exist.
+      :param property_name: name of the property to get value
+      :return: value of the property, None if doesn't exist
+
+
+
+   .. py:attribute:: properties
+      :type:  Dict[str, Union[str, float, bool]]
+
+
+.. py:class:: NodeScores
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Gathers all useful information to exploit computed node wise LCIA results.
+
+
+   .. py:method:: combine_by_property(nodes_scores: List[NodeScores], property_name: str) -> List[NodeScores]
+      :staticmethod:
+
+
+      Sum up (element wise) the scores of each node sharing the same property value,
+      for each method.
+      :param nodes_scores: node scores to combine according to property value.
+      :param property_name: name of the property under consideration
+      :return: list of newly created nodes. Name of the node will be the property
+      value.
+
+
+
+   .. py:method:: to_unpivoted_df() -> pandas.DataFrame
+
+
+   .. py:attribute:: lcia_scores
+      :type:  apparun.score.LCIAScores
+
+      Computed LCIA scores, for each method.
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+      Node name/property value, if results have been combined by property value.
+
+
+
+   .. py:attribute:: parent
+      :type:  str
+
+      Name of parent node.
+
+
+
+   .. py:attribute:: properties
+      :type:  NodeProperties
+
+      Properties of the node.
+
+
+

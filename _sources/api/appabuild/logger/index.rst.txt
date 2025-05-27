@@ -1,0 +1,19 @@
+appabuild.logger
+================
+
+.. py:module:: appabuild.logger
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   appabuild.logger.logger
+
+
+Module Contents
+---------------
+
+.. py:data:: logger
+

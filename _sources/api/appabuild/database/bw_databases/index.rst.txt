@@ -1,0 +1,64 @@
+appabuild.database.bw_databases
+===============================
+
+.. py:module:: appabuild.database.bw_databases
+
+.. autoapi-nested-parse::
+
+   This module contains classes and functions to interact with databases imported in
+   Brightway project.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   appabuild.database.bw_databases.BwDatabase
+
+
+Module Contents
+---------------
+
+.. py:class:: BwDatabase
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Interacts with the database with corresponding name imported in Brightway project.
+
+
+   .. py:method:: resolve_activity_identifier(unresolved_activity_identifier: appabuild.database.serialized_data.ActivityIdentifier) -> appabuild.database.serialized_data.ActivityIdentifier
+
+      Resolve an unresolved activity identifier, i.e. find uuid of an activity
+      identified by a set of regexes.
+      Raise an error if more or less than one activity is found.
+      :param unresolved_activity_identifier: activity identified by a set of
+      regexes. Must be of the same database.
+      :return: resolved ActivityIdentifier, i.e. with uuid defined.
+
+
+
+   .. py:method:: search_activity(regexes: dict, must_find_only_one: Optional[bool] = False) -> Union[appabuild.database.serialized_data.ActivityIdentifier, List[appabuild.database.serialized_data.ActivityIdentifier]]
+
+      Search an activity in database with a set of regexes on any activities' field.
+      :param regexes: key is the field and value the regex to match.
+      :param must_find_only_one: if True, will raise an exception if the quantity of
+      matching activities is different than one.
+      :return: ActivityIdentifier, or list of ActivityIdentifier of matching
+      activities.
+
+
+
+   .. py:property:: database
+
+      Brightway database object
+      :return:
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
