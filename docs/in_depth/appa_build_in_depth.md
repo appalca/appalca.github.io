@@ -1093,8 +1093,8 @@ generic datasets.
 Each node is a foreground dataset, with the root node being the FU.
 
 Each link is unidirectional and means that a dataset propagate its parameters to another dataset.
-Each link also has a label that show the parameters propagated, parameters matching are represented like a function call.
-For example the parameter matching in the dataset nvidia_ai_gpu_chip :
+Each link also has a label that shows the parameters propagated, parameters matching are represented like a function call.
+For example, the parameter matching in the dataset nvidia_ai_gpu_chip :
 ```
 inference: inference_per_day * lifespan * 365.25
 ```
