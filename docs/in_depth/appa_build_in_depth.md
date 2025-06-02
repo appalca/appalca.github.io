@@ -74,7 +74,7 @@ This mechanism allows to define very generic datasets at the leaves that are com
 Let's look at the structure of the example LCA:
 
 <figure>
-  <img src="../_static/in_depth/sample_diagram.svg" alt="" width="500" />
+  <img src="../_static/in_depth/sample_diagram.png" alt="" width="1000" />
   <figcaption>Diagram of the datasets and corresponding parameterization used in Appa Build to generate the example impact model.</figcaption>
 </figure>
 
@@ -1082,6 +1082,54 @@ datasets: #(2)!
 1. Default fields are present in every dataset unless overridden.
 2. Fields specific to a dataset must be specified below the dataset list.
 3. Should match the name of the dataset in the export file. Don't forget to include the spaces at the beginning!
+
+## Life cycle inventory graphs
+
+Life cycle inventory graphs (LCI graphs) make more visual the structure of life cycle inventory for a LCA.
+
+### Structure of a graph
+
+A LCI graph is a tree which displays all the downstream activities of the foreground database and corresponding exchanges.
+Each node being an activity and the root being the FU.
+Edges represent the exchanges, a label is attached to each edge showing the dynamic propagation of the parameters
+with parameters matching represented like a function call.
+
+For example, the parameter matching in the dataset nvidia_ai_gpu_chip :
+```
+inference: inference_per_day * lifespan * 365.25
+```
+will be represented like this in an edge label :
+```
+inference=f(inference_per_day,lifespan)
+```
+
+Here is the graph generate using the samples datasets and using the dataset nvidia_ai_gpu_chip as the FU :
+
+<figure>
+  <img src="../_static/in_depth/sample_diagram.png" alt="" width="1000" />
+</figure>
+
+### How to generate a graph ?
+
+To generate a graph, use the command:
+
+```
+appabuild lca graph PATH_TO_DATASETS NAME_OF_FU_DATASET OPTIONS
+```
+
+:::{attention}
+Graphs images are generated using a distant API, it is recommended to not use this command if you use sensitive data.
+Before starting to generate a graph, a confirmation prompt will appear.
+:::
+
+:::{admonition} Command options
+:class: node
+- -\\\-type VALUE: type of the output image, can only be png or svg, the default type is png.
+- -\\\-width VALUE: width of the output image, must be an integer value superior to 0.
+- -\\\-height VALUE: of the output image, must be an integer value superior to 0.
+- -\\\-no-sensitive: skip the confirmation prompt and start the graph generation directly. 
+
+:::
 
 [^1]: Edelen, A., Ingwersen, W. W., Rodríguez, C., Alvarenga, R. A., de Almeida, A. R., & Wernet, G. (2018). Critical review of elementary flows in LCA data. The international journal of life cycle assessment, 23, 1261-1273.
 [^2]: https://www.greendelta.com/wp-content/uploads/2017/03/Washington_LCA_data_ac_2014.pdf
