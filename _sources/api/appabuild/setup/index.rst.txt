@@ -1,0 +1,53 @@
+appabuild.setup
+===============
+
+.. py:module:: appabuild.setup
+
+.. autoapi-nested-parse::
+
+   Setup everything required to build an ImpactModel
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   appabuild.setup.build
+   appabuild.setup.initialize
+   appabuild.setup.project_setup
+
+
+Module Contents
+---------------
+
+.. py:function:: build(lca_config_path: str, foreground_database: Optional[appabuild.database.databases.ForegroundDatabase] = None)
+
+   Build an impact model for the configured functional unit and save it to the disk (to the location configured in the file).
+   :param lca_config_path: information about the current LCA, such as functional unit,
+   list of methods.
+   :param foreground_database: database containing the LCA functional unit
+   :return the impact model
+
+
+.. py:function:: initialize(appabuild_config_path: str) -> appabuild.database.databases.ForegroundDatabase
+
+   Initialize a Brightway environment (background and foreground databases).
+   :param appabuild_config_path: generic information required by Appa Build to be initialized, such
+   as location of EcoInvent or name of Brightway project. This config file should
+   remain the same for all your LCAs.
+   :return: the initialized foreground database
+
+
+.. py:function:: project_setup(project_name: str, foreground_name: str, foreground_path: str, ecoinvent_name: Optional[str] = None, ecoinvent_path: Optional[str] = None) -> appabuild.database.databases.ForegroundDatabase
+
+   Triggers all Brightway functions and database import necessary to build an Impact
+   Model.
+   :param project_name: Brightway project name.
+   :param ecoinvent_name: how EcoInvent is referred to in user datasets.
+   :param ecoinvent_path: path to EcoInvent database.
+   :param foreground_name: how user database is referred to.
+   :param foreground_path: path to folder containing user datasets.
+
+
