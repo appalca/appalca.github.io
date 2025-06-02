@@ -1083,27 +1083,27 @@ datasets: #(2)!
 2. Fields specific to a dataset must be specified below the dataset list.
 3. Should match the name of the dataset in the export file. Don't forget to include the spaces at the beginning!
 
-## Parameters propagation datasets graphs
+## Life cycle inventory graphs
 
-Parameters propagation datasets graphs make more visual the propagation of parameters from a FU to more 
-generic datasets.
+Life cycle inventory graphs (LCI graphs) make more visual the structure of life cycle inventory for a LCA.
 
 ### Structure of a graph
 
-Each node is a foreground dataset, with the root node being the FU.
+A LCI graph is a tree which displays all the downstream activities of the foreground database and corresponding exchanges.
+Each node being an activity and the root being the FU.
+Edges represent the exchanges, a label is attached to each edge showing the dynamic propagation of the parameters
+with parameters matching represented like a function call.
 
-Each link is unidirectional and means that a dataset propagate its parameters to another dataset.
-Each link also has a label that shows the parameters propagated, parameters matching are represented like a function call.
 For example, the parameter matching in the dataset nvidia_ai_gpu_chip :
 ```
 inference: inference_per_day * lifespan * 365.25
 ```
-will be represented like this in a link label :
+will be represented like this in an edge label :
 ```
 inference=f(inference_per_day,lifespan)
 ```
 
-Here is the graph generate using the samples datasets and the dataset nvidia_ai_gpu_chip as the FU :
+Here is the graph generate using the samples datasets and using the dataset nvidia_ai_gpu_chip as the FU :
 
 <figure>
   <img src="../_static/in_depth/sample_diagram.png" alt="" width="1000" />
