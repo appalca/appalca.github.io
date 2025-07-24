@@ -138,13 +138,13 @@ outputs:
         appabuild_version: "0.2" #(8)!
     parameters: #(9)!
       - name: cuda_core #(10)!
-        type: float #(11)!
+        type: float #(15)!
         default: 512 #(12)!
         pm_perc: 0.1 #(13)!
       - name: architecture
         type: enum #(14)!
         default: Maxwell
-        weights: #(15)!
+        weights: #(10)!
           Maxwell: 1
           Pascal: 1
       - name: usage_location

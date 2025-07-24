@@ -128,7 +128,7 @@ function onClickAnnotation(id) {
 document.addEventListener("DOMContentLoaded", function() {
     const blocks = document.querySelectorAll('.literal-block-wrapper');
 
-    let id = 0;
+   id = 0;
     for(let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         const list = findAssociatedList(block);
@@ -138,7 +138,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const lis = list.querySelectorAll('li');
             for(let j = 0; j < spans.length; j++) {
                 const span = spans[j];
-                const annotation = createAnnotation(id, lis[j].children[0].innerHTML);
+
+                const match = span.innerHTML.match(/#\((\d+)\)!/);
+                text_id = parseInt(match[1], 10);
+
+                const annotation = createAnnotation(id, lis[text_id - 1].children[0].innerHTML);
                 span.parentNode.replaceChild(annotation, span);
                 id++;
             }
