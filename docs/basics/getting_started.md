@@ -40,10 +40,11 @@ pip install -r requirements.txt
 ```
 
 If you want to use Appa Run to run Appa Build, or to use its CLI, you need to build the package:
-If necessary, you can install wheel using `pip install wheel`.
+If necessary, you can install wheel using `pip install wheel` and hatchling using `pip install hatchling`.
 
 ```
-python setup.py sdist bdist_wheel
+python -m hatchling build
+pip install dist/*.whl --progress-bar off
 ```
 
 ### Appa Build
@@ -51,7 +52,7 @@ python setup.py sdist bdist_wheel
 Clone the repository first:
 
 ```
-git clone https://github.com/appalca/apparun
+git clone https://github.com/appalca/appabuild
 cd appabuild
 ```
 
@@ -64,10 +65,11 @@ pip install ../apparun/dist/apparun-X.X.X-py3-none-any.whl -r requirements.txt
 Replacing `X.X.X` with the appropriate version. 
 
 If you want to use the Appa Build CLI, you need to build the package:
-If necessary, you can install wheel using `pip install wheel`.
+If necessary, you can install wheel using `pip install wheel` and hatchling using `pip install hatchling`.
 
 ```
-python setup.py sdist bdist_wheel
+python -m hatchling build
+pip install dist/*.whl --progress-bar off
 ``` 
 
 ## Usage

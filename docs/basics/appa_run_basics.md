@@ -86,7 +86,7 @@ Result:
 The equivalent using the Python API is as follows, and should produce the same result:
 
 :::{code-block} python
-:caption: samples/conf/parameters.yaml
+:caption: samples/scripts/python_api_usage.py
 :lineno-start: 1
 
 nodes_scores = impact_model.get_nodes_scores(lifespan=3,
@@ -150,7 +150,7 @@ Here is a figure we can obtain:
 The same figure can be generated using the Python API:
 
 :::{code-block} python
-:caption: samples/conf/parameters.yaml
+:caption: samples/scripts/python_api_usage.py
 :lineno-start: 1
 
 tree_map_result = get_result("tree_map")(
