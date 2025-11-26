@@ -10,10 +10,11 @@ Appa Build currently works with Brightway 2.4.7 and lca_algebraic 1.0.0.
 This includes working with Python above version 3.10.
 This limits EcoInvent version support to version 3.9.1.
 
-It is not trivial to solve these version requirements limits, as there seem to be some problems with backward compatibility.
+Latest version of Brightway, which supports all versions of EcoInvent, is currently integrated in the dev branch, and will be integrated into a new release after thoroughly tests.
 
 ### Background databases
 At the moment only the EcoInvent background database is supported, as we haven't been able to access and test other databases supported by Brightway.
+Data from other databases can nonetheless be imported at the impact level.
 
 ### Methods
 Appa Run uses *Enum* to associate Brightway method names with comprehensive strings.
