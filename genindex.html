@@ -1,0 +1,2279 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script src="_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.act_symbols">act_symbols (in module appabuild.model.builder)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.UserDatabaseContext.activities">activities (appabuild.database.user_database_elements.UserDatabaseContext attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity">Activity (class in appabuild.database.user_database_elements)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier">ActivityIdentifier (class in appabuild.database.serialized_data)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.actToExpression">actToExpression() (appabuild.model.builder.ImpactModelBuilder static method)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.amount">amount (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact.amount">(appabuild.database.generator.eime.EimeV6Impact attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.amount">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.amount">(appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.amount">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.amount">(appabuild.database.user_database_elements.DatabaseElement attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.amount">(apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/cli/database/index.html#appabuild.cli.database.app">app (in module appabuild.cli.database)</a>
+
+      <ul>
+        <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.app">(in module appabuild.cli.lca)</a>
+</li>
+        <li><a href="api/apparun/api/app/index.html#apparun.api.app.app">(in module apparun.api.app)</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild
+
+      <ul>
+        <li><a href="api/appabuild/index.html#module-appabuild">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.cli
+
+      <ul>
+        <li><a href="api/appabuild/cli/index.html#module-appabuild.cli">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.cli.database
+
+      <ul>
+        <li><a href="api/appabuild/cli/database/index.html#module-appabuild.cli.database">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.cli.lca
+
+      <ul>
+        <li><a href="api/appabuild/cli/lca/index.html#module-appabuild.cli.lca">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.cli.main
+
+      <ul>
+        <li><a href="api/appabuild/cli/main/index.html#module-appabuild.cli.main">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.config
+
+      <ul>
+        <li><a href="api/appabuild/config/index.html#module-appabuild.config">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.config.appa_lca
+
+      <ul>
+        <li><a href="api/appabuild/config/appa_lca/index.html#module-appabuild.config.appa_lca">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.config.lca
+
+      <ul>
+        <li><a href="api/appabuild/config/lca/index.html#module-appabuild.config.lca">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database
+
+      <ul>
+        <li><a href="api/appabuild/database/index.html#module-appabuild.database">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.bw_databases
+
+      <ul>
+        <li><a href="api/appabuild/database/bw_databases/index.html#module-appabuild.database.bw_databases">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.databases
+
+      <ul>
+        <li><a href="api/appabuild/database/databases/index.html#module-appabuild.database.databases">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.generator
+
+      <ul>
+        <li><a href="api/appabuild/database/generator/index.html#module-appabuild.database.generator">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.generator.eime
+
+      <ul>
+        <li><a href="api/appabuild/database/generator/eime/index.html#module-appabuild.database.generator.eime">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.serialized_data
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#module-appabuild.database.serialized_data">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.database.user_database_elements
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#module-appabuild.database.user_database_elements">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.exceptions
+
+      <ul>
+        <li><a href="api/appabuild/exceptions/index.html#module-appabuild.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.logger
+
+      <ul>
+        <li><a href="api/appabuild/logger/index.html#module-appabuild.logger">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    appabuild.model
+
+      <ul>
+        <li><a href="api/appabuild/model/index.html#module-appabuild.model">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.model.builder
+
+      <ul>
+        <li><a href="api/appabuild/model/builder/index.html#module-appabuild.model.builder">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.model.graph
+
+      <ul>
+        <li><a href="api/appabuild/model/graph/index.html#module-appabuild.model.graph">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.output
+
+      <ul>
+        <li><a href="api/appabuild/output/index.html#module-appabuild.output">module</a>
+</li>
+      </ul></li>
+      <li>
+    appabuild.setup
+
+      <ul>
+        <li><a href="api/appabuild/setup/index.html#module-appabuild.setup">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.appabuild_version">appabuild_version (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.AppaLCAConfig">AppaLCAConfig (class in appabuild.config.appa_lca)</a>
+</li>
+      <li>
+    apparun
+
+      <ul>
+        <li><a href="api/apparun/index.html#module-apparun">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.api
+
+      <ul>
+        <li><a href="api/apparun/api/index.html#module-apparun.api">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.api.app
+
+      <ul>
+        <li><a href="api/apparun/api/app/index.html#module-apparun.api.app">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.cli
+
+      <ul>
+        <li><a href="api/apparun/cli/index.html#module-apparun.cli">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.cli.main
+
+      <ul>
+        <li><a href="api/apparun/cli/main/index.html#module-apparun.cli.main">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.core
+
+      <ul>
+        <li><a href="api/apparun/core/index.html#module-apparun.core">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.exceptions
+
+      <ul>
+        <li><a href="api/apparun/exceptions/index.html#module-apparun.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.expressions
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#module-apparun.expressions">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.impact_methods
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#module-apparun.impact_methods">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.impact_model
+
+      <ul>
+        <li><a href="api/apparun/impact_model/index.html#module-apparun.impact_model">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.impact_tree
+
+      <ul>
+        <li><a href="api/apparun/impact_tree/index.html#module-apparun.impact_tree">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.logger
+
+      <ul>
+        <li><a href="api/apparun/logger/index.html#module-apparun.logger">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.parameters
+
+      <ul>
+        <li><a href="api/apparun/parameters/index.html#module-apparun.parameters">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.results
+
+      <ul>
+        <li><a href="api/apparun/results/index.html#module-apparun.results">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.score
+
+      <ul>
+        <li><a href="api/apparun/score/index.html#module-apparun.score">module</a>
+</li>
+      </ul></li>
+      <li>
+    apparun.tree_node
+
+      <ul>
+        <li><a href="api/apparun/tree_node/index.html#module-apparun.tree_node">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.Config.arbitrary_types_allowed">arbitrary_types_allowed (appabuild.database.user_database_elements.DatabaseElement.Config attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.Config.arbitrary_types_allowed">(apparun.impact_tree.ImpactTreeNode.Config attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.Config.arbitrary_types_allowed">(apparun.parameters.ImpactModelParam.Config attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata.author">author (apparun.impact_model.ModelMetadata attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.BiosphereDatabase">BiosphereDatabase (class in appabuild.database.databases)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet.build">build() (apparun.expressions.ParamsValuesSet class method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.build">(in module appabuild.cli.lca)</a>
+</li>
+        <li><a href="api/appabuild/setup/index.html#appabuild.setup.build">(in module appabuild.setup)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.build_impact_model">build_impact_model() (appabuild.model.builder.ImpactModelBuilder method)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.build_impact_tree_and_parameters">build_impact_tree_and_parameters() (appabuild.model.builder.ImpactModelBuilder method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/model/graph/index.html#appabuild.model.graph.build_mermaid_graph">build_mermaid_graph() (in module appabuild.model.graph)</a>
+</li>
+      <li><a href="api/appabuild/model/graph/index.html#appabuild.model.graph.build_parameters_str">build_parameters_str() (in module appabuild.model.graph)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.bw_user_database">bw_user_database (appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/bw_databases/index.html#appabuild.database.bw_databases.BwDatabase">BwDatabase (class in appabuild.database.bw_databases)</a>
+</li>
+      <li><a href="api/appabuild/exceptions/index.html#appabuild.exceptions.BwDatabaseError">BwDatabaseError</a>
+</li>
+      <li><a href="api/appabuild/exceptions/index.html#appabuild.exceptions.BwMethodError">BwMethodError</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.check_name">check_name() (appabuild.database.serialized_data.SerializedActivity class method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.children">children (apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+      <li><a href="api/appabuild/cli/main/index.html#appabuild.cli.main.cli_app">cli_app (in module appabuild.cli.main)</a>
+
+      <ul>
+        <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.cli_app">(in module apparun.cli.main)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.code">code (appabuild.database.serialized_data.ActivityIdentifier property)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.code">(appabuild.database.serialized_data.SerializedActivity property)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.code">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.combine_by_property">combine_by_property() (apparun.tree_node.NodeScores static method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.combined_amount">combined_amount (apparun.impact_tree.ImpactTreeNode property)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.comment">comment (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.comment">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.comment">(appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.comment">(appabuild.database.user_database_elements.DatabaseElement attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.compile">compile (appabuild.config.lca.Model attribute)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.compile_models">compile_models (appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.compile_models">compile_models() (apparun.impact_tree.ImpactTreeNode method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.compute">compute() (apparun.impact_tree.ImpactTreeNode method)</a>
+
+      <ul>
+        <li><a href="api/apparun/api/app/index.html#apparun.api.app.compute">(in module apparun.api.app)</a>
+</li>
+        <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.compute">(in module apparun.cli.main)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/core/index.html#apparun.core.compute_impacts">compute_impacts() (in module apparun.core)</a>
+</li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.compute_nodes">compute_nodes() (in module apparun.api.app)</a>
+
+      <ul>
+        <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.compute_nodes">(in module apparun.cli.main)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/core/index.html#apparun.core.compute_results">compute_results() (in module apparun.core)</a>
+</li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.ComputeParams">ComputeParams (class in apparun.api.app)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.context">context (appabuild.database.databases.ForegroundDatabase attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.context">(appabuild.database.user_database_elements.DatabaseElement attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.corresponds">corresponds() (apparun.parameters.EnumParam method)</a>
+
+      <ul>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.corresponds">(apparun.parameters.FloatParam method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.corresponds">(apparun.parameters.ImpactModelParam method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/exceptions/index.html#apparun.exceptions.InvalidExpr.ctx">ctx (apparun.exceptions.InvalidExpr attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.data_quality">data_quality (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.data_quality">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.data_quality">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.FunctionalUnit.database">database (appabuild.config.lca.FunctionalUnit attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/bw_databases/index.html#appabuild.database.bw_databases.BwDatabase.database">(appabuild.database.bw_databases.BwDatabase property)</a>
+</li>
+        <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.database">(appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.database">(appabuild.database.serialized_data.ActivityIdentifier attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.database">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.database">(appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.database">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.UserDatabaseContext.database">(appabuild.database.user_database_elements.UserDatabaseContext attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.Database">Database (class in appabuild.database.databases)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.DatabaseConfig">DatabaseConfig (class in appabuild.config.appa_lca)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement">DatabaseElement (class in appabuild.database.user_database_elements)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.Config">DatabaseElement.Config (class in appabuild.database.user_database_elements)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.AppaLCAConfig.databases">databases (appabuild.config.appa_lca.AppaLCAConfig attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.date">date (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.default">default (apparun.parameters.ImpactModelParam attribute)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.dependencies">dependencies (apparun.expressions.ParamEnumExpr property)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr.dependencies">(apparun.expressions.ParamExpr property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.dependencies">(apparun.expressions.ParamFloatExpr property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet.dependencies_cycle">dependencies_cycle() (apparun.expressions.ParamsValuesSet method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet.dependencies_graph">dependencies_graph (apparun.expressions.ParamsValuesSet property)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.description">description (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.direct_impacts">direct_impacts (apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.distrib">distrib (apparun.parameters.FloatParam attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.draw_to_distrib">draw_to_distrib() (apparun.parameters.EnumParam method)</a>
+
+      <ul>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.draw_to_distrib">(apparun.parameters.FloatParam method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.draw_to_distrib">(apparun.parameters.ImpactModelParam method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.draw_to_distrib">(apparun.parameters.ImpactModelParams method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.dummies_names">dummies_names (apparun.parameters.EnumParam property)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.dump_parameters">dump_parameters() (appabuild.config.lca.Model method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.EcoInventDatabase">EcoInventDatabase (class in appabuild.database.databases)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ACIDIFICATION">EFV3_ACIDIFICATION (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ACIDIFICATION">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ACIDIFICATION">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE">EFV3_CLIMATE_CHANGE (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_CLIMATE_CHANGE">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_CLIMATE_CHANGE">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_BIOGENIC">EFV3_CLIMATE_CHANGE_BIOGENIC (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_CLIMATE_CHANGE_BIOGENIC">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_CLIMATE_CHANGE_BIOGENIC">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_FOSSIL">EFV3_CLIMATE_CHANGE_FOSSIL (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_CLIMATE_CHANGE_FOSSIL">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_CLIMATE_CHANGE_FOSSIL">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_LAND_USE">EFV3_CLIMATE_CHANGE_LAND_USE (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_CLIMATE_CHANGE_LAND_USE">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_CLIMATE_CHANGE_LAND_USE">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ECOTOXICITY_FRESHWATER">EFV3_ECOTOXICITY_FRESHWATER (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ECOTOXICITY_FRESHWATER">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ECOTOXICITY_FRESHWATER">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ECOTOXICITY_FRESHWATER_INORGANICS">EFV3_ECOTOXICITY_FRESHWATER_INORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ECOTOXICITY_FRESHWATER_INORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ECOTOXICITY_FRESHWATER_METALS">EFV3_ECOTOXICITY_FRESHWATER_METALS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ECOTOXICITY_FRESHWATER_METALS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ECOTOXICITY_FRESHWATER_ORGANICS">EFV3_ECOTOXICITY_FRESHWATER_ORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ECOTOXICITY_FRESHWATER_ORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ENERGY_RESOURCES">EFV3_ENERGY_RESOURCES (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_ENERGY_RESOURCES">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_ENERGY_RESOURCES">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_FRESHWATER">EFV3_EUTROPHICATION_FRESHWATER (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_EUTROPHICATION_FRESHWATER">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_EUTROPHICATION_FRESHWATER">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_MARINE">EFV3_EUTROPHICATION_MARINE (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_EUTROPHICATION_MARINE">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_EUTROPHICATION_MARINE">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_TERRESTRIAL">EFV3_EUTROPHICATION_TERRESTRIAL (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_EUTROPHICATION_TERRESTRIAL">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_EUTROPHICATION_TERRESTRIAL">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_CARCINOGENIC">EFV3_HUMAN_TOXICITY_CARCINOGENIC (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_CARCINOGENIC">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_CARCINOGENIC">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_INORGANICS">EFV3_HUMAN_TOXICITY_CARCINOGENIC_INORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_INORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_METALS">EFV3_HUMAN_TOXICITY_CARCINOGENIC_METALS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_METALS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_ORGANICS">EFV3_HUMAN_TOXICITY_CARCINOGENIC_ORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_CARCINOGENIC_ORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC">EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_INORGANICS">EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_INORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_INORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_METALS">EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_METALS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_METALS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_ORGANICS">EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_ORGANICS (apparun.impact_methods.MethodFullName attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC_ORGANICS">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_IONISING_RADIATION">EFV3_IONISING_RADIATION (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_IONISING_RADIATION">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_IONISING_RADIATION">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_LAND_USE">EFV3_LAND_USE (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_LAND_USE">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_LAND_USE">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_MATERIAL_RESOURCES">EFV3_MATERIAL_RESOURCES (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_MATERIAL_RESOURCES">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_MATERIAL_RESOURCES">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_OZONE_DEPLETION">EFV3_OZONE_DEPLETION (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_OZONE_DEPLETION">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_OZONE_DEPLETION">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PARTICULATE_MATTER_FORMATION">EFV3_PARTICULATE_MATTER_FORMATION (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_PARTICULATE_MATTER_FORMATION">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_PARTICULATE_MATTER_FORMATION">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PHOTOCHEMICAL_OZONE_FORMATION">EFV3_PHOTOCHEMICAL_OZONE_FORMATION (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_PHOTOCHEMICAL_OZONE_FORMATION">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_PHOTOCHEMICAL_OZONE_FORMATION">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_WATER_USE">EFV3_WATER_USE (appabuild.database.generator.eime.MethodEimeV6Name attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.EFV3_WATER_USE">(apparun.impact_methods.MethodFullName attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.EFV3_WATER_USE">(apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription">EimeV6DatasetDescription (class in appabuild.database.generator.eime)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Generator">EimeV6Generator (class in appabuild.database.generator.eime)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact">EimeV6Impact (class in appabuild.database.generator.eime)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam">EnumParam (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumConst.evaluate">evaluate() (apparun.expressions.ParamEnumConst method)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.evaluate">(apparun.expressions.ParamEnumExpr method)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr.evaluate">(apparun.expressions.ParamExpr method)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatConst.evaluate">(apparun.expressions.ParamFloatConst method)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.evaluate">(apparun.expressions.ParamFloatExpr method)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet.evaluate">(apparun.expressions.ParamsValuesSet method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/exceptions/index.html#appabuild.exceptions.BwDatabaseError.exception_type">exception_type (appabuild.exceptions.BwDatabaseError attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange">Exchange (class in appabuild.database.user_database_elements)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.exchanges">exchanges (appabuild.database.serialized_data.SerializedActivity attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.exchanges">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.execute_at_build_time">execute_at_build_time() (appabuild.database.databases.ForegroundDatabase method)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.BiosphereDatabase.execute_at_startup">execute_at_startup() (appabuild.database.databases.BiosphereDatabase method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.Database.execute_at_startup">(appabuild.database.databases.Database method)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.execute_at_startup">(appabuild.database.databases.ForegroundDatabase method)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ImpactProxiesDatabase.execute_at_startup">(appabuild.database.databases.ImpactProxiesDatabase method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/core/index.html#apparun.core.execution_time_logging">execution_time_logging() (in module apparun.core)</a>
+</li>
+      <li><a href="api/apparun/exceptions/index.html#apparun.exceptions.InvalidExpr.expr">expr (apparun.exceptions.InvalidExpr attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.expr">(apparun.expressions.ParamFloatExpr attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet.expressions">expressions (apparun.expressions.ParamsValuesSet attribute)</a>
+</li>
+      <li><a href="api/appabuild/model/graph/index.html#appabuild.model.graph.extract_params_from_matching">extract_params_from_matching() (in module appabuild.model.graph)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.file_handler">file_handler (in module appabuild.logger)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.find_activities_on_disk">find_activities_on_disk() (appabuild.database.databases.ForegroundDatabase method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.find_corresponding_parameter">find_corresponding_parameter() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.find_functional_unit_in_bw">find_functional_unit_in_bw() (appabuild.model.builder.ImpactModelBuilder method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam">FloatParam (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase">ForegroundDatabase (class in appabuild.database.databases)</a>
+</li>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.formatter">formatter (in module appabuild.logger)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.formula">formula (appabuild.database.user_database_elements.Exchange attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.from_dict">from_dict() (apparun.impact_model.ImpactModel static method)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata.from_dict">(apparun.impact_model.ModelMetadata static method)</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.from_dict">(apparun.impact_tree.ImpactTreeNode static method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.from_dict">(apparun.parameters.ImpactModelParam static method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParamsValues.from_dict">(apparun.parameters.ImpactModelParamsValues class method)</a>
+</li>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeProperties.from_dict">(apparun.tree_node.NodeProperties class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.from_list">from_list() (apparun.parameters.ImpactModelParams static method)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.from_serialized_activity">from_serialized_activity() (appabuild.database.user_database_elements.Activity class method)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.from_serialized_exchange">from_serialized_exchange() (appabuild.database.user_database_elements.Exchange class method)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.from_tree_children">from_tree_children() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.AppaLCAConfig.from_yaml">from_yaml() (appabuild.config.appa_lca.AppaLCAConfig static method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.LCAConfig.from_yaml">(appabuild.config.lca.LCAConfig static method)</a>
+</li>
+        <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.from_yaml">(appabuild.model.builder.ImpactModelBuilder static method)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.from_yaml">(apparun.impact_model.ImpactModel static method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Scope.fu">fu (appabuild.config.lca.Scope attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.fu_name">fu_name (appabuild.database.databases.ForegroundDatabase attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.full_option_name">full_option_name() (apparun.parameters.EnumParam method)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.functional_unit">functional_unit (appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.FunctionalUnit">FunctionalUnit (class in appabuild.config.lca)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Generator.generate_datasets">generate_datasets() (appabuild.database.generator.eime.EimeV6Generator method)</a>
+</li>
+      <li><a href="api/appabuild/cli/database/index.html#appabuild.cli.database.generate_eime_v6">generate_eime_v6() (in module appabuild.cli.database)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.get_default_values">get_default_values() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.get_figure">get_figure() (apparun.results.ImpactModelResult method)</a>
+
+      <ul>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesSobolIndexResult.get_figure">(apparun.results.NodesSobolIndexResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesUncertaintyResult.get_figure">(apparun.results.NodesUncertaintyResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SankeyDiagramResult.get_figure">(apparun.results.SankeyDiagramResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SobolIndexResult.get_figure">(apparun.results.SobolIndexResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.TreeMapResult.get_figure">(apparun.results.TreeMapResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.UncertaintyResult.get_figure">(apparun.results.UncertaintyResult method)</a>
+</li>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.NewNodesUncertaintyResult.get_figure">(python_api_usage.NewNodesUncertaintyResult method)</a>
+</li>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.UncertaintyResult.get_figure">(python_api_usage.UncertaintyResult method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact.get_method_full_name">get_method_full_name() (appabuild.database.generator.eime.EimeV6Impact method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.get_missing_parameter_names">get_missing_parameter_names() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.get_model_params">get_model_params() (in module apparun.api.app)</a>
+
+      <ul>
+        <li><a href="api/apparun/core/index.html#apparun.core.get_model_params">(in module apparun.core)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.get_models">get_models() (in module apparun.api.app)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.get_nodes_scores">get_nodes_scores() (apparun.impact_model.ImpactModel method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.get_parameter_by_name">get_parameter_by_name() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeProperties.get_property_value">get_property_value() (apparun.tree_node.NodeProperties method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.get_result">get_result() (in module apparun.results)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.get_scores">get_scores() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.get_sobol_s1_indices">get_sobol_s1_indices() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.get_table">get_table() (apparun.results.ImpactModelResult method)</a>
+
+      <ul>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesSobolIndexResult.get_table">(apparun.results.NodesSobolIndexResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesUncertaintyResult.get_table">(apparun.results.NodesUncertaintyResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SankeyDiagramResult.get_table">(apparun.results.SankeyDiagramResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SobolIndexResult.get_table">(apparun.results.SobolIndexResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.TreeMapResult.get_table">(apparun.results.TreeMapResult method)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.UncertaintyResult.get_table">(apparun.results.UncertaintyResult method)</a>
+</li>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.UncertaintyResult.get_table">(python_api_usage.UncertaintyResult method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.get_uncertainty_nodes_scores">get_uncertainty_nodes_scores() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.get_uncertainty_scores">get_uncertainty_scores() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/core/index.html#apparun.core.get_valid_models">get_valid_models() (in module apparun.core)</a>
+</li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.GetModelParams">GetModelParams (class in apparun.api.app)</a>
+</li>
+      <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.graph">graph() (in module appabuild.cli.lca)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.height">height (apparun.results.ImpactModelResult attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.html_save_path">html_save_path (apparun.results.ImpactModelResult attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.impact_model">impact_model (apparun.results.ImpactModelResult attribute)</a>
+
+      <ul>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.impact_model">(in module python_api_usage)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.ComputeParams.impact_model_name">impact_model_name (apparun.api.app.ComputeParams attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/api/app/index.html#apparun.api.app.GetModelParams.impact_model_name">(apparun.api.app.GetModelParams attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact.impact_name">impact_name (appabuild.database.generator.eime.EimeV6Impact attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel">ImpactModel (class in apparun.impact_model)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder">ImpactModelBuilder (class in appabuild.model.builder)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam">ImpactModelParam (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.Config">ImpactModelParam.Config (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams">ImpactModelParams (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParamsValues">ImpactModelParamsValues (class in apparun.parameters)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult">ImpactModelResult (class in apparun.results)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ImpactProxiesDatabase">ImpactProxiesDatabase (class in appabuild.database.databases)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Generator.impacts">impacts (appabuild.database.generator.eime.EimeV6Generator attribute)</a>
+</li>
+      <li><a href="api/apparun/core/index.html#apparun.core.IMPACTS_MODEL_DIR">IMPACTS_MODEL_DIR (in module apparun.core)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode">ImpactTreeNode (class in apparun.impact_tree)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.Config">ImpactTreeNode.Config (class in apparun.impact_tree)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.BiosphereDatabase.import_in_project">import_in_project() (appabuild.database.databases.BiosphereDatabase method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.Database.import_in_project">(appabuild.database.databases.Database method)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.EcoInventDatabase.import_in_project">(appabuild.database.databases.EcoInventDatabase method)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.import_in_project">(appabuild.database.databases.ForegroundDatabase method)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ImpactProxiesDatabase.import_in_project">(appabuild.database.databases.ImpactProxiesDatabase method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.include_in_tree">include_in_tree (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.include_in_tree">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.include_in_tree">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/logger/index.html#apparun.logger.init_logger">init_logger() (in module apparun.logger)</a>
+</li>
+      <li><a href="api/appabuild/setup/index.html#appabuild.setup.initialize">initialize() (in module appabuild.setup)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.input">input (appabuild.database.serialized_data.SerializedExchange attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.input">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.input">(appabuild.database.user_database_elements.Exchange attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/exceptions/index.html#apparun.exceptions.InvalidExpr">InvalidExpr</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumConst.is_complex">is_complex (apparun.expressions.ParamEnumConst property)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.is_complex">(apparun.expressions.ParamEnumExpr property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr.is_complex">(apparun.expressions.ParamExpr property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatConst.is_complex">(apparun.expressions.ParamFloatConst property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.is_complex">(apparun.expressions.ParamFloatExpr property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.is_unresolved">is_unresolved (appabuild.database.serialized_data.ActivityIdentifier property)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParamsValues.items">items() (apparun.parameters.ImpactModelParamsValues method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.LCAConfig">LCAConfig (class in appabuild.config.lca)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaPractitioner">LcaPractitioner (class in apparun.impact_model)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy">LcaStudy (class in apparun.impact_model)</a>
+</li>
+      <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.lcia_scores">lcia_scores (apparun.tree_node.NodeScores attribute)</a>
+</li>
+      <li><a href="api/apparun/score/index.html#apparun.score.LCIAScores">LCIAScores (class in apparun.score)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.license">license (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.link">link (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+      <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.load_yaml">load_yaml() (in module apparun.cli.main)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.loc_to_str">loc_to_str() (in module appabuild.logger)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.location">location (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.location">(appabuild.database.serialized_data.ActivityIdentifier attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.location">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.location">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.log_validation_error">log_validation_error() (in module appabuild.logger)</a>
+</li>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.logger">logger (in module appabuild.logger)</a>
+
+      <ul>
+        <li><a href="api/apparun/logger/index.html#apparun.logger.logger">(in module apparun.logger)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.look_up_table">look_up_table() (apparun.parameters.EnumParam method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaPractitioner.mail">mail (apparun.impact_model.LcaPractitioner attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.max">max (apparun.parameters.FloatParam attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.metadata">metadata (appabuild.config.lca.Model attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.metadata">(appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.metadata">(apparun.impact_model.ImpactModel attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/score/index.html#apparun.score.LCIAScores.method_names">method_names (apparun.score.LCIAScores property)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.MethodEimeV6Name">MethodEimeV6Name (class in appabuild.database.generator.eime)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName">MethodFullName (class in apparun.impact_methods)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Scope.methods">methods (appabuild.config.lca.Scope attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.methods">(appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName">MethodShortName (class in apparun.impact_methods)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.min">min (apparun.parameters.FloatParam attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.LCAConfig.model">model (appabuild.config.lca.LCAConfig attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model">Model (class in appabuild.config.lca)</a>
+</li>
+      <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.model_params">model_params() (in module apparun.cli.main)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata">ModelMetadata (class in apparun.impact_model)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.models">models (apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+      <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.models">models() (in module apparun.cli.main)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.models_compiled">models_compiled (apparun.impact_tree.ImpactTreeNode property)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/appabuild/index.html#module-appabuild">appabuild</a>
+</li>
+        <li><a href="api/appabuild/cli/index.html#module-appabuild.cli">appabuild.cli</a>
+</li>
+        <li><a href="api/appabuild/cli/database/index.html#module-appabuild.cli.database">appabuild.cli.database</a>
+</li>
+        <li><a href="api/appabuild/cli/lca/index.html#module-appabuild.cli.lca">appabuild.cli.lca</a>
+</li>
+        <li><a href="api/appabuild/cli/main/index.html#module-appabuild.cli.main">appabuild.cli.main</a>
+</li>
+        <li><a href="api/appabuild/config/index.html#module-appabuild.config">appabuild.config</a>
+</li>
+        <li><a href="api/appabuild/config/appa_lca/index.html#module-appabuild.config.appa_lca">appabuild.config.appa_lca</a>
+</li>
+        <li><a href="api/appabuild/config/lca/index.html#module-appabuild.config.lca">appabuild.config.lca</a>
+</li>
+        <li><a href="api/appabuild/database/index.html#module-appabuild.database">appabuild.database</a>
+</li>
+        <li><a href="api/appabuild/database/bw_databases/index.html#module-appabuild.database.bw_databases">appabuild.database.bw_databases</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#module-appabuild.database.databases">appabuild.database.databases</a>
+</li>
+        <li><a href="api/appabuild/database/generator/index.html#module-appabuild.database.generator">appabuild.database.generator</a>
+</li>
+        <li><a href="api/appabuild/database/generator/eime/index.html#module-appabuild.database.generator.eime">appabuild.database.generator.eime</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#module-appabuild.database.serialized_data">appabuild.database.serialized_data</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#module-appabuild.database.user_database_elements">appabuild.database.user_database_elements</a>
+</li>
+        <li><a href="api/appabuild/exceptions/index.html#module-appabuild.exceptions">appabuild.exceptions</a>
+</li>
+        <li><a href="api/appabuild/logger/index.html#module-appabuild.logger">appabuild.logger</a>
+</li>
+        <li><a href="api/appabuild/model/index.html#module-appabuild.model">appabuild.model</a>
+</li>
+        <li><a href="api/appabuild/model/builder/index.html#module-appabuild.model.builder">appabuild.model.builder</a>
+</li>
+        <li><a href="api/appabuild/model/graph/index.html#module-appabuild.model.graph">appabuild.model.graph</a>
+</li>
+        <li><a href="api/appabuild/output/index.html#module-appabuild.output">appabuild.output</a>
+</li>
+        <li><a href="api/appabuild/setup/index.html#module-appabuild.setup">appabuild.setup</a>
+</li>
+        <li><a href="api/apparun/index.html#module-apparun">apparun</a>
+</li>
+        <li><a href="api/apparun/api/index.html#module-apparun.api">apparun.api</a>
+</li>
+        <li><a href="api/apparun/api/app/index.html#module-apparun.api.app">apparun.api.app</a>
+</li>
+        <li><a href="api/apparun/cli/index.html#module-apparun.cli">apparun.cli</a>
+</li>
+        <li><a href="api/apparun/cli/main/index.html#module-apparun.cli.main">apparun.cli.main</a>
+</li>
+        <li><a href="api/apparun/core/index.html#module-apparun.core">apparun.core</a>
+</li>
+        <li><a href="api/apparun/exceptions/index.html#module-apparun.exceptions">apparun.exceptions</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#module-apparun.expressions">apparun.expressions</a>
+</li>
+        <li><a href="api/apparun/impact_methods/index.html#module-apparun.impact_methods">apparun.impact_methods</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#module-apparun.impact_model">apparun.impact_model</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#module-apparun.impact_tree">apparun.impact_tree</a>
+</li>
+        <li><a href="api/apparun/logger/index.html#module-apparun.logger">apparun.logger</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#module-apparun.parameters">apparun.parameters</a>
+</li>
+        <li><a href="api/apparun/results/index.html#module-apparun.results">apparun.results</a>
+</li>
+        <li><a href="api/apparun/score/index.html#module-apparun.score">apparun.score</a>
+</li>
+        <li><a href="api/apparun/tree_node/index.html#module-apparun.tree_node">apparun.tree_node</a>
+</li>
+        <li><a href="api/python_api_usage/index.html#module-python_api_usage">python_api_usage</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.NodesSobolIndexResult.n">n (apparun.results.NodesSobolIndexResult attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesUncertaintyResult.n">(apparun.results.NodesUncertaintyResult attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SobolIndexResult.n">(apparun.results.SobolIndexResult attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.UncertaintyResult.n">(apparun.results.UncertaintyResult attribute)</a>
+</li>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.UncertaintyResult.n">(python_api_usage.UncertaintyResult attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.DatabaseConfig.name">name (appabuild.config.appa_lca.DatabaseConfig attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.FunctionalUnit.name">(appabuild.config.lca.FunctionalUnit attribute)</a>
+</li>
+        <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.name">(appabuild.config.lca.Model attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/bw_databases/index.html#appabuild.database.bw_databases.BwDatabase.name">(appabuild.database.bw_databases.BwDatabase attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.Database.name">(appabuild.database.databases.Database attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.name">(appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.name">(appabuild.database.serialized_data.ActivityIdentifier attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.name">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.name">(appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.Switch.name">(appabuild.database.serialized_data.Switch attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.name">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.name">(appabuild.database.user_database_elements.DatabaseElement attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.name">(apparun.impact_model.ImpactModel property)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaPractitioner.name">(apparun.impact_model.LcaPractitioner attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.name">(apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.name">(apparun.parameters.ImpactModelParam attribute)</a>
+</li>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.name">(apparun.tree_node.NodeScores attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.name_already_in_tree">name_already_in_tree() (apparun.impact_tree.ImpactTreeNode method)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.name_in_export">name_in_export (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact.name_in_export">(appabuild.database.generator.eime.EimeV6Impact attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.name_is_valid">name_is_valid() (apparun.parameters.ImpactModelParam method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.names">names (apparun.parameters.ImpactModelParams property)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.new_child">new_child() (apparun.impact_tree.ImpactTreeNode method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.new_child_from_dict">new_child_from_dict() (apparun.impact_tree.ImpactTreeNode method)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.new_nodes_uncertainty_result">new_nodes_uncertainty_result (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.new_nodes_uncertainty_table">new_nodes_uncertainty_table (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.NewNodesUncertaintyResult">NewNodesUncertaintyResult (class in python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.node_name_to_symbol_name">node_name_to_symbol_name() (apparun.impact_tree.ImpactTreeNode static method)</a>
+</li>
+      <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeProperties">NodeProperties (class in apparun.tree_node)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.nodes_scores">nodes_scores (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores">NodeScores (class in apparun.tree_node)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.NodesSobolIndexResult">NodesSobolIndexResult (class in apparun.results)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.NodesUncertaintyResult">NodesUncertaintyResult (class in apparun.results)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.Switch.options">options (appabuild.database.serialized_data.Switch attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.options">(apparun.expressions.ParamEnumExpr attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.options">(apparun.parameters.EnumParam property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaPractitioner.organization">organization (apparun.impact_model.LcaPractitioner attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.output">output (appabuild.database.user_database_elements.Exchange attribute)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.OUTPUT_FILES_PATH">OUTPUT_FILES_PATH (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.output_name">output_name (apparun.results.ImpactModelResult attribute)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.output_path">output_path (appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.param">param (apparun.expressions.ParamEnumExpr attribute)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumConst">ParamEnumConst (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr">ParamEnumExpr (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/appabuild/exceptions/index.html#appabuild.exceptions.ParameterError">ParameterError</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.parameters">parameters (appabuild.config.lca.Model attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.parameters">(appabuild.database.databases.ForegroundDatabase attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.parameters">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.parameters">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+        <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.parameters">(appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.parameters">(apparun.impact_model.ImpactModel attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.parameters">(apparun.parameters.ImpactModelParams attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.NodesSobolIndexResult.parameters">(apparun.results.NodesSobolIndexResult attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SankeyDiagramResult.parameters">(apparun.results.SankeyDiagramResult attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.SobolIndexResult.parameters">(apparun.results.SobolIndexResult attribute)</a>
+</li>
+        <li><a href="api/apparun/results/index.html#apparun.results.TreeMapResult.parameters">(apparun.results.TreeMapResult attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.parameters_matching">parameters_matching (appabuild.database.serialized_data.SerializedExchange attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.parameters_matching">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.parameters_matching">(appabuild.database.user_database_elements.Exchange attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr">ParamExpr (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatConst">ParamFloatConst (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr">ParamFloatExpr (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/apparun/api/app/index.html#apparun.api.app.ComputeParams.params">params (apparun.api.app.ComputeParams attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.params_values">params_values() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamsValuesSet">ParamsValuesSet (class in apparun.expressions)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.parent">parent (apparun.impact_tree.ImpactTreeNode attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.parent">(apparun.tree_node.NodeScores attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr.parse">parse() (apparun.expressions.ParamExpr class method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.parse_expr">parse_expr() (in module apparun.expressions)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Generator.parse_impacts_export">parse_impacts_export() (appabuild.database.generator.eime.EimeV6Generator method)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.parse_parameters">parse_parameters() (appabuild.config.lca.Model class method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.parse_sub_exprs">parse_sub_exprs() (apparun.expressions.ParamEnumExpr class method)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.DatabaseConfig.path">path (appabuild.config.appa_lca.DatabaseConfig attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Model.path">(appabuild.config.lca.Model attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.Database.path">(appabuild.database.databases.Database attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.DatabaseConfig.path_exists">path_exists() (appabuild.config.appa_lca.DatabaseConfig class method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.pdf_save_path">pdf_save_path (apparun.results.ImpactModelResult attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.pm">pm (apparun.parameters.FloatParam attribute)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.pm_perc">pm_perc (apparun.parameters.FloatParam attribute)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.png_save_path">png_save_path (apparun.results.ImpactModelResult attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.AppaLCAConfig.project_name">project_name (appabuild.config.appa_lca.AppaLCAConfig attribute)</a>
+</li>
+      <li><a href="api/appabuild/setup/index.html#appabuild.setup.project_setup">project_setup() (in module appabuild.setup)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.propagate_include_in_tree">propagate_include_in_tree() (appabuild.database.user_database_elements.Activity method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.propagate_include_in_tree">(appabuild.database.user_database_elements.Exchange method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.propagate_parameters">propagate_parameters() (appabuild.database.user_database_elements.Activity method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.propagate_parameters">(appabuild.database.user_database_elements.Exchange method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.properties">properties (appabuild.database.serialized_data.SerializedActivity attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.properties">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.properties">(apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeProperties.properties">(apparun.tree_node.NodeProperties attribute)</a>
+</li>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.properties">(apparun.tree_node.NodeScores attribute)</a>
+</li>
+      </ul></li>
+      <li>
+    python_api_usage
+
+      <ul>
+        <li><a href="api/python_api_usage/index.html#module-python_api_usage">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumConst.raw_version">raw_version (apparun.expressions.ParamEnumConst property)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.raw_version">(apparun.expressions.ParamEnumExpr property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamExpr.raw_version">(apparun.expressions.ParamExpr property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatConst.raw_version">(apparun.expressions.ParamFloatConst property)</a>
+</li>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.raw_version">(apparun.expressions.ParamFloatExpr property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_ENDPOINT_ECOSYSTEM_QUALITY">RECIPE_ENDPOINT_ECOSYSTEM_QUALITY (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_ENDPOINT_HUMAN_HEALTH">RECIPE_ENDPOINT_HUMAN_HEALTH (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_ENDPOINT_RESOURCES">RECIPE_ENDPOINT_RESOURCES (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_ENDPOINT_TOTAL">RECIPE_ENDPOINT_TOTAL (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_MIDPOINT_CLIMATE_CHANGE">RECIPE_MIDPOINT_CLIMATE_CHANGE (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.RECIPE_MIDPOINT_TERRESTRIAL_ECOTOXICITY">RECIPE_MIDPOINT_TERRESTRIAL_ECOTOXICITY (apparun.impact_methods.MethodShortName attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.register_result">register_result() (in module apparun.results)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.registered_results">registered_results() (in module apparun.results)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.replace_parameters">replace_parameters() (appabuild.database.user_database_elements.Activity method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.replace_parameters">(appabuild.database.user_database_elements.Exchange method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata.report">report (apparun.impact_model.ModelMetadata attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/bw_databases/index.html#appabuild.database.bw_databases.BwDatabase.resolve_activity_identifier">resolve_activity_identifier() (appabuild.database.bw_databases.BwDatabase method)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.resolve_switch">resolve_switch() (appabuild.database.serialized_data.SerializedExchange method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.RESULTS">RESULTS (in module apparun.results)</a>
+</li>
+      <li><a href="api/apparun/cli/main/index.html#apparun.cli.main.results">results() (in module apparun.cli.main)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata.reviewer">reviewer (apparun.impact_model.ModelMetadata attribute)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.run">run() (apparun.results.ImpactModelResult method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.sankey_result">sankey_result (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.sankey_table">sankey_table (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.SankeyDiagramResult">SankeyDiagramResult (class in apparun.results)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Generator.save_datasets">save_datasets() (appabuild.database.generator.eime.EimeV6Generator static method)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.save_figure">save_figure() (apparun.results.ImpactModelResult method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.scaled_direct_impacts">scaled_direct_impacts (apparun.impact_tree.ImpactTreeNode attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.LCAConfig.scope">scope (appabuild.config.lca.LCAConfig attribute)</a>
+</li>
+      <li><a href="api/appabuild/config/lca/index.html#appabuild.config.lca.Scope">Scope (class in appabuild.config.lca)</a>
+</li>
+      <li><a href="api/apparun/score/index.html#apparun.score.LCIAScores.scores">scores (apparun.score.LCIAScores attribute)</a>
+
+      <ul>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.scores">(in module python_api_usage)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/database/bw_databases/index.html#appabuild.database.bw_databases.BwDatabase.search_activity">search_activity() (appabuild.database.bw_databases.BwDatabase method)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.UserDatabaseContext.serialized_activities">serialized_activities (appabuild.database.user_database_elements.UserDatabaseContext attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity">SerializedActivity (class in appabuild.database.serialized_data)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/exceptions/index.html#appabuild.exceptions.SerializedDataError">SerializedDataError</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange">SerializedExchange (class in appabuild.database.serialized_data)</a>
+</li>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.ForegroundDatabase.set_functional_unit">set_functional_unit() (appabuild.database.databases.ForegroundDatabase method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.set_sobol_problem">set_sobol_problem() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.sobol_draw">sobol_draw() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.sobol_problem">sobol_problem (apparun.parameters.ImpactModelParams attribute)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.sobol_result">sobol_result (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.sobol_table">sobol_table (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.SobolIndexResult">SobolIndexResult (class in apparun.results)</a>
+</li>
+      <li><a href="api/appabuild/logger/index.html#appabuild.logger.stream_handler">stream_handler (in module appabuild.logger)</a>
+</li>
+      <li><a href="api/apparun/score/index.html#apparun.score.LCIAScores.sum">sum() (apparun.score.LCIAScores static method)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.switch">switch (appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.Switch">Switch (class in appabuild.database.serialized_data)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption">SwitchOption (class in appabuild.database.serialized_data)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.table_save_path">table_save_path (apparun.results.ImpactModelResult attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.to_bw_format">to_bw_format() (appabuild.database.user_database_elements.Activity method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.to_bw_format">(appabuild.database.user_database_elements.Exchange method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.to_bw_method">to_bw_method() (in module appabuild.model.builder)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.to_dict">to_dict() (appabuild.database.serialized_data.ActivityIdentifier method)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.to_dict">(appabuild.database.serialized_data.SerializedActivity method)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.to_dict">(appabuild.database.serialized_data.SerializedExchange method)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.to_dict">(apparun.impact_model.ImpactModel method)</a>
+</li>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ModelMetadata.to_dict">(apparun.impact_model.ModelMetadata method)</a>
+</li>
+        <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.to_dict">(apparun.impact_tree.ImpactTreeNode method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.to_dict">(apparun.parameters.ImpactModelParam method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodShortName.to_full_name">to_full_name() (apparun.impact_methods.MethodShortName method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.to_list">to_list() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.to_serialized_activity">to_serialized_activity() (appabuild.database.generator.eime.EimeV6DatasetDescription method)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6Impact.to_serialized_exchange">to_serialized_exchange() (appabuild.database.generator.eime.EimeV6Impact method)</a>
+</li>
+      <li><a href="api/apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName.to_short_name">to_short_name() (apparun.impact_methods.MethodFullName method)</a>
+</li>
+      <li><a href="api/apparun/score/index.html#apparun.score.LCIAScores.to_unpivoted_df">to_unpivoted_df() (apparun.score.LCIAScores method)</a>
+
+      <ul>
+        <li><a href="api/apparun/tree_node/index.html#apparun.tree_node.NodeScores.to_unpivoted_df">(apparun.tree_node.NodeScores method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.to_yaml">to_yaml() (appabuild.database.serialized_data.SerializedActivity method)</a>
+
+      <ul>
+        <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.to_yaml">(apparun.impact_model.ImpactModel method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.transform">transform() (apparun.parameters.EnumParam method)</a>
+
+      <ul>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.transform">(apparun.parameters.FloatParam method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.transform_parameters">transform_parameters() (apparun.impact_model.ImpactModel method)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.transformation_table">transformation_table (apparun.impact_model.ImpactModel property)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.ImpactModel.tree">tree (apparun.impact_model.ImpactModel attribute)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.tree_map_result">tree_map_result (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.tree_map_table">tree_map_table (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.TreeMapResult">TreeMapResult (class in apparun.results)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.type">type (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.type">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.type">(appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.type">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.DatabaseElement.type">(appabuild.database.user_database_elements.DatabaseElement attribute)</a>
+</li>
+        <li><a href="api/apparun/exceptions/index.html#apparun.exceptions.InvalidExpr.type">(apparun.exceptions.InvalidExpr attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.type">(apparun.parameters.EnumParam attribute)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.type">(apparun.parameters.FloatParam attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.uncertainty_nodes_result">uncertainty_nodes_result (in module python_api_usage)</a>
+</li>
+      <li><a href="api/python_api_usage/index.html#python_api_usage.uncertainty_nodes_table">uncertainty_nodes_table (in module python_api_usage)</a>
+</li>
+      <li><a href="api/apparun/results/index.html#apparun.results.UncertaintyResult">UncertaintyResult (class in apparun.results)</a>
+
+      <ul>
+        <li><a href="api/python_api_usage/index.html#python_api_usage.UncertaintyResult">(class in python_api_usage)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.uniform_draw">uniform_draw() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.unit">unit (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.unit">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SwitchOption.unit">(appabuild.database.serialized_data.SwitchOption attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Activity.unit">(appabuild.database.user_database_elements.Activity attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.unnested_descendants">unnested_descendants (apparun.impact_tree.ImpactTreeNode property)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.update_bounds">update_bounds() (apparun.parameters.FloatParam method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.update_default">update_default() (apparun.parameters.EnumParam method)</a>
+
+      <ul>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.FloatParam.update_default">(apparun.parameters.FloatParam method)</a>
+</li>
+        <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParam.update_default">(apparun.parameters.ImpactModelParam method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParams.update_defaults">update_defaults() (apparun.parameters.ImpactModelParams method)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.Exchange.update_parameters_matching">update_parameters_matching() (appabuild.database.user_database_elements.Exchange method)</a>
+</li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.update_weights">update_weights() (apparun.parameters.EnumParam method)</a>
+</li>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange.use_exchange_name">use_exchange_name (appabuild.database.serialized_data.SerializedExchange attribute)</a>
+</li>
+      <li><a href="api/appabuild/model/builder/index.html#appabuild.model.builder.ImpactModelBuilder.user_database_name">user_database_name (appabuild.model.builder.ImpactModelBuilder attribute)</a>
+</li>
+      <li><a href="api/appabuild/database/user_database_elements/index.html#appabuild.database.user_database_elements.UserDatabaseContext">UserDatabaseContext (class in appabuild.database.user_database_elements)</a>
+</li>
+      <li><a href="api/appabuild/database/generator/eime/index.html#appabuild.database.generator.eime.EimeV6DatasetDescription.uuid">uuid (appabuild.database.generator.eime.EimeV6DatasetDescription attribute)</a>
+
+      <ul>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.ActivityIdentifier.uuid">(appabuild.database.serialized_data.ActivityIdentifier attribute)</a>
+</li>
+        <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity.uuid">(appabuild.database.serialized_data.SerializedActivity attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/databases/index.html#appabuild.database.databases.EcoInventDatabase.validate">validate() (appabuild.database.databases.EcoInventDatabase method)</a>
+</li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.validate_amount">validate_amount() (apparun.impact_tree.ImpactTreeNode class method)</a>
+</li>
+      <li><a href="api/appabuild/config/appa_lca/index.html#appabuild.config.appa_lca.AppaLCAConfig.validate_databases">validate_databases() (appabuild.config.appa_lca.AppaLCAConfig class method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.validate_dependencies">validate_dependencies() (apparun.expressions.ParamFloatExpr method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatExpr.validate_expr">validate_expr() (apparun.expressions.ParamFloatExpr class method)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.validate_expr">(in module apparun.expressions)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/impact_tree/index.html#apparun.impact_tree.ImpactTreeNode.validate_exprs">validate_exprs() (apparun.impact_tree.ImpactTreeNode class method)</a>
+</li>
+      <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.validate_foreground_datasets">validate_foreground_datasets() (in module appabuild.cli.lca)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.validate_options">validate_options() (apparun.expressions.ParamEnumExpr class method)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumExpr.validate_param">validate_param() (apparun.expressions.ParamEnumExpr class method)</a>
+</li>
+      <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.validate_size">validate_size() (in module appabuild.cli.lca)</a>
+</li>
+      <li><a href="api/appabuild/cli/lca/index.html#appabuild.cli.lca.validate_type">validate_type() (in module appabuild.cli.lca)</a>
+</li>
+      <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamEnumConst.value">value (apparun.expressions.ParamEnumConst attribute)</a>
+
+      <ul>
+        <li><a href="api/apparun/expressions/index.html#apparun.expressions.ParamFloatConst.value">(apparun.expressions.ParamFloatConst attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.ImpactModelParamsValues.values">values (apparun.parameters.ImpactModelParamsValues attribute)</a>
+</li>
+      <li><a href="api/apparun/impact_model/index.html#apparun.impact_model.LcaStudy.version">version (apparun.impact_model.LcaStudy attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/parameters/index.html#apparun.parameters.EnumParam.weights">weights (apparun.parameters.EnumParam attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/apparun/results/index.html#apparun.results.ImpactModelResult.width">width (apparun.results.ImpactModelResult attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/appabuild/database/serialized_data/index.html#appabuild.database.serialized_data.yaml">yaml (in module appabuild.database.serialized_data)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

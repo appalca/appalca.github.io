@@ -1,0 +1,43 @@
+appabuild.model.graph
+=====================
+
+.. py:module:: appabuild.model.graph
+
+.. autoapi-nested-parse::
+
+   Module containing all required classes and methods to create a mermaid graph from a set of foreground datasets.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   appabuild.model.graph.build_mermaid_graph
+   appabuild.model.graph.build_parameters_str
+   appabuild.model.graph.extract_params_from_matching
+
+
+Module Contents
+---------------
+
+.. py:function:: build_mermaid_graph(foreground_path: str, name: str) -> mermaid.graph.Graph
+
+   Build a mermaid graph from a set of foreground datasets.
+   :param foreground_path: the root path of the datasets.
+   :param name: name of the root dataset.
+   :return: a graph representing the set of foreground datasets and their dependencies.
+
+
+.. py:function:: build_parameters_str(parameters: list[str], exchange: appabuild.database.serialized_data.SerializedExchange) -> str
+
+.. py:function:: extract_params_from_matching(matching: str)
+
+   Extract the list of parameters from a parameter matching.
+   A parameter matching is an expression used to replace a parameter,
+   for example energy: time * power.
+   :param matching: a parameter matching.
+   :return: the list of parameters used in the parameter matching.
+
+

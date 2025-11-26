@@ -1,0 +1,51 @@
+apparun.score
+=============
+
+.. py:module:: apparun.score
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.score.LCIAScores
+
+
+Module Contents
+---------------
+
+.. py:class:: LCIAScores
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Scores for each impact method.
+
+
+   .. py:method:: sum(lcia_scores: List[LCIAScores]) -> LCIAScores
+      :staticmethod:
+
+
+      Sum element-wise all scores for each method.
+      :param lcia_scores: LCIA scores to sum up.
+      :return: summed LCIA scores
+
+
+
+   .. py:method:: to_unpivoted_df() -> pandas.DataFrame
+
+
+   .. py:property:: method_names
+      :type: Set[str]
+
+
+      Get all LCIA methods assessed.
+      :return: LCIA methods assessed
+
+
+
+   .. py:attribute:: scores
+      :type:  Optional[Dict[str, Union[float, List[float]]]]
+
+

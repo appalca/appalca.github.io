@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting started &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="../_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basics/getting_started';</script>
+    <script src="../_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appa Build basics" href="appa_build_basics.html" />
+    <link rel="prev" title="Basics" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appa_build_basics.html">Appa Build basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appa_run_basics.html">Appa Run basics</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Basics</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting started</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Appa Build and Appa Run are available on PyPI.
+Appa Build requires at least Python 3.10, while Appa Run requires at least Python 3.9.
+Tested and recommended version is Python 3.11.
+Since Appa Run is required by Appa Build, you can install both by using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">appabuild</span>
+</pre></div>
+</div>
+<p>If you only need Appa Run, you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">apparun</span>
+</pre></div>
+</div>
+<p>We recommend using virtualenv to limit the risks of package dependency conflicts, that are likely to occur with Appa Build, as Brightway requires a specific version of <em>numpy</em> to run.</p>
+<section id="installation-with-source-code">
+<h3>Installation with source code<a class="headerlink" href="#installation-with-source-code" title="Link to this heading">#</a></h3>
+<p>You may need to install Appa Build and/or Appa Run from source if you intend to modify the source or change some package versions in requirements.txt.</p>
+</section>
+<section id="appa-run">
+<h3>Appa Run<a class="headerlink" href="#appa-run" title="Link to this heading">#</a></h3>
+<p>Clone the repository first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">appalca</span><span class="o">/</span><span class="n">apparun</span>
+<span class="n">cd</span> <span class="n">apparun</span>
+</pre></div>
+</div>
+<p>It is recommended to use a virtualenv before installing Appa Run package dependencies. You can then use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>If you want to use Appa Run to run Appa Build, or to use its CLI, you need to build the package:
+If necessary, you can install wheel using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">wheel</span></code> and hatchling using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">hatchling</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">hatchling</span> <span class="n">build</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">dist</span><span class="o">/*.</span><span class="n">whl</span> <span class="o">--</span><span class="n">progress</span><span class="o">-</span><span class="n">bar</span> <span class="n">off</span>
+</pre></div>
+</div>
+</section>
+<section id="appa-build">
+<h3>Appa Build<a class="headerlink" href="#appa-build" title="Link to this heading">#</a></h3>
+<p>Clone the repository first:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">appalca</span><span class="o">/</span><span class="n">appabuild</span>
+<span class="n">cd</span> <span class="n">appabuild</span>
+</pre></div>
+</div>
+<p>To install the dependencies of Appa Build (using the desired Python installation), you will need to specify the path of the packaged Appa Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">../</span><span class="n">apparun</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">apparun</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">X</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Replacing <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code> with the appropriate version.</p>
+<p>If you want to use the Appa Build CLI, you need to build the package:
+If necessary, you can install wheel using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">wheel</span></code> and hatchling using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">hatchling</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">hatchling</span> <span class="n">build</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">dist</span><span class="o">/*.</span><span class="n">whl</span> <span class="o">--</span><span class="n">progress</span><span class="o">-</span><span class="n">bar</span> <span class="n">off</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<p>Appa Build and Appa Run most basic interface are their command line interfaces (CLIs).
+The following CLI commands will allow you to verify that both packages are properly installed by respectively building and running a sample impact model.</p>
+<section id="id1">
+<h3>Appa Build<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>To test your Appa Build installation, you can set the project directory with the <code class="docutils literal notranslate"><span class="pre">BRIGHTWAY2_DIR</span></code> environment variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">BRIGHTWAY2_DIR</span><span class="o">=</span><span class="n">brightway2_project</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>You will also need an EcoInvent database. The tested version is 3.9.1 cutoff.
+You must indicate the path of the folder containing the .spold datasets in <code class="docutils literal notranslate"><span class="pre">samples/conf/appalca_conf.yaml</span></code>.</p>
+<p>More information can be found in section <a class="reference internal" href="appa_build_basics.html"><span class="std std-doc">Appa Build Basics</span></a>.</p>
+<p>Documentation about the CLI can be obtained by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">appabuild</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>Here is an example of the Appa Build CLI call to build the demo impact model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">appabuild</span> <span class="n">lca</span> <span class="n">build</span> <span class="n">samples</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">appalca_conf</span><span class="o">.</span><span class="n">yaml</span> <span class="n">samples</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nvidia_ai_gpu_chip_lca_conf</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Both arguments are covered in section <a class="reference internal" href="appa_build_basics.html"><span class="std std-doc">Appa Build basics</span></a>.</p>
+</section>
+<section id="id2">
+<h3>Appa Run<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>You will need an environment variable to specify where the impact models are located.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">APPARUN_IMPACT_MODELS_DIR</span><span class="o">=</span><span class="n">samples</span><span class="o">/</span><span class="n">impact_models</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Documentation about the CLI can be obtained by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apparun</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>Here is an example of Appa Run CLI call to use the demo impact model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apparun</span> <span class="n">compute</span> <span class="n">nvidia_ai_gpu_chip</span> <span class="n">samples</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">parameters</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="n">path</span> <span class="n">outputs</span><span class="o">/</span><span class="n">scores</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Basics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appa_build_basics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appa Build basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-with-source-code">Installation with source code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appa-run">Appa Run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appa-build">Appa Build</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Appa Build</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Appa Run</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

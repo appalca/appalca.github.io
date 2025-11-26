@@ -1,0 +1,34 @@
+apparun.logger
+==============
+
+.. py:module:: apparun.logger
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.logger.logger
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.logger.init_logger
+
+
+Module Contents
+---------------
+
+.. py:function:: init_logger()
+
+   Init the logger so that all the logs are saved
+   in a file named apparun.log and are redirected on
+   the standard output.
+
+
+.. py:data:: logger
+

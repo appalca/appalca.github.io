@@ -1,0 +1,75 @@
+apparun.core
+============
+
+.. py:module:: apparun.core
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.core.IMPACTS_MODEL_DIR
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.core.compute_impacts
+   apparun.core.compute_results
+   apparun.core.execution_time_logging
+   apparun.core.get_model_params
+   apparun.core.get_valid_models
+
+
+Module Contents
+---------------
+
+.. py:function:: compute_impacts(impact_model_name: str, params: Dict, all_nodes: bool = False) -> Union[List, Dict[str, Union[float, List[float]]]]
+
+   Load an impact model from disk from its name, and get impact scores of the root node
+   for each impact method, according to the parameters.
+   APPARUN_IMPACT_MODELS_DIR environment variable should be specified (see README.md).
+   :param impact_model_name: name of the impact model to load
+   :param params: value, or list of values of the impact model's parameters.
+   List of values must have the same length. If single values are provided
+   alongside a list of values, it will be duplicated to the appropriate length.
+   :param all_nodes: if True, scores will be computed for each node. Only root node
+   otherwise (default).
+   :return: a dict mapping impact names and corresponding score, or list of scores.
+
+
+.. py:function:: compute_results(results_config: List[Dict])
+
+   Generate results according to results_config.
+   :param results_config: list of results wanted. Each element of this list will be
+   used to construct an ImpactModelResult, using the elements in "args" argument.
+   Result subclass is determined by "class" argument.
+
+
+.. py:function:: execution_time_logging(func)
+
+   Decorator to log execution time as an info.
+   :param func: function to wrap.
+   :return: wrapped function.
+
+
+.. py:function:: get_model_params(impact_model_name: str) -> List[Dict]
+
+   Return the list of parameters required to execute an impact model.
+   APPARUN_IMPACT_MODELS_DIR environment variable should be specified (see README.md).
+   :param impact_model_name: name of the impact model to load.
+   :return: a list of parameters required by the model.
+
+
+.. py:function:: get_valid_models() -> List[str]
+
+   Get a list of all valid impact models in the directory specified by
+   APPARUN_IMPACT_MODELS_DIR environment variable.
+   :return: a list of all valid impact models.
+
+
+.. py:data:: IMPACTS_MODEL_DIR
+

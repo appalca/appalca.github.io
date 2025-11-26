@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Appa Build basics &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="../_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'basics/appa_build_basics';</script>
+    <script src="../_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Appa Run basics" href="appa_run_basics.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Appa Build basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appa_run_basics.html">Appa Run basics</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Basics</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Appa Build basics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="appa-build-basics">
+<h1>Appa Build basics<a class="headerlink" href="#appa-build-basics" title="Link to this heading">#</a></h1>
+<p>The main purpose of Appa Build package is to build impact models.
+Building an impact model requires four types of files:</p>
+<ol class="arabic simple">
+<li><p>Foreground datasets</p></li>
+<li><p>LCA configuration, which is specific to each LCA</p></li>
+<li><p>Context configuration, which usually needs to be defined once for all LCAs</p></li>
+<li><p>Background databases</p></li>
+</ol>
+<p>The next sections cover all these elements, in a nutshell, using the case study provided in the Appa Build source code.</p>
+<section id="foreground-datasets">
+<h2>Foreground datasets<a class="headerlink" href="#foreground-datasets" title="Link to this heading">#</a></h2>
+<p>Each foreground dataset is described in a <em>yaml</em> (or <em>json</em>) file.
+The structure of these files is closely related to Brightway’s representation of Activities and Exchanges.
+We recommend you to have a look at Brightway’s documentation (‘legacy’ version) first.</p>
+<p>The next example contains common fields that can be found in a dataset file.
+You can click the <img src="../_static/plus.svg" height='16' width='16' /> to have information about each field.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">logic_wafer_manufacturing.yaml</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logic_wafer_manufacturing</span><span class="w"> </span><span class="c1">#(1)!</span>
+<span class="linenos"> 2</span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GLO</span><span class="w"> </span><span class="c1">#(2)!</span>
+<span class="linenos"> 3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">process</span><span class="w"> </span><span class="c1">#(3)!</span>
+<span class="linenos"> 4</span><span class="nt">unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit</span><span class="w"> </span><span class="c1">#(4)! </span>
+<span class="linenos"> 5</span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1">#(5)!</span>
+<span class="linenos"> 6</span><span class="nt">parameters</span><span class="p">:</span><span class="w"> </span><span class="c1">#(6)!</span>
+<span class="linenos"> 7</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fab_location</span>
+<span class="linenos"> 8</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">masks</span>
+<span class="linenos"> 9</span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;[...]&quot;</span><span class="w"> </span><span class="c1">#(7)!</span>
+<span class="linenos">10</span><span class="nt">include_in_tree</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w">  </span><span class="c1">#(8)!</span>
+<span class="linenos">11</span><span class="nt">exchanges</span><span class="p">:</span><span class="w"> </span><span class="c1">#(9)!</span>
+<span class="linenos">12</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user_database</span><span class="w"> </span><span class="c1">#(10)! </span>
+<span class="linenos">13</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmos_wafer_production</span><span class="w"> </span><span class="c1">#(11)!</span>
+<span class="linenos">14</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">technosphere</span><span class="w"> </span><span class="c1">#(12)!</span>
+<span class="linenos">15</span><span class="w">  </span><span class="nt">switch</span><span class="p">:</span><span class="w"> </span><span class="c1">#(13)!</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fab_location</span><span class="w"> </span><span class="c1">#(14)!</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="c1">#(15)!</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TW</span><span class="w"> </span><span class="c1">#(16)!</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(0.049*masks</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">0.3623)</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">3.14159</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">pow(15,</span><span class="nv"> </span><span class="s">2)&quot;</span><span class="w"> </span><span class="c1">#(17)!</span>
+<span class="linenos">20</span><span class="w">  </span><span class="nt">input</span><span class="p">:</span>
+<span class="linenos">21</span><span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">impact_proxies</span><span class="w"> </span><span class="c1">#(18)!</span>
+<span class="linenos">22</span><span class="w">    </span><span class="nt">uuid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(&#39;EF</span><span class="nv"> </span><span class="s">v3.0&#39;,</span><span class="nv"> </span><span class="s">&#39;climate</span><span class="nv"> </span><span class="s">change&#39;,</span><span class="nv"> </span><span class="s">&#39;global</span><span class="nv"> </span><span class="s">warming</span><span class="nv"> </span><span class="s">potential</span><span class="nv"> </span><span class="s">(GWP100)&#39;)_technosphere_proxy&quot;</span><span class="w"> </span><span class="c1">#(19)!</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Activity name. Not really used except to indicate which activity is the FU in the LCA conf file.</p></li>
+<li><p>Location of the activity. Purely informative.</p></li>
+<li><p>Type of activity. Brightway supports “production”, “process” and “” type of activity. It is not clear to us what this choice means, so we recommend using “process” by default.</p></li>
+<li><p>Unit of the activity’s output. Strictly informative.</p></li>
+<li><p>Amount of the activity produced with the given amount of exchanges. Brightway recommends to always set it to one.</p></li>
+<li><p>Free parameters in the exchange amount, <strong>recursively</strong>, i.e. the free parameters of an activity should include the free parameters of all downstream activities. Strictly informative, but we strongly encourage you to include them for debugging purposes. Dynamic checking will probably be implemented in a future release.</p></li>
+<li><p>Free comment. In this activity, we have indicated the source of this record.</p></li>
+<li><p>Whether or not the activity should be present in the generated impact model. Setting this flag to True will allow Appa Run to determine the FU impacts.</p></li>
+<li><p>All activities necessary to produce the desired amount of current activity output. Exchanges can lead to background datasets, foreground datasets, or impact proxies (which is the case here).</p></li>
+<li><p>Database where the exchange will be stored. We recommend using the foreground database.</p></li>
+<li><p>Name of the exchange. It is not clear to us what Brightway does with this information. For safety, we recommend choosing unique names for each exchange.</p></li>
+<li><p>Exchange type. A technosphere exchange can only associated with a technosphere database activity. A biosphere exchange can only be associated with a biosphere3 elementary flow.</p></li>
+<li><p>The switch is the mechanism that allows Appa Build to handle enumeration type parameters. Each option of the switch creates a different exchange. In this example the type, name and input of the exchange will be common to each switch option, while the amount will be different for each switch option.</p></li>
+<li><p>The name of the enumeration type parameter. Should match an enum parameter in the LCA configuration file.</p></li>
+<li><p>List of all covered options.</p></li>
+<li><p>One option per enumeration value. You can put any field that can be found in an exchange in a switch option. For example, you can point switch options to different inputs, or to the same input but with different parameterization.</p></li>
+<li><p>Amount of input required to produce the required amount of this activity. Amount can be either numeric values or a string containing a formula. This formula may contain numpy functions. Here, amount is inside a switch option, but if you don’t need a switch, you can enter it directly as an exchange field.</p></li>
+<li><p>The name of the database containing the desired activity.</p></li>
+<li><p>UUID of the activity. For foreground activities imported by yaml/json importer, this is the file name (without extension). For EcoInvent dataset, the UUIDs have been randomly generated. We suggest you to either find the UUID of the desired activity using the Activity Browser, or instead to dynamically search for the desired activity by name and location. This feature is covered in the “in depth” section.</p></li>
+</ol>
+</section>
+<section id="appa-lca-configuration">
+<h2>Appa LCA configuration<a class="headerlink" href="#appa-lca-configuration" title="Link to this heading">#</a></h2>
+<p>The Appa LCA configuration file contains information that should be reused for most of your projects.
+The information in this file is used to set up Brightway’s environment and to specify the paths to the background and foreground databases.</p>
+<p>The next example breaks down sample’s Appa LCA configuration file.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.</p>
+<p>This file corresponds to the file required as the first argument by the <em>appabuild lca build</em> CLI command.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">appabuild_conf.yaml</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;sample_project&#39;</span><span class="w"> </span><span class="c1">#(1)!</span>
+<span class="linenos">2</span><span class="nt">databases</span><span class="p">:</span><span class="w"> </span><span class="c1">#(2)!</span>
+<span class="linenos">3</span><span class="w">  </span><span class="nt">ecoinvent</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)!</span>
+<span class="linenos">4</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecoinvent_3.9.1_cutoff</span><span class="w"> </span><span class="c1">#(4)!</span>
+<span class="linenos">5</span><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C:\\databases\\ecoinvent_3.9.1_cutoff\\datasets&#39;</span><span class="w"> </span><span class="c1">#(5)!</span>
+<span class="linenos">6</span><span class="w">  </span><span class="nt">foreground</span><span class="p">:</span><span class="w"> </span><span class="c1">#(6)!</span>
+<span class="linenos">7</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user_database</span><span class="w"> </span><span class="c1">#(7)!</span>
+<span class="linenos">8</span><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;samples/datasets/user_database/&#39;</span><span class="w"> </span><span class="c1">#(8)!</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>This name is used by Brightway to initialize the environment. The location of the environment is specified by the <code class="docutils literal notranslate"><span class="pre">BRIGHTWAY_DIR</span></code> environment variable.</p></li>
+<li><p>Databases to import. At the moment this is quite static as you need one EcoInvent database and one foreground database.</p></li>
+<li><p>Background databases are databases that cannot contain parameters.</p></li>
+<li><p>Name given to the EcoInvent database. This name will be used in foreground datasets’ exchanges.</p></li>
+<li><p>Must correspond to a folder containing a list of <code class="docutils literal notranslate"><span class="pre">.spold</span></code> files.</p></li>
+<li><p>Foreground database consists of a folder containing yaml/json datasets. Subfolders can be used.</p></li>
+<li><p>Name given to the foreground database. This name will be used in foreground datasets’ exchanges.</p></li>
+<li><p>Folder containing yaml/json datasets. Note that when Appa Build is run to build an impact model, only the datasets needed for the FU will be imported.</p></li>
+</ol>
+</section>
+<section id="lca-configuration">
+<h2>LCA configuration<a class="headerlink" href="#lca-configuration" title="Link to this heading">#</a></h2>
+<p>The LCA configuration contains information about the LCA and its corresponding impact model.
+You need one LCA configuration per LCA performed.</p>
+<p>The next example breaks down the Appa LCA sample configuration file.
+You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to get information about each field.</p>
+<p>This file corresponds to the file required as the second argument by the <code class="docutils literal notranslate"><span class="pre">appabuild</span> <span class="pre">lca</span> <span class="pre">build</span></code> CLI command.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">nvidia_ai_gpu_chip_lca_conf.yaml</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">scope</span><span class="p">:</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="nt">fu</span><span class="p">:</span><span class="w"> </span><span class="c1">#(1)!</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nvidia_ai_gpu_chip&quot;</span><span class="w"> </span><span class="c1">#(2)!</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user_database&quot;</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="nt">methods</span><span class="p">:</span><span class="w"> </span><span class="c1">#(3)!</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;EFV3_CLIMATE_CHANGE&quot;</span>
+<span class="linenos"> 7</span><span class="nt">outputs</span><span class="p">:</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">model</span><span class="p">:</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="c1">#(4)!</span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nvidia_ai_gpu_chip&quot;</span><span class="w"> </span><span class="c1">#(5)!</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">compile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1">#(6)!</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="c1">#(7)!</span>
+<span class="linenos">13</span><span class="w">      </span><span class="nt">author</span><span class="p">:</span>
+<span class="linenos">14</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maxime PERALTA</span>
+<span class="linenos">15</span><span class="w">        </span><span class="nt">organization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CEA</span>
+<span class="linenos">16</span><span class="w">        </span><span class="nt">mail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">maxime.peralta@cea.fr</span>
+<span class="linenos">17</span><span class="w">      </span><span class="nt">reviewer</span><span class="p">:</span>
+<span class="linenos">18</span><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mathias TORCASO</span>
+<span class="linenos">19</span><span class="w">        </span><span class="nt">organization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CEA</span>
+<span class="linenos">20</span><span class="w">        </span><span class="nt">mail</span><span class="p">:</span><span class="w"> </span>
+<span class="linenos">21</span><span class="w">      </span><span class="nt">report</span><span class="p">:</span>
+<span class="linenos">22</span><span class="w">        </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://appalca.github.io/</span>
+<span class="linenos">23</span><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">mock</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Appa</span><span class="nv"> </span><span class="s">LCA&#39;s</span><span class="nv"> </span><span class="s">impact</span><span class="nv"> </span><span class="s">model</span><span class="nv"> </span><span class="s">corresponding</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">fictive</span><span class="nv"> </span><span class="s">AI</span><span class="nv"> </span><span class="s">chip</span><span class="nv"> </span><span class="s">accelerator</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">NVIDIA</span><span class="nv"> </span><span class="s">GPU.&quot;</span>
+<span class="linenos">24</span><span class="w">        </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">03/11/2023</span>
+<span class="linenos">25</span><span class="w">        </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+<span class="linenos">26</span><span class="w">        </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">proprietary</span>
+<span class="linenos">27</span><span class="w">        </span><span class="nt">appabuild_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.2&quot;</span><span class="w"> </span><span class="c1">#(8)!</span>
+<span class="linenos">28</span><span class="w">    </span><span class="nt">parameters</span><span class="p">:</span><span class="w"> </span><span class="c1">#(9)!</span>
+<span class="linenos">29</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cuda_core</span><span class="w"> </span><span class="c1">#(10)!</span>
+<span class="linenos">30</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span><span class="w"> </span><span class="c1">#(15)!</span>
+<span class="linenos">31</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"> </span><span class="c1">#(12)!</span>
+<span class="linenos">32</span><span class="w">        </span><span class="nt">pm_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"> </span><span class="c1">#(13)!</span>
+<span class="linenos">33</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">architecture</span>
+<span class="linenos">34</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enum</span><span class="w"> </span><span class="c1">#(14)!</span>
+<span class="linenos">35</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maxwell</span>
+<span class="linenos">36</span><span class="w">        </span><span class="nt">weights</span><span class="p">:</span><span class="w"> </span><span class="c1">#(10)!</span>
+<span class="linenos">37</span><span class="w">          </span><span class="nt">Maxwell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">38</span><span class="w">          </span><span class="nt">Pascal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">39</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage_location</span>
+<span class="linenos">40</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enum</span>
+<span class="linenos">41</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EU</span>
+<span class="linenos">42</span><span class="w">        </span><span class="nt">weights</span><span class="p">:</span>
+<span class="linenos">43</span><span class="w">          </span><span class="nt">FR</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">44</span><span class="w">          </span><span class="nt">EU</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">45</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">energy_per_inference</span>
+<span class="linenos">46</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="linenos">47</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
+<span class="linenos">48</span><span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span><span class="w"> </span><span class="c1">#(16)!</span>
+<span class="linenos">49</span><span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span><span class="w"> </span><span class="c1">#(17)!</span>
+<span class="linenos">50</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lifespan</span>
+<span class="linenos">51</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="linenos">52</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos">53</span><span class="w">        </span><span class="nt">pm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1">#(18)!</span>
+<span class="linenos">54</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inference_per_day</span>
+<span class="linenos">55</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="linenos">56</span><span class="w">        </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3600</span>
+<span class="linenos">57</span><span class="w">        </span><span class="nt">pm_perc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1">#(19)!</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Functional Unit (FU) corresponds to the activity that produces the reference flow. The FU should be stored in the foreground database.</p></li>
+<li><p>Note that FU should be specified by name, not by UUID. Make sure that the FU name is unique.</p></li>
+<li><p>LCIA methods to cover. Appa LCA uses a mapping between short keys and full LCIA method names as available in Brightway. So far we only mapped PEF3.0 LCIA methods (see the FAQ sections for more information).</p></li>
+<li><p>Output folder for saving impact model</p></li>
+<li><p>Name of the yaml file corresponding to the impact model (do not include file extension)</p></li>
+<li><p>If True, all symbolic expressions needed by Appa Run to generate any kind of results will be precomputed by Appa Build and stored in the impact model. This will result in larger impact model files and a longer building time. If False, those symbolic expressions will be computed by Appa Run when required, which will lead to more time during runtime (but only for the first computation).</p></li>
+<li><p>The following fields are informative and will be included in the impact model, and are meant to help the user of the impact model to better understand the LCA leading to the impact model, as well as to facilitate reproducibility.</p></li>
+<li><p>Appa Build version used to create the impact model. Note that this has to be entered manually at the moment. The Appa Build version can be found in setup.py.</p></li>
+<li><p>Information about all free parameters needed by the FU.</p></li>
+<li><p>Name of the parameter. For float parameter, this name will be present in the amount expression of some exchanges. For enum parameter, this will correspond to the name of a switch.</p></li>
+<li><p>Type of the parameter, which can either be float or enum. Float parameters are used to parameterize the amount of exchange(s).</p></li>
+<li><p>Default value used by Appa Run if the user does not specify a new one.</p></li>
+<li><p>Used to determine the lower and upper bounds of the parameter, for features using Monte Carlo simulation. Pm_perc (plus/minus, in percent) dynamically sets the minimum and maximum values to default*(1-pm_perc) and default*(1+pm_perc), respectively.</p></li>
+<li><p>Type of the parameter, which can be either float or enum. Enum parameter can be used to include modularity in LCA, i.e. to modify the exchange’s amount, exchange’s input activity, or exchange’s input activity’s parameterization depending on the value of a variable.</p></li>
+<li><p>Contains two information: the possible values of the enum parameter (should correspond to the name of the switch’s options), and their corresponding probability, for features such as Monte Carlo simulation.</p></li>
+<li><p>The minimum limit of the parameter, used for features such as Monte Carlo simulation.</p></li>
+<li><p>The maximum limit of the parameter, used for features such as Monte Carlo simulation.</p></li>
+<li><p>Used to set the lower and upper bounds of the parameter, for features using Monte Carlo simulation. Pm (plus/minus) dynamically sets the minimum and maximum values as default-pm and default+pm, respectively.</p></li>
+<li><p>If the value of a parameter is fixed and you don’t want it to vary during the Monte Carlo simulation, you can set pm, or pm_perc at zero.</p></li>
+</ol>
+</section>
+<section id="background-databases">
+<h2>Background databases<a class="headerlink" href="#background-databases" title="Link to this heading">#</a></h2>
+<p>Background databases are databases than cannot be parameterized.
+Currently, only EcoInvent 3.9.1 is supported.
+Please refer to the <a class="reference internal" href="../about/faq.html"><span class="std std-doc">FAQ</span></a> section for more information.</p>
+</section>
+<section id="let-s-build-an-impact-model">
+<h2>Let’s build an impact model!<a class="headerlink" href="#let-s-build-an-impact-model" title="Link to this heading">#</a></h2>
+<p>Once you have created your datasets, your configuration files, and made sure you have downloaded EcoInvent to the correct location, you are ready to build your model using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">appabuild</span> <span class="n">lca</span> <span class="n">build</span> <span class="n">PATH_TO_APPALCA_CONF</span> <span class="n">PATH_TO_LCA_CONF</span>
+</pre></div>
+</div>
+<p>Depending on how you installed the <code class="docutils literal notranslate"><span class="pre">appabuild</span></code> package, you may need to activate your virtual environment first.</p>
+<p><code class="docutils literal notranslate"><span class="pre">lca</span> <span class="pre">build</span></code> is the command that tells Appa Build that you want to build an impact model.
+Other commands are covered in the section <a class="reference internal" href="../in_depth/appa_build_in_depth.html"><span class="std std-doc">Appa Build in depth</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PATH_TO_APPALCA_CONF</span></code> is the path to your Appa LCA conf file. You can use <code class="docutils literal notranslate"><span class="pre">samples/conf/appalca_conf.yaml</span></code> to build the sample.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PATH_TO_LCA_CONF</span></code> is the path to your LCA conf file. You can use <code class="docutils literal notranslate"><span class="pre">samples/conf/nvidia_ai_gpu_chip_lca_conf.yaml</span></code>to build the sample.</p>
+<p>The first use of <code class="docutils literal notranslate"><span class="pre">appabuild</span></code> will be long because Brightway has to initialize a Brightway project. Next usage should be faster.</p>
+<p>This command should create an impact model at the location specified in the LCA configuration file.
+A complete breakdown of the fields of this impact model can be found in the section <a class="reference internal" href="../in_depth/impact_models_in_depth.html"><span class="std std-doc">Impact models in depth</span></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="getting_started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="appa_run_basics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Appa Run basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foreground-datasets">Foreground datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appa-lca-configuration">Appa LCA configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lca-configuration">LCA configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-databases">Background databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-build-an-impact-model">Let’s build an impact model!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

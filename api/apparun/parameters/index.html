@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>apparun.parameters &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/apparun/parameters/index';</script>
+    <script src="../../../_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="apparun.results" href="../results/index.html" />
+    <link rel="prev" title="apparun.logger" href="../logger/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">apparun</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index.html">apparun.api</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/app/index.html">apparun.api.app</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/index.html">apparun.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cli/main/index.html">apparun.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">apparun.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/index.html">apparun.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressions/index.html">apparun.expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_methods/index.html">apparun.impact_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_model/index.html">apparun.impact_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_tree/index.html">apparun.impact_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logger/index.html">apparun.logger</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">apparun.parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/index.html">apparun.results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../score/index.html">apparun.score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tree_node/index.html">apparun.tree_node</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appabuild/index.html">appabuild</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/cli/index.html">appabuild.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/database/index.html">appabuild.cli.database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/lca/index.html">appabuild.cli.lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/main/index.html">appabuild.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/config/index.html">appabuild.config</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/config/appa_lca/index.html">appabuild.config.appa_lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/config/lca/index.html">appabuild.config.lca</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/database/index.html">appabuild.database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/bw_databases/index.html">appabuild.database.bw_databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/databases/index.html">appabuild.database.databases</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../appabuild/database/generator/index.html">appabuild.database.generator</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../appabuild/database/generator/eime/index.html">appabuild.database.generator.eime</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/serialized_data/index.html">appabuild.database.serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/user_database_elements/index.html">appabuild.database.user_database_elements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/exceptions/index.html">appabuild.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/logger/index.html">appabuild.logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/model/index.html">appabuild.model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/model/builder/index.html">appabuild.model.builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/model/graph/index.html">appabuild.model.graph</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/output/index.html">appabuild.output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/setup/index.html">appabuild.setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_api_usage/index.html">python_api_usage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">apparun</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">apparun.parameters</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-apparun.parameters">
+<span id="apparun-parameters"></span><h1>apparun.parameters<a class="headerlink" href="#module-apparun.parameters" title="Link to this heading">#</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.parameters.EnumParam" title="apparun.parameters.EnumParam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EnumParam</span></code></a></p></td>
+<td><p>Impact model enum parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.parameters.FloatParam" title="apparun.parameters.FloatParam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FloatParam</span></code></a></p></td>
+<td><p>Impact model float parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImpactModelParam</span></code></a></p></td>
+<td><p>Impact model parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.parameters.ImpactModelParams" title="apparun.parameters.ImpactModelParams"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImpactModelParams</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.parameters.ImpactModelParamsValues" title="apparun.parameters.ImpactModelParamsValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImpactModelParamsValues</span></code></a></p></td>
+<td><p>A set of values for the parameters of an impact model.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.parameters.</span></span><span class="sig-name descname"><span class="pre">EnumParam</span></span><a class="headerlink" href="#apparun.parameters.EnumParam" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImpactModelParam</span></code></a></p>
+<p>Impact model enum parameter.
+Contains a default, list of options and associated weights for monte carlo run.
+runs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.corresponds">
+<span class="sig-name descname"><span class="pre">corresponds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#apparun.parameters.EnumParam.corresponds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.draw_to_distrib">
+<span class="sig-name descname"><span class="pre">draw_to_distrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.EnumParam.draw_to_distrib" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.full_option_name">
+<span class="sig-name descname"><span class="pre">full_option_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.parameters.EnumParam.full_option_name" title="Link to this definition">#</a></dt>
+<dd><p>Return option with parameter name as a prefix.
+:param option: enum option.
+:return: option name with parameter name as a prefix.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.look_up_table">
+<span class="sig-name descname"><span class="pre">look_up_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.EnumParam.look_up_table" title="Link to this definition">#</a></dt>
+<dd><p>Map every option to its one hot encoded vector, i.e. a dict with dummies names
+and associated value (1 if corresponding to current option, 0 otherwise).
+:return: a nested dict with all option and corresponding one hot encoded vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.EnumParam.transform" title="Link to this definition">#</a></dt>
+<dd><p>Transform option, or list of options to be readily usable by ImpactModel.
+Value(s) one hot encoded, then mapped to a dict with parameter name as a key.
+:param values:
+:return: a dict mapping parameter name and transformed values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.update_default">
+<span class="sig-name descname"><span class="pre">update_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_to_default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.EnumParam.update_default" title="Link to this definition">#</a></dt>
+<dd><p>Change default value of the parameter, and optionally update the weights to match
+the new value only (which can be useful for uncertainty analysis).
+:param new_value: new default value
+:param weights_to_default: if True, the weights will be assigned to the new value
+only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.update_weights">
+<span class="sig-name descname"><span class="pre">update_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.EnumParam.update_weights" title="Link to this definition">#</a></dt>
+<dd><p>Change the weights of the parameter.
+:param new_weights: new weights. Keys are enum options, values are corresponding
+probability of occurrence.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.dummies_names">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dummies_names</span></span><a class="headerlink" href="#apparun.parameters.EnumParam.dummies_names" title="Link to this definition">#</a></dt>
+<dd><p>Give dummies names of all possible options.
+A dummy name is the option with parameter name as a prefix.
+:return: a list containing dummies names for all possible options.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.options">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">options</span></span><a class="headerlink" href="#apparun.parameters.EnumParam.options" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'enum'</span></em><a class="headerlink" href="#apparun.parameters.EnumParam.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.EnumParam.weights">
+<span class="sig-name descname"><span class="pre">weights</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.parameters.EnumParam.weights" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.parameters.</span></span><span class="sig-name descname"><span class="pre">FloatParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.FloatParam" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ImpactModelParam</span></code></a></p>
+<p>Impact model float parameter.
+Contains a default, min and max values, as well as a distribution for monte carlo
+runs.
+Supported distributions is “linear”.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.corresponds">
+<span class="sig-name descname"><span class="pre">corresponds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#apparun.parameters.FloatParam.corresponds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.draw_to_distrib">
+<span class="sig-name descname"><span class="pre">draw_to_distrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.FloatParam.draw_to_distrib" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.FloatParam.transform" title="Link to this definition">#</a></dt>
+<dd><p>Transform float value, or list of float values to be readily usable by
+ImpactModel.
+Value(s) are mapped to a dict with parameter name as a key.
+:param values:
+:return: a dict mapping parameter name and transformed values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.update_bounds">
+<span class="sig-name descname"><span class="pre">update_bounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.FloatParam.update_bounds" title="Link to this definition">#</a></dt>
+<dd><p>Compute min and max attributes from default attribute if pm, or pm_perc attributes
+is not None.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.update_default">
+<span class="sig-name descname"><span class="pre">update_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.FloatParam.update_default" title="Link to this definition">#</a></dt>
+<dd><p>Change default value of the parameter, and compute new min and max values if they
+are defined using pm or pm_perc.
+:param new_value: new default value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.distrib">
+<span class="sig-name descname"><span class="pre">distrib</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'linear'</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.distrib" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.max">
+<span class="sig-name descname"><span class="pre">max</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.max" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.min">
+<span class="sig-name descname"><span class="pre">min</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.min" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.pm">
+<span class="sig-name descname"><span class="pre">pm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.pm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.pm_perc">
+<span class="sig-name descname"><span class="pre">pm_perc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.pm_perc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.FloatParam.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'float'</span></em><a class="headerlink" href="#apparun.parameters.FloatParam.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.parameters.</span></span><span class="sig-name descname"><span class="pre">ImpactModelParam</span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>Impact model parameter.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.Config">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.Config" title="Link to this definition">#</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.Config.arbitrary_types_allowed">
+<span class="sig-name descname"><span class="pre">arbitrary_types_allowed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParam.Config.arbitrary_types_allowed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.corresponds">
+<span class="sig-name descname"><span class="pre">corresponds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.corresponds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.draw_to_distrib">
+<span class="sig-name descname"><span class="pre">draw_to_distrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.draw_to_distrib" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.from_dict">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impact_model_param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><span class="pre">ImpactModelParam</span></a></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Convert dict to ImpactModelParam object. Subclass must be specified in ‘type’
+field.
+:param impact_model_param: dict containing construction parameters of the param.
+:return: constructed param</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.name_is_valid">
+<span class="sig-name descname"><span class="pre">name_is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.name_is_valid" title="Link to this definition">#</a></dt>
+<dd><p>Check if parameter’s name is considered as valid.
+Parameter name should only be composed of letters, numbers, underscores, and
+contain at least one letter.
+:return: if parameter’s name is valid</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Convert self to dict.
+:return: self as a dict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.update_default">
+<span class="sig-name descname"><span class="pre">update_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.ImpactModelParam.update_default" title="Link to this definition">#</a></dt>
+<dd><p>Change default value of the parameter, and compute new bounds if relevant.
+:param new_value: new default value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.default">
+<span class="sig-name descname"><span class="pre">default</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParam.default" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParam.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParam.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.parameters.</span></span><span class="sig-name descname"><span class="pre">ImpactModelParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.ImpactModelParams" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.draw_to_distrib">
+<span class="sig-name descname"><span class="pre">draw_to_distrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.draw_to_distrib" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.find_corresponding_parameter">
+<span class="sig-name descname"><span class="pre">find_corresponding_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">must_find_one</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><span class="pre">ImpactModelParam</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><span class="pre">ImpactModelParam</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.find_corresponding_parameter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.from_list">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.parameters.ImpactModelParams" title="apparun.parameters.ImpactModelParams"><span class="pre">ImpactModelParams</span></a></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.from_list" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.get_default_values">
+<span class="sig-name descname"><span class="pre">get_default_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.get_default_values" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.get_missing_parameter_names">
+<span class="sig-name descname"><span class="pre">get_missing_parameter_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.get_missing_parameter_names" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.get_parameter_by_name">
+<span class="sig-name descname"><span class="pre">get_parameter_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><span class="pre">ImpactModelParam</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.get_parameter_by_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.set_sobol_problem">
+<span class="sig-name descname"><span class="pre">set_sobol_problem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.set_sobol_problem" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.sobol_draw">
+<span class="sig-name descname"><span class="pre">sobol_draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.sobol_draw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.to_list">
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sorted_by_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.to_list" title="Link to this definition">#</a></dt>
+<dd><p>Convert each parameter of parameters attributes to a dict, return them as a list,
+optionally sorted by parameter’s name
+:param sorted_by_name: sort parameters list by parameter’s name if True
+:return: list of parameter, themselves as dict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.uniform_draw">
+<span class="sig-name descname"><span class="pre">uniform_draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.uniform_draw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.update_defaults">
+<span class="sig-name descname"><span class="pre">update_defaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_to_default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.update_defaults" title="Link to this definition">#</a></dt>
+<dd><p>Change default value of the parameters contained in argument, and compute new
+bounds if relevant.
+:param defaults: dict containing parameter name as key and new default as
+value
+:param weights_to_default: if True, the weights of the enum parameters will be
+assigned to the new value only.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.names">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParams.names" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#apparun.parameters.ImpactModelParam" title="apparun.parameters.ImpactModelParam"><span class="pre">ImpactModelParam</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParams.parameters" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParams.sobol_problem">
+<span class="sig-name descname"><span class="pre">sobol_problem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParams.sobol_problem" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParamsValues">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.parameters.</span></span><span class="sig-name descname"><span class="pre">ImpactModelParamsValues</span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParamsValues" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>A set of values for the parameters of an impact model.</p>
+<p>ATTENTION!! Use the method from dict to build instance of this class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParamsValues.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#apparun.parameters.ImpactModelParams" title="apparun.parameters.ImpactModelParams"><span class="pre">ImpactModelParams</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.parameters.ImpactModelParamsValues" title="apparun.parameters.ImpactModelParamsValues"><span class="pre">ImpactModelParamsValues</span></a></span></span><a class="headerlink" href="#apparun.parameters.ImpactModelParamsValues.from_dict" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParamsValues.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apparun.parameters.ImpactModelParamsValues.items" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.parameters.ImpactModelParamsValues.values">
+<span class="sig-name descname"><span class="pre">values</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.parameters.ImpactModelParamsValues.values" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../logger/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">apparun.logger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../results/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">apparun.results</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam"><code class="docutils literal notranslate"><span class="pre">EnumParam</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.corresponds"><code class="docutils literal notranslate"><span class="pre">EnumParam.corresponds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.draw_to_distrib"><code class="docutils literal notranslate"><span class="pre">EnumParam.draw_to_distrib()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.full_option_name"><code class="docutils literal notranslate"><span class="pre">EnumParam.full_option_name()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.look_up_table"><code class="docutils literal notranslate"><span class="pre">EnumParam.look_up_table()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.transform"><code class="docutils literal notranslate"><span class="pre">EnumParam.transform()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.update_default"><code class="docutils literal notranslate"><span class="pre">EnumParam.update_default()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.update_weights"><code class="docutils literal notranslate"><span class="pre">EnumParam.update_weights()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.dummies_names"><code class="docutils literal notranslate"><span class="pre">EnumParam.dummies_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.options"><code class="docutils literal notranslate"><span class="pre">EnumParam.options</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.type"><code class="docutils literal notranslate"><span class="pre">EnumParam.type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.EnumParam.weights"><code class="docutils literal notranslate"><span class="pre">EnumParam.weights</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam"><code class="docutils literal notranslate"><span class="pre">FloatParam</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.corresponds"><code class="docutils literal notranslate"><span class="pre">FloatParam.corresponds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.draw_to_distrib"><code class="docutils literal notranslate"><span class="pre">FloatParam.draw_to_distrib()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.transform"><code class="docutils literal notranslate"><span class="pre">FloatParam.transform()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.update_bounds"><code class="docutils literal notranslate"><span class="pre">FloatParam.update_bounds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.update_default"><code class="docutils literal notranslate"><span class="pre">FloatParam.update_default()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.distrib"><code class="docutils literal notranslate"><span class="pre">FloatParam.distrib</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.max"><code class="docutils literal notranslate"><span class="pre">FloatParam.max</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.min"><code class="docutils literal notranslate"><span class="pre">FloatParam.min</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.pm"><code class="docutils literal notranslate"><span class="pre">FloatParam.pm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.pm_perc"><code class="docutils literal notranslate"><span class="pre">FloatParam.pm_perc</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.FloatParam.type"><code class="docutils literal notranslate"><span class="pre">FloatParam.type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.Config"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.Config</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.Config.arbitrary_types_allowed"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.Config.arbitrary_types_allowed</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.corresponds"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.corresponds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.draw_to_distrib"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.draw_to_distrib()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.from_dict"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.from_dict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.name_is_valid"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.name_is_valid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.to_dict"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.to_dict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.update_default"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.update_default()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.default"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.default</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParam.name"><code class="docutils literal notranslate"><span class="pre">ImpactModelParam.name</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.draw_to_distrib"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.draw_to_distrib()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.find_corresponding_parameter"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.find_corresponding_parameter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.from_list"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.from_list()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.get_default_values"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.get_default_values()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.get_missing_parameter_names"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.get_missing_parameter_names()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.get_parameter_by_name"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.get_parameter_by_name()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.set_sobol_problem"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.set_sobol_problem()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.sobol_draw"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.sobol_draw()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.to_list"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.to_list()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.uniform_draw"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.uniform_draw()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.update_defaults"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.update_defaults()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.names"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.parameters"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.parameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParams.sobol_problem"><code class="docutils literal notranslate"><span class="pre">ImpactModelParams.sobol_problem</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParamsValues"><code class="docutils literal notranslate"><span class="pre">ImpactModelParamsValues</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParamsValues.from_dict"><code class="docutils literal notranslate"><span class="pre">ImpactModelParamsValues.from_dict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParamsValues.items"><code class="docutils literal notranslate"><span class="pre">ImpactModelParamsValues.items()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.parameters.ImpactModelParamsValues.values"><code class="docutils literal notranslate"><span class="pre">ImpactModelParamsValues.values</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

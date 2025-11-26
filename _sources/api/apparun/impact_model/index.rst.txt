@@ -1,0 +1,280 @@
+apparun.impact_model
+====================
+
+.. py:module:: apparun.impact_model
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.impact_model.ImpactModel
+   apparun.impact_model.LcaPractitioner
+   apparun.impact_model.LcaStudy
+   apparun.impact_model.ModelMetadata
+
+
+Module Contents
+---------------
+
+.. py:class:: ImpactModel
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Impact model contains all the information required to compute the impact of an
+   LCA built with Appa Build.
+
+
+   .. py:method:: from_dict(impact_model: dict) -> ImpactModel
+      :staticmethod:
+
+
+      Convert dict to ImpactModel object.
+      :param impact_model: dict containing construction parameters of the impact
+      model.
+      :return: constructed impact model.
+
+
+
+   .. py:method:: from_tree_children() -> List[ImpactModel]
+
+      Create a new impact model for each of Impact Model tree root node's children.
+      Parameters of the impact model are copied, so unused parameters can remain in
+      newly created impact models.
+      :return: a list of newly created impact models.
+
+
+
+   .. py:method:: from_yaml(filepath: str) -> ImpactModel
+      :staticmethod:
+
+
+      Convert a yaml file to an ImpactModel object.
+      :param filepath: yaml file containing construction parameters of the impact
+      model.
+      :return: constructed impact model.
+
+
+
+   .. py:method:: get_nodes_scores(by_property: Optional[str] = None, **params) -> List[apparun.tree_node.NodeScores]
+
+      Get impact scores of the each node for each impact method, according to the
+      parameters.
+      :param by_property: if different than None, results will be pooled by nodes
+      sharing the same property value. Property name is the value of by_property.
+      :param params: value, or list of values of the impact model's parameters.
+      List of values must have the same length. If single values are provided
+      alongside a list of values, it will be duplicated to the appropriate length.
+      :return: a list of dict mapping impact names and corresponding score, or list
+      of scores, for each node/property value.
+
+
+
+   .. py:method:: get_scores(**params) -> apparun.score.LCIAScores
+
+      Get impact scores of the root node for each impact method, according to the
+      parameters.
+      :param params: value, or list of values of the impact model's parameters.
+      List of values must have the same length. If single values are provided
+      alongside a list of values, it will be duplicated to the appropriate length.
+      :return: a dict mapping impact names and corresponding score, or list of scores.
+
+
+
+   .. py:method:: get_sobol_s1_indices(n, all_nodes: bool = False) -> List[Dict[str, Union[str, numpy.ndarray]]]
+
+      Get sobol first indices, which corresponds to the contribution of each
+      parameter to total result variance.
+      :param n: number of samples to draw with monte carlo.
+      :param all_nodes: if True, sobol s1 indices will be computed for each node. Else,
+      only for root node (FU).
+      :return: unpivoted dataframe containing sobol first indices for each parameter,
+      impact method, and node name if all_nodes is True.
+
+
+
+   .. py:method:: get_uncertainty_nodes_scores(n) -> List[apparun.tree_node.NodeScores]
+
+
+   .. py:method:: get_uncertainty_scores(n) -> apparun.score.LCIAScores
+
+
+   .. py:method:: params_values(**params) -> apparun.parameters.ImpactModelParamsValues
+
+
+   .. py:method:: to_dict()
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:method:: to_yaml(filepath: str, compile_models: bool = True)
+
+      Convert self to yaml file.
+      :param filepath: filepath of the yaml file to create.
+      :param compile_models: if True, all models in tree nodes will be compiled.
+      ImpactModel will be bigger, but its execution will be faster at first use.
+
+
+
+   .. py:method:: transform_parameters(parameters: Dict[str, Union[List[Union[str, float]], Union[str, float]]]) -> Dict[str, Union[List[Union[str, float]], Union[str, float]]]
+
+      Transform all the parameters' values, so it can be fed into a node's compute
+      method. See ImpactModelParam's transform methods for more information.
+      :param parameters: a dict mapping parameters' name and parameters' value, or
+      list of values.
+      :return: a dict mapping parameters' name and parameters' transformed value, or
+      list of transformed values.
+
+
+
+   .. py:attribute:: metadata
+      :type:  Optional[ModelMetadata]
+      :value: None
+
+
+
+   .. py:property:: name
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[apparun.parameters.ImpactModelParams]
+      :value: None
+
+
+
+   .. py:property:: transformation_table
+      :type: Dict[str, Callable[[Union[str, float]], Dict[str, float]]]
+
+
+      Map each parameter to its transform method.
+      :return: a dict mapping impact model's parameters' name with their transform
+      method.
+
+
+
+   .. py:attribute:: tree
+      :type:  Optional[apparun.impact_tree.ImpactTreeNode]
+      :value: None
+
+
+
+.. py:class:: LcaPractitioner
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Information about a LCA practitioner.
+
+
+   .. py:attribute:: mail
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: organization
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:class:: LcaStudy
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Information about LCA study, in order to understand its scope and for
+   reproducibility.
+
+
+   .. py:attribute:: appabuild_version
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: date
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: description
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: license
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: link
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: version
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:class:: ModelMetadata
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Contain information various information about the context of production of the
+   impact model.
+
+
+   .. py:method:: from_dict(model_metadata: dict) -> ModelMetadata
+      :staticmethod:
+
+
+      Convert dict to ModelMetadata object.
+      :param model_metadata: dict containing construction parameters of the model
+      metadata.
+      :return: constructed model metadata.
+
+
+
+   .. py:method:: to_dict()
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:attribute:: author
+      :type:  Optional[LcaPractitioner]
+      :value: None
+
+
+
+   .. py:attribute:: report
+      :type:  Optional[LcaStudy]
+      :value: None
+
+
+
+   .. py:attribute:: reviewer
+      :type:  Optional[LcaPractitioner]
+      :value: None
+
+
+

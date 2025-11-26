@@ -1,0 +1,140 @@
+appabuild.model.builder
+=======================
+
+.. py:module:: appabuild.model.builder
+
+.. autoapi-nested-parse::
+
+   Module containing all required classes and methods to run LCA and build impact models.
+   Majority of the code is copied and adapted from lca_algebraic package.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   appabuild.model.builder.act_symbols
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   appabuild.model.builder.ImpactModelBuilder
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   appabuild.model.builder.to_bw_method
+
+
+Module Contents
+---------------
+
+.. py:class:: ImpactModelBuilder(user_database_name: str, functional_unit: str, methods: list[str], output_path: str, metadata: Optional[apparun.impact_model.ModelMetadata] = ModelMetadata(), compile_models: bool = True, parameters: Optional[apparun.parameters.ImpactModelParams] = None)
+
+   Main purpose of this class is to build Impact Models.
+
+   Initialize the model builder
+   :param user_database_name: name of the user database (foreground database)
+   :param functional_unit: uuid of the activity producing the reference flow.
+   :param methods: list of methods to generate arithmetic models for.
+       Expected method format is Appa Run method keys.
+   :param metadata: information about the LCA behind the impact model.
+       Should contain, or link to all information necessary for the end user's
+       proper understanding of the impact model.
+   :param parameters: an ImpactModelParam object will have to be created for each
+   parameter used in all used datasets. See ImpactModelParam attributes to know
+   required fields.
+
+
+   .. py:method:: actToExpression(act: bw2data.backends.peewee.Activity, impact_model_tree_node: apparun.impact_tree.ImpactTreeNode)
+      :staticmethod:
+
+
+      Determines the arithmetic model corresponding to activity's impact function of
+      model's parameters.
+      :param act: Brightway activity corresponding to the node.
+      :param impact_model_tree_node: node of the tree to store result in.
+      :return:
+
+
+
+   .. py:method:: build_impact_model(foreground_database: Optional[appabuild.database.databases.ForegroundDatabase] = None) -> apparun.impact_model.ImpactModel
+
+      Build an Impact Model, the model is a represented as a tree with the functional unit as its root
+      :param foreground_database: database containing the functional unit
+      :return: built impact model.
+
+
+
+   .. py:method:: build_impact_tree_and_parameters(functional_unit_bw: lca_algebraic.ActivityExtended, methods: List[str]) -> Tuple[apparun.impact_tree.ImpactTreeNode, apparun.parameters.ImpactModelParams]
+
+      Perform LCA, construct all arithmetic models and collect used parameters.
+      :param functional_unit_bw: Brightway activity producing the reference flow.
+      :param methods: list of methods to generate arithmetic models for. Expected
+      method format is Appa Run method keys.
+      :return: root node (corresponding to the reference flow) and used parameters.
+
+
+
+   .. py:method:: find_functional_unit_in_bw() -> lca_algebraic.ActivityExtended
+
+      Find the bw activity matching the functional unit in the bw database. A single activity
+      should be found as it is to be used as the root of the tree.
+
+
+
+   .. py:method:: from_yaml(lca_config_path: str) -> ImpactModelBuilder
+      :staticmethod:
+
+
+      Initializes a build with information contained in a YAML config file
+      :param lca_config_path: path to the file holding the config.
+      :return: the Impact Model Builder
+
+
+
+   .. py:attribute:: bw_user_database
+
+
+   .. py:attribute:: compile_models
+      :value: True
+
+
+
+   .. py:attribute:: functional_unit
+
+
+   .. py:attribute:: metadata
+
+
+   .. py:attribute:: methods
+
+
+   .. py:attribute:: output_path
+
+
+   .. py:attribute:: parameters
+      :value: None
+
+
+
+   .. py:attribute:: user_database_name
+
+
+.. py:function:: to_bw_method(method_full_name: apparun.impact_methods.MethodFullName) -> Tuple[str, str, str]
+
+   Find corresponding method as known by Brightway.
+   :param method_full_name: method to be found.
+   :return: Brightway representation of the method.
+
+
+.. py:data:: act_symbols
+

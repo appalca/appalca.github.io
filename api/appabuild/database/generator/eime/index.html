@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>appabuild.database.generator.eime &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/appabuild/database/generator/eime/index';</script>
+    <script src="../../../../../_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="appabuild.database.serialized_data" href="../../serialized_data/index.html" />
+    <link rel="prev" title="appabuild.database.generator" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="../../../../../_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../apparun/index.html">apparun</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../apparun/api/index.html">apparun.api</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../apparun/api/app/index.html">apparun.api.app</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../apparun/cli/index.html">apparun.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../apparun/cli/main/index.html">apparun.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/core/index.html">apparun.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/exceptions/index.html">apparun.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/expressions/index.html">apparun.expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/impact_methods/index.html">apparun.impact_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/impact_model/index.html">apparun.impact_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/impact_tree/index.html">apparun.impact_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/logger/index.html">apparun.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/parameters/index.html">apparun.parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/results/index.html">apparun.results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/score/index.html">apparun.score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../apparun/tree_node/index.html">apparun.tree_node</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../index.html">appabuild</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../cli/index.html">appabuild.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/database/index.html">appabuild.cli.database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/lca/index.html">appabuild.cli.lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../cli/main/index.html">appabuild.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../config/index.html">appabuild.config</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../config/appa_lca/index.html">appabuild.config.appa_lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../config/lca/index.html">appabuild.config.lca</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../index.html">appabuild.database</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../bw_databases/index.html">appabuild.database.bw_databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../databases/index.html">appabuild.database.databases</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="../index.html">appabuild.database.generator</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">appabuild.database.generator.eime</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../serialized_data/index.html">appabuild.database.serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_database_elements/index.html">appabuild.database.user_database_elements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exceptions/index.html">appabuild.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../logger/index.html">appabuild.logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../model/index.html">appabuild.model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/builder/index.html">appabuild.model.builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../model/graph/index.html">appabuild.model.graph</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../output/index.html">appabuild.output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../setup/index.html">appabuild.setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../python_api_usage/index.html">python_api_usage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">appabuild</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">appabuild.database</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">appabuild.database.generator</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">appabuild.database.generator.eime</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-appabuild.database.generator.eime">
+<span id="appabuild-database-generator-eime"></span><h1>appabuild.database.generator.eime<a class="headerlink" href="#module-appabuild.database.generator.eime" title="Link to this heading">#</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#appabuild.database.generator.eime.EimeV6DatasetDescription" title="appabuild.database.generator.eime.EimeV6DatasetDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EimeV6DatasetDescription</span></code></a></p></td>
+<td><p>Information required to build serialized activities from Eime V6 exports.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#appabuild.database.generator.eime.EimeV6Generator" title="appabuild.database.generator.eime.EimeV6Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EimeV6Generator</span></code></a></p></td>
+<td><p>Generate yaml datasets readily usable by Appa Build from configuration file and</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#appabuild.database.generator.eime.EimeV6Impact" title="appabuild.database.generator.eime.EimeV6Impact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EimeV6Impact</span></code></a></p></td>
+<td><p>Impact as generated by Eime V6 exports.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#appabuild.database.generator.eime.MethodEimeV6Name" title="appabuild.database.generator.eime.MethodEimeV6Name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MethodEimeV6Name</span></code></a></p></td>
+<td><p>Map EFV3 methods known by Appa Run with method names in Eime V6 exports.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">appabuild.database.generator.eime.</span></span><span class="sig-name descname"><span class="pre">EimeV6DatasetDescription</span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>Information required to build serialized activities from Eime V6 exports.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.to_serialized_activity">
+<span class="sig-name descname"><span class="pre">to_serialized_activity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchanges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange" title="appabuild.database.serialized_data.SerializedExchange"><span class="pre">appabuild.database.serialized_data.SerializedExchange</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity" title="appabuild.database.serialized_data.SerializedActivity"><span class="pre">appabuild.database.serialized_data.SerializedActivity</span></a></span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.to_serialized_activity" title="Link to this definition">#</a></dt>
+<dd><p>Convert to SerializedActivity.
+:param exchanges: list of SerializedExchange
+:return: SerializedActivity readily usable by Appa Build.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.amount" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.comment">
+<span class="sig-name descname"><span class="pre">comment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.comment" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.data_quality">
+<span class="sig-name descname"><span class="pre">data_quality</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.data_quality" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.database">
+<span class="sig-name descname"><span class="pre">database</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.database" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.include_in_tree">
+<span class="sig-name descname"><span class="pre">include_in_tree</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.include_in_tree" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.location">
+<span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.location" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.name_in_export">
+<span class="sig-name descname"><span class="pre">name_in_export</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.name_in_export" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.unit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6DatasetDescription.uuid">
+<span class="sig-name descname"><span class="pre">uuid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.uuid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Generator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">appabuild.database.generator.eime.</span></span><span class="sig-name descname"><span class="pre">EimeV6Generator</span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Generator" title="Link to this definition">#</a></dt>
+<dd><p>Generate yaml datasets readily usable by Appa Build from configuration file and
+Eime V6 impact exports. To generate the adequate export file, create a new Eime V6
+project, add a single phase (no particular phase name required), and add a copy of
+every dataset you want to export. Then, go to analysis page, tick all required PEF
+impact assessment method, and export the result as a xlsx file.
+Configuration file should contain all other information of the datasets you want
+to generate. Common fields across all datasets can be set once in a “default”
+dict. Specific fields can be provided as a list in a “datasets” dict. Each dataset
+should have a “name_in_export” key, which value is the name of the corresponding
+dataset in Eime V6 export.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Generator.generate_datasets">
+<span class="sig-name descname"><span class="pre">generate_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eime_v6_impacts_export_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets_description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity" title="appabuild.database.serialized_data.SerializedActivity"><span class="pre">appabuild.database.serialized_data.SerializedActivity</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Generator.generate_datasets" title="Link to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Generate yaml datasets readily usable by Appa Build.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eime_v6_impacts_export_path</strong> – Eime V6 impact exports. To generate the</p>
+</dd>
+</dl>
+<p>adequate export file, create a new Eime V6 project, add a single phase (no
+particular phase name required), and add a copy of every dataset you want to
+export. Then, go to analysis page, tick all required PEF impact assessment
+method, and export the result as a xlsx file.
+:param datasets_description: should contain all other information of the
+datasets you want to generate. Common fields across all datasets can be set
+once in a “default” dict. Specific fields can be provided as a list in a
+“datasets” dict. Each dataset should have a “name_in_export” key, which value
+is the name of the corresponding dataset in Eime V6 export.
+:return: list of SerializedActivity readily usable by Appa Build.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Generator.parse_impacts_export">
+<span class="sig-name descname"><span class="pre">parse_impacts_export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eime_v6_impacts_export_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#appabuild.database.generator.eime.EimeV6Impact" title="appabuild.database.generator.eime.EimeV6Impact"><span class="pre">EimeV6Impact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Generator.parse_impacts_export" title="Link to this definition">#</a></dt>
+<dd><p>Parse Eime V6 export to find every impact, with corresponding Eime V6 impact
+method name and dataset name.
+:param eime_v6_impacts_export_path: path to the export file exported by Eime V6.
+:return: a list of EimeV6impact present in the export file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Generator.save_datasets">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../serialized_data/index.html#appabuild.database.serialized_data.SerializedActivity" title="appabuild.database.serialized_data.SerializedActivity"><span class="pre">appabuild.database.serialized_data.SerializedActivity</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Generator.save_datasets" title="Link to this definition">#</a></dt>
+<dd><p>Export SerializedActivity generated to yaml files.
+:param datasets: SerialiazedActivity datasets to save
+:param output_path: directory to save yaml files.
+:return:</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Generator.impacts">
+<span class="sig-name descname"><span class="pre">impacts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#appabuild.database.generator.eime.EimeV6Impact" title="appabuild.database.generator.eime.EimeV6Impact"><span class="pre">EimeV6Impact</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Generator.impacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">appabuild.database.generator.eime.</span></span><span class="sig-name descname"><span class="pre">EimeV6Impact</span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>Impact as generated by Eime V6 exports.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact.get_method_full_name">
+<span class="sig-name descname"><span class="pre">get_method_full_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../../../apparun/impact_methods/index.html#apparun.impact_methods.MethodFullName" title="apparun.impact_methods.MethodFullName"><span class="pre">apparun.impact_methods.MethodFullName</span></a></span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact.get_method_full_name" title="Link to this definition">#</a></dt>
+<dd><p>Convert Eime V6 export method name to Appa Run method name.
+:return: Method name known by Appa Run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact.to_serialized_exchange">
+<span class="sig-name descname"><span class="pre">to_serialized_exchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../serialized_data/index.html#appabuild.database.serialized_data.SerializedExchange" title="appabuild.database.serialized_data.SerializedExchange"><span class="pre">appabuild.database.serialized_data.SerializedExchange</span></a></span></span><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact.to_serialized_exchange" title="Link to this definition">#</a></dt>
+<dd><p>Transforms the impact to a SerializedExchange. Each impact will be linked to a
+impact proxy exchange. And impact proxy is an elementary flow with a
+characterisation factor of 1 to the corresponding impact method. Impact proxies
+and corresponding characterisation factors are automatically generated at Appa
+Build start up.
+:param database: name of the user database the exchange will be attached to.
+Likely the database name of the calling Activity.
+:return: SerializedExchange readily usable by Appa Build.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact.amount">
+<span class="sig-name descname"><span class="pre">amount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact.amount" title="Link to this definition">#</a></dt>
+<dd><p>Amount of impact.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact.impact_name">
+<span class="sig-name descname"><span class="pre">impact_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact.impact_name" title="Link to this definition">#</a></dt>
+<dd><p>Method name in Eime V6 export.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.EimeV6Impact.name_in_export">
+<span class="sig-name descname"><span class="pre">name_in_export</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#appabuild.database.generator.eime.EimeV6Impact.name_in_export" title="Link to this definition">#</a></dt>
+<dd><p>Name of the dataset in Eime V6 export.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">appabuild.database.generator.eime.</span></span><span class="sig-name descname"><span class="pre">MethodEimeV6Name</span></span><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Map EFV3 methods known by Appa Run with method names in Eime V6 exports.</p>
+<p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ACIDIFICATION">
+<span class="sig-name descname"><span class="pre">EFV3_ACIDIFICATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-AP'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ACIDIFICATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE">
+<span class="sig-name descname"><span class="pre">EFV3_CLIMATE_CHANGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-GWP'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_BIOGENIC">
+<span class="sig-name descname"><span class="pre">EFV3_CLIMATE_CHANGE_BIOGENIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-GWPb'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_BIOGENIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_FOSSIL">
+<span class="sig-name descname"><span class="pre">EFV3_CLIMATE_CHANGE_FOSSIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-GWPf'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_FOSSIL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_LAND_USE">
+<span class="sig-name descname"><span class="pre">EFV3_CLIMATE_CHANGE_LAND_USE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-GWPlu'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_LAND_USE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ECOTOXICITY_FRESHWATER">
+<span class="sig-name descname"><span class="pre">EFV3_ECOTOXICITY_FRESHWATER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-CTUe'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ECOTOXICITY_FRESHWATER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ENERGY_RESOURCES">
+<span class="sig-name descname"><span class="pre">EFV3_ENERGY_RESOURCES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-ADPf'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ENERGY_RESOURCES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_FRESHWATER">
+<span class="sig-name descname"><span class="pre">EFV3_EUTROPHICATION_FRESHWATER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-Epf'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_FRESHWATER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_MARINE">
+<span class="sig-name descname"><span class="pre">EFV3_EUTROPHICATION_MARINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-Epm'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_MARINE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_TERRESTRIAL">
+<span class="sig-name descname"><span class="pre">EFV3_EUTROPHICATION_TERRESTRIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-Ept'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_TERRESTRIAL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_CARCINOGENIC">
+<span class="sig-name descname"><span class="pre">EFV3_HUMAN_TOXICITY_CARCINOGENIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-CTUh-c'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_CARCINOGENIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC">
+<span class="sig-name descname"><span class="pre">EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-CTUh-nc'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_IONISING_RADIATION">
+<span class="sig-name descname"><span class="pre">EFV3_IONISING_RADIATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-IR'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_IONISING_RADIATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_LAND_USE">
+<span class="sig-name descname"><span class="pre">EFV3_LAND_USE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-LU'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_LAND_USE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_MATERIAL_RESOURCES">
+<span class="sig-name descname"><span class="pre">EFV3_MATERIAL_RESOURCES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-ADPe'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_MATERIAL_RESOURCES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_OZONE_DEPLETION">
+<span class="sig-name descname"><span class="pre">EFV3_OZONE_DEPLETION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-ODP'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_OZONE_DEPLETION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PARTICULATE_MATTER_FORMATION">
+<span class="sig-name descname"><span class="pre">EFV3_PARTICULATE_MATTER_FORMATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-PM'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PARTICULATE_MATTER_FORMATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PHOTOCHEMICAL_OZONE_FORMATION">
+<span class="sig-name descname"><span class="pre">EFV3_PHOTOCHEMICAL_OZONE_FORMATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-POCP'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PHOTOCHEMICAL_OZONE_FORMATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="appabuild.database.generator.eime.MethodEimeV6Name.EFV3_WATER_USE">
+<span class="sig-name descname"><span class="pre">EFV3_WATER_USE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PEF-WU'</span></em><a class="headerlink" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_WATER_USE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">appabuild.database.generator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../serialized_data/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">appabuild.database.serialized_data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.to_serialized_activity"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.to_serialized_activity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.amount"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.amount</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.comment"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.comment</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.data_quality"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.data_quality</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.database"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.database</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.include_in_tree"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.include_in_tree</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.location"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.location</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.name"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.name_in_export"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.name_in_export</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.type"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.type</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.unit"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.unit</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6DatasetDescription.uuid"><code class="docutils literal notranslate"><span class="pre">EimeV6DatasetDescription.uuid</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Generator"><code class="docutils literal notranslate"><span class="pre">EimeV6Generator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Generator.generate_datasets"><code class="docutils literal notranslate"><span class="pre">EimeV6Generator.generate_datasets()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Generator.parse_impacts_export"><code class="docutils literal notranslate"><span class="pre">EimeV6Generator.parse_impacts_export()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Generator.save_datasets"><code class="docutils literal notranslate"><span class="pre">EimeV6Generator.save_datasets()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Generator.impacts"><code class="docutils literal notranslate"><span class="pre">EimeV6Generator.impacts</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact.get_method_full_name"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact.get_method_full_name()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact.to_serialized_exchange"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact.to_serialized_exchange()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact.amount"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact.amount</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact.impact_name"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact.impact_name</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.EimeV6Impact.name_in_export"><code class="docutils literal notranslate"><span class="pre">EimeV6Impact.name_in_export</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ACIDIFICATION"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_ACIDIFICATION</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_CLIMATE_CHANGE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_BIOGENIC"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_CLIMATE_CHANGE_BIOGENIC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_FOSSIL"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_CLIMATE_CHANGE_FOSSIL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_CLIMATE_CHANGE_LAND_USE"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_CLIMATE_CHANGE_LAND_USE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ECOTOXICITY_FRESHWATER"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_ECOTOXICITY_FRESHWATER</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_ENERGY_RESOURCES"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_ENERGY_RESOURCES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_FRESHWATER"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_EUTROPHICATION_FRESHWATER</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_MARINE"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_EUTROPHICATION_MARINE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_EUTROPHICATION_TERRESTRIAL"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_EUTROPHICATION_TERRESTRIAL</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_CARCINOGENIC"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_HUMAN_TOXICITY_CARCINOGENIC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_HUMAN_TOXICITY_NON_CARCINOGENIC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_IONISING_RADIATION"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_IONISING_RADIATION</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_LAND_USE"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_LAND_USE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_MATERIAL_RESOURCES"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_MATERIAL_RESOURCES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_OZONE_DEPLETION"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_OZONE_DEPLETION</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PARTICULATE_MATTER_FORMATION"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_PARTICULATE_MATTER_FORMATION</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_PHOTOCHEMICAL_OZONE_FORMATION"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_PHOTOCHEMICAL_OZONE_FORMATION</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appabuild.database.generator.eime.MethodEimeV6Name.EFV3_WATER_USE"><code class="docutils literal notranslate"><span class="pre">MethodEimeV6Name.EFV3_WATER_USE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

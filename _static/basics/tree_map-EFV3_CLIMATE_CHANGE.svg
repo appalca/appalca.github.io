@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="539.99994"
+   height="319.99997"
+   viewBox="0 0 539.99994 319.99997"
+   sodipodi:docname="tree_map-EFV3_CLIMATE_CHANGE.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 69.919968 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="700.15997 : 69.919968 : 1"
+       inkscape:persp3d-origin="350.07999 : -13.440033 : 1"
+       id="perspective405" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M 0,0 H 2187.5 V 1562.5 H 0 Z"
+         clip-rule="evenodd"
+         id="path16" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath30">
+      <path
+         d="M 0,0 H 2187.5 V 1562.5 H 0 Z"
+         clip-rule="evenodd"
+         id="path28" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.6734645"
+     inkscape:cx="270.39714"
+     inkscape:cy="150.58581"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="118"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10">
+    <inkscape:page
+       x="0"
+       y="0"
+       id="page8"
+       width="539.99994"
+       height="319.99997" />
+  </sodipodi:namedview>
+  <g
+     id="g10"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(0.31999998,0,0,0.31999998,-79.999995,-99.999994)">
+    <g
+       id="g24">
+      <g
+         id="g26"
+         clip-path="url(#clipPath30)">
+        <g
+           id="g32"
+           transform="scale(3.125)">
+          <path
+             d="M 80,100 H 620 V 420 H 80 Z"
+             style="fill:#d3d3d3;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path34" />
+        </g>
+        <g
+           id="g36"
+           transform="matrix(3.125,0,0,3.125,268.75,359.375)">
+          <text
+             xml:space="preserve"
+             style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#2a3f5f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text40"><tspan
+               x="0 7.4765625 14.578125 17.871094 25.347656 28.640625 35.847656 43.476562 50.683594 53.976562 61.605469 69.082031 76.558594 84.152344 91.78125 98.033203 105.62695 108.91992"
+               y="0"
+               sodipodi:role="line"
+               id="tspan38">nvidia_ai_gpu_chip</tspan></text>
+        </g>
+        <g
+           id="g42"
+           transform="scale(3.125)">
+          <path
+             d="M 86,124 H 548.62543 V 414 H 86 Z"
+             style="fill:#636efa;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path44" />
+          <path
+             d="M 86,124 H 548.62543 V 414 H 86 Z"
+             style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path46" />
+        </g>
+        <g
+           id="g48"
+           transform="matrix(3.125,0,0,3.125,278.125,434.375)">
+          <text
+             xml:space="preserve"
+             style="font-variant:normal;font-weight:normal;font-size:12px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text52"><tspan
+               x="0 7.4765625 14.578125 17.871094 25.347656 28.640625 35.847656 43.476562 50.953125 58.429688 66.023438 73.652344 79.904297 87.498047 90.791016 98.267578 105.89648 117.56836 124.77539 132.36914 139.96289 144.18164 151.38867 157.64062 162.36914 169.96289 175.08398 178.37695 185.9707"
+               y="0"
+               sodipodi:role="line"
+               id="tspan50">nvidia_gpu_chip_manufacturing</tspan></text>
+        </g>
+        <g
+           id="g54"
+           transform="scale(3.125)">
+          <path
+             d="M 551.62543,124 H 614 v 290 h -62.37457 z"
+             style="fill:#ef553b;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path56" />
+          <path
+             d="M 551.62543,124 H 614 v 290 h -62.37457 z"
+             style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path58" />
+        </g>
+        <g
+           id="g60"
+           transform="matrix(3.125,0,0,3.125,1733.2045,422.5192)">
+          <text
+             xml:space="preserve"
+             style="font-variant:normal;font-weight:normal;font-size:8.2px;font-family:Verdana;-inkscape-font-specification:Verdana;writing-mode:lr-tb;fill:#444444;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text64"><tspan
+               x="0 4.9248047 7.1749878 12.388062 17.577118 21.849274 26.734039 31.947113 37.056091 42.245148 47.169952 51.442108"
+               y="0"
+               sodipodi:role="line"
+               id="tspan62">ai_use_phase</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

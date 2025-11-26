@@ -1,0 +1,66 @@
+appabuild.exceptions
+====================
+
+.. py:module:: appabuild.exceptions
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   appabuild.exceptions.BwDatabaseError
+   appabuild.exceptions.BwMethodError
+   appabuild.exceptions.ParameterError
+   appabuild.exceptions.SerializedDataError
+
+
+Module Contents
+---------------
+
+.. py:exception:: BwDatabaseError(*args, exception_type=None, **kwargs)
+
+   Bases: :py:obj:`Exception`
+
+
+   Raised when any problem concerning the data (Database, Exchanges, Activities) is
+   encountered.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:attribute:: exception_type
+      :value: None
+
+
+
+.. py:exception:: BwMethodError
+
+   Bases: :py:obj:`Exception`
+
+
+   Raised when any problem concerning the methods is encountered.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+.. py:exception:: ParameterError
+
+   Bases: :py:obj:`Exception`
+
+
+   Raised when any problem concerning impact model parameterization is encountered.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+.. py:exception:: SerializedDataError
+
+   Bases: :py:obj:`Exception`
+
+
+   Raised when any problem concerning yaml/json dataset is encountered.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+

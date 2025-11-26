@@ -1,0 +1,22 @@
+appabuild
+=========
+
+.. py:module:: appabuild
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/appabuild/cli/index
+   /api/appabuild/config/index
+   /api/appabuild/database/index
+   /api/appabuild/exceptions/index
+   /api/appabuild/logger/index
+   /api/appabuild/model/index
+   /api/appabuild/output/index
+   /api/appabuild/setup/index
+
+

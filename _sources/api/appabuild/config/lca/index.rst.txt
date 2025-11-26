@@ -1,0 +1,146 @@
+appabuild.config.lca
+====================
+
+.. py:module:: appabuild.config.lca
+
+.. autoapi-nested-parse::
+
+   Module containing all the classes and methods to load and validate LCA configurations.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   appabuild.config.lca.FunctionalUnit
+   appabuild.config.lca.LCAConfig
+   appabuild.config.lca.Model
+   appabuild.config.lca.Scope
+
+
+Module Contents
+---------------
+
+.. py:class:: FunctionalUnit
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Information about the functional unit corresponding to the activity that produces the reference flow.
+   The functional unit should be stored in the foreground database.
+
+   Attributes:
+       name: name of the functional unit to use, make sure that the name is unique.
+       database: name of the database (defined in the Appa LCA configuration) the functional unit will be loaded from.
+
+
+   .. py:attribute:: database
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+.. py:class:: LCAConfig
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   An LCA configuration, contains information about the LCA and its corresponding impact model.
+   One LCA configuration is needed per LCA performed.
+
+   Attributes:
+       scope: the scope of the LCA.
+       model: information about the corresponding impact model.
+
+
+   .. py:method:: from_yaml(lca_conf_path: str) -> LCAConfig
+      :staticmethod:
+
+
+      Load an LCA config from its yaml file.
+      If the config is invalid, raise a ValidationError.
+
+
+
+   .. py:attribute:: model
+      :type:  Model
+
+
+   .. py:attribute:: scope
+      :type:  Scope
+
+
+.. py:class:: Model
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Contain information about an impact model, like its metadata, the name of the output file
+   or the free parameters needed by the functional unit used in the impact model.
+
+   Attributes:
+       name: name of the yaml file corresponding to the impact model (do not include file extension).
+       path: output folder for saving impact model.
+       compile: if True, precompute the symbolic expressions needed by Appa Run and store them in the impact model.
+       metadata: information about the impact model, meant to help the user of it to better understand the LCA leading to the impact model.
+       parameters: information about all free parameters needed by the functional unit of the impact model.
+
+
+   .. py:method:: dump_parameters() -> List[dict]
+
+
+   .. py:method:: parse_parameters(parameters: List[dict]) -> List[apparun.parameters.ImpactModelParam]
+      :classmethod:
+
+
+
+   .. py:attribute:: compile
+      :type:  bool
+
+
+   .. py:attribute:: metadata
+      :type:  Optional[apparun.impact_model.ModelMetadata]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[List[apparun.parameters.ImpactModelParam]]
+      :value: []
+
+
+
+   .. py:attribute:: path
+      :type:  Optional[str]
+      :value: '.'
+
+
+
+.. py:class:: Scope
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Scope of an LCA of the corresponding impact model, define the main characteristics of it.
+
+   Attributes:
+       fu: functional unit used in this scope.
+       methods: LCIA methods to cover. Appa LCA uses a mapping between short keys and full LCIA method names as available in Brightway.
+
+
+   .. py:attribute:: fu
+      :type:  FunctionalUnit
+
+
+   .. py:attribute:: methods
+      :type:  List[str]
+
+

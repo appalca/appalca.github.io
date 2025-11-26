@@ -1,0 +1,374 @@
+apparun.expressions
+===================
+
+.. py:module:: apparun.expressions
+
+.. autoapi-nested-parse::
+
+   This module contains all the functions and classes used to manipulate the expressions
+   for the parameters of an impact model.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.expressions.ParamEnumConst
+   apparun.expressions.ParamEnumExpr
+   apparun.expressions.ParamExpr
+   apparun.expressions.ParamFloatConst
+   apparun.expressions.ParamFloatExpr
+   apparun.expressions.ParamsValuesSet
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.expressions.parse_expr
+   apparun.expressions.validate_expr
+
+
+Module Contents
+---------------
+
+.. py:class:: ParamEnumConst
+
+   Bases: :py:obj:`ParamExpr`
+
+
+   Represents an constant enum type.
+
+
+   .. py:method:: evaluate(dependencies_values: Dict[str, Union[float, int, str]]) -> Union[float, int, str]
+
+      Evaluate this expression based on the values of its dependencies.
+
+      :param dependencies_values: the values of the dependencies of this expression.
+      :returns: the evaluated value for this expression.
+
+
+
+   .. py:property:: is_complex
+      :type: bool
+
+
+      :returns: True if the expression is a complex one, else False.
+
+
+
+   .. py:property:: raw_version
+
+      :returns: the raw version of the expression.
+
+
+
+   .. py:attribute:: value
+      :type:  str
+
+
+.. py:class:: ParamEnumExpr
+
+   Bases: :py:obj:`ParamExpr`
+
+
+   Represents an enum type expression.
+
+
+   .. py:method:: evaluate(dependencies_values: Dict[str, Union[float, int, str]]) -> Union[float, int, str]
+
+      Evaluate this expression based on the values of its dependencies.
+
+      :param dependencies_values: the values of the dependencies of this expression.
+      :returns: the evaluated value for this expression.
+
+
+
+   .. py:method:: parse_sub_exprs(data: Any, info: pydantic_core.core_schema.ValidationInfo) -> Any
+      :classmethod:
+
+
+      Validator use to parse the sub expressions.
+
+
+
+   .. py:method:: validate_options(data: Any, info: pydantic_core.core_schema.ValidationInfo) -> Any
+      :classmethod:
+
+
+      Check the expression contains all the options of the parameter used in it
+      with no extra options. Also check that each option has an associated sub expression.
+
+
+
+   .. py:method:: validate_param(data: Any, info: pydantic_core.core_schema.ValidationInfo) -> Any
+      :classmethod:
+
+
+      Check the parameter used in the expression is an existing
+      parameter of the impact model and that is an enum type parameter.
+
+
+
+   .. py:property:: dependencies
+      :type: List[str]
+
+
+      :returns: the list of the parameters whose are the dependencies of this expression.
+
+
+
+   .. py:property:: is_complex
+      :type: bool
+
+
+      :returns: True if the expression is a complex one, else False.
+
+
+
+   .. py:attribute:: options
+      :type:  Dict[str, ParamExpr]
+
+
+   .. py:attribute:: param
+      :type:  str
+
+
+   .. py:property:: raw_version
+
+      :returns: the raw version of the expression.
+
+
+
+.. py:class:: ParamExpr
+
+   Bases: :py:obj:`pydantic.BaseModel`, :py:obj:`abc.ABC`
+
+
+   Base class for the expressions used as values for the parameters of
+   an impact model.
+
+
+   .. py:method:: evaluate(dependencies_values: Dict[str, Union[float, int, str]]) -> Union[float, int, str]
+      :abstractmethod:
+
+
+      Evaluate this expression based on the values of its dependencies.
+
+      :param dependencies_values: the values of the dependencies of this expression.
+      :returns: the evaluated value for this expression.
+
+
+
+   .. py:method:: parse(raw_expr: Union[float, int, str, dict], param: str, parameters: apparun.parameters.ImpactModelParams) -> ParamExpr
+      :classmethod:
+
+
+      Parse an expression.
+
+      :param raw_expr: the expression to parse.
+      :param param: name of the parameter associated to this expression.
+      :param parameters: information about the parameters of the impact model.
+
+      :returns: the parsed expression.
+
+
+
+   .. py:property:: dependencies
+      :type: List[str]
+
+
+      :returns: the list of the parameters whose are the dependencies of this expression.
+
+
+
+   .. py:property:: is_complex
+      :type: bool
+
+      :abstractmethod:
+
+
+      :returns: True if the expression is a complex one, else False.
+
+
+
+   .. py:property:: raw_version
+      :abstractmethod:
+
+
+      :returns: the raw version of the expression.
+
+
+
+.. py:class:: ParamFloatConst
+
+   Bases: :py:obj:`ParamExpr`
+
+
+   Represents a float type constant.
+
+
+   .. py:method:: evaluate(dependencies_values: Dict[str, Union[float, int, str]]) -> Union[float, int, str]
+
+      Evaluate this expression based on the values of its dependencies.
+
+      :param dependencies_values: the values of the dependencies of this expression.
+      :returns: the evaluated value for this expression.
+
+
+
+   .. py:property:: is_complex
+      :type: bool
+
+
+      :returns: True if the expression is a complex one, else False.
+
+
+
+   .. py:property:: raw_version
+
+      :returns: the raw version of the expression.
+
+
+
+   .. py:attribute:: value
+      :type:  float
+
+
+.. py:class:: ParamFloatExpr
+
+   Bases: :py:obj:`ParamExpr`
+
+
+   Represents a float type expression.
+
+
+   .. py:method:: evaluate(dependencies_values: Dict[str, Union[float, int, str]]) -> Union[float, int, str]
+
+      Evaluate this expression based on the values of its dependencies.
+
+      :param dependencies_values: the values of the dependencies of this expression.
+      :returns: the evaluated value for this expression.
+
+
+
+   .. py:method:: validate_dependencies(info: pydantic_core.core_schema.ValidationInfo) -> Self
+
+      Check all the dependencies of the expression are
+      existing parameters of the impact model and are of type float.
+
+      :parameter info: useful information used for validating data.
+
+
+
+   .. py:method:: validate_expr(expr: str) -> str
+      :classmethod:
+
+
+      Check that the expression is a valid float expression.
+
+      :parameter expr: the expression to validate.
+
+
+
+   .. py:property:: dependencies
+      :type: List[str]
+
+
+      :returns: the list of the parameters whose are the dependencies of this expression.
+
+
+
+   .. py:attribute:: expr
+      :type:  str
+
+
+   .. py:property:: is_complex
+      :type: bool
+
+
+      :returns: True if the expression is a complex one, else False.
+
+
+
+   .. py:property:: raw_version
+
+      :returns: the raw version of the expression.
+
+
+
+.. py:class:: ParamsValuesSet
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Represents a set of expressions for a set of parameters of an impact model.
+   Each expression in the set is associated to one and only one parameter.
+
+
+   .. py:method:: build(expressions: Dict[str, Union[float, int, str, dict]], parameters: apparun.parameters.ImpactModelParams) -> ParamsValuesSet
+      :classmethod:
+
+
+      Builder function to create instance of this class.
+
+      :param expressions: a set of expressions, each expression is associated to one parameter.
+      :param parameters: parameters associated to the expressions.
+      :returns: an instance of this class with the given expressions.
+
+
+
+   .. py:method:: dependencies_cycle() -> List[str]
+
+      Detect if there is a dependencies cycle between the expressions.
+
+      :returns: the list of the parameters whose expressions are creating a dependencies cycle
+      or an empty list if there is no cycle.
+
+
+
+   .. py:method:: evaluate() -> Dict[str, Union[float, int, str]]
+
+      Evaluate the value of each expression, there must be no dependency cycle
+      in the set. If there is a dependency cycle, a ValueError is raised.
+
+      :returns: the value of each expression, the keys are the name of the parameter associated to the expression.
+
+
+
+   .. py:property:: dependencies_graph
+      :type: networkx.DiGraph
+
+
+      Build the dependencies graph of the expressions.
+
+      :returns: an oriented graph representing the dependencies between the expressions.
+
+
+
+   .. py:attribute:: expressions
+      :type:  Dict[str, ParamExpr]
+
+
+.. py:function:: parse_expr(expr: Any) -> sympy.Expr
+
+   Parses an arithmetic expression using sympy.
+   Raises an error if the expression is invalid.
+
+   :param expr: an expression.
+   :returns: a sympy expression object.
+
+
+.. py:function:: validate_expr(expr: str) -> bool
+
+   Check if an expression is a valid arithmetic expression that
+   can be used in an impact model. Allowed functions inside an
+   expression are only functions of the modules math and numpy.
+
+   :param expr: an expression.
+   :returns: True if the expression is a valid arithmetic expression, else False.
+
+

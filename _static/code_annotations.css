@@ -1,0 +1,22 @@
+:root {
+    --code-annotation-offset: 0.5em;
+}
+
+.code-annotation-icon {
+    position: relative;
+}
+
+.code-annotation-text {
+    position: absolute;
+    left: var(--code-annotation-offset);
+    top: var(--code-annotation-offset);
+    width: min(75ch, 70vw);
+    padding: 1em 3ch;
+    z-index: 1;
+
+    background-color: white;
+    border-radius: 0.1em;
+    text-wrap: initial;
+    text-align: justify;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

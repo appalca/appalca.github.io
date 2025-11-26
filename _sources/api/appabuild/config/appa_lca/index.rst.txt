@@ -1,0 +1,87 @@
+appabuild.config.appa_lca
+=========================
+
+.. py:module:: appabuild.config.appa_lca
+
+.. autoapi-nested-parse::
+
+   Module containing all the classes and methods to load and validate Appa LCA configurations.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   appabuild.config.appa_lca.AppaLCAConfig
+   appabuild.config.appa_lca.DatabaseConfig
+
+
+Module Contents
+---------------
+
+.. py:class:: AppaLCAConfig
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   An Appa LCA configuration, contains information used to set up a Brightway's
+   environment and specify the paths of the background and foreground databases.
+
+   Attributes:
+       project_name: name used by Brightway to initialize the environment.
+       databases: databases to import, only one foreground database is required and ecoinvent database is optional.
+
+
+   .. py:method:: from_yaml(appa_lca_conf_path: str) -> AppaLCAConfig
+      :staticmethod:
+
+
+      Load an Appa LCA configuration from its yaml file.
+      If the configuration is invalid, raise a ValidationError.
+
+
+
+   .. py:method:: validate_databases(databases)
+      :classmethod:
+
+
+      Check that the foreground database is in the databases to import,
+      if not raise a PydanticCustomError of type key_error.
+
+
+
+   .. py:attribute:: databases
+      :type:  Dict[str, DatabaseConfig]
+
+
+   .. py:attribute:: project_name
+      :type:  str
+
+
+.. py:class:: DatabaseConfig
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Database entry in an Appa LCA configuration.
+
+   Attributes:
+       name: name of the database.
+       path: root path of the database elements.
+
+
+   .. py:method:: path_exists(path: str)
+      :classmethod:
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: path
+      :type:  str
+
+

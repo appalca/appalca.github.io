@@ -1,0 +1,1107 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>apparun.expressions &#8212; Appa LCA 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=dceb0b33" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_annotations.css?v=7b79c8c0" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/apparun/expressions/index';</script>
+    <script src="../../../_static/code_annotations.js?v=48b8a54c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="apparun.impact_methods" href="../impact_methods/index.html" />
+    <link rel="prev" title="apparun.exceptions" href="../exceptions/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/cea.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/cea.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Appa LCA framework</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../home/index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../basics/index.html">
+    Basics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../in_depth/index.html">
+    In depth
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../about/index.html">
+    About
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/appalca/appalca.github.io" title="Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Github</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">apparun</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/index.html">apparun.api</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/app/index.html">apparun.api.app</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cli/index.html">apparun.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cli/main/index.html">apparun.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../core/index.html">apparun.core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/index.html">apparun.exceptions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">apparun.expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_methods/index.html">apparun.impact_methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_model/index.html">apparun.impact_model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../impact_tree/index.html">apparun.impact_tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logger/index.html">apparun.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameters/index.html">apparun.parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../results/index.html">apparun.results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../score/index.html">apparun.score</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tree_node/index.html">apparun.tree_node</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../appabuild/index.html">appabuild</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/cli/index.html">appabuild.cli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/database/index.html">appabuild.cli.database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/lca/index.html">appabuild.cli.lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/cli/main/index.html">appabuild.cli.main</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/config/index.html">appabuild.config</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/config/appa_lca/index.html">appabuild.config.appa_lca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/config/lca/index.html">appabuild.config.lca</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/database/index.html">appabuild.database</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/bw_databases/index.html">appabuild.database.bw_databases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/databases/index.html">appabuild.database.databases</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../appabuild/database/generator/index.html">appabuild.database.generator</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../appabuild/database/generator/eime/index.html">appabuild.database.generator.eime</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/serialized_data/index.html">appabuild.database.serialized_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/database/user_database_elements/index.html">appabuild.database.user_database_elements</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/exceptions/index.html">appabuild.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/logger/index.html">appabuild.logger</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../appabuild/model/index.html">appabuild.model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/model/builder/index.html">appabuild.model.builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../appabuild/model/graph/index.html">appabuild.model.graph</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/output/index.html">appabuild.output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appabuild/setup/index.html">appabuild.setup</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_api_usage/index.html">python_api_usage</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">apparun</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">apparun.expressions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-apparun.expressions">
+<span id="apparun-expressions"></span><h1>apparun.expressions<a class="headerlink" href="#module-apparun.expressions" title="Link to this heading">#</a></h1>
+<p>This module contains all the functions and classes used to manipulate the expressions
+for the parameters of an impact model.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.expressions.ParamEnumConst" title="apparun.expressions.ParamEnumConst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamEnumConst</span></code></a></p></td>
+<td><p>Represents an constant enum type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.expressions.ParamEnumExpr" title="apparun.expressions.ParamEnumExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamEnumExpr</span></code></a></p></td>
+<td><p>Represents an enum type expression.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamExpr</span></code></a></p></td>
+<td><p>Base class for the expressions used as values for the parameters of</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.expressions.ParamFloatConst" title="apparun.expressions.ParamFloatConst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamFloatConst</span></code></a></p></td>
+<td><p>Represents a float type constant.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.expressions.ParamFloatExpr" title="apparun.expressions.ParamFloatExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamFloatExpr</span></code></a></p></td>
+<td><p>Represents a float type expression.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.expressions.ParamsValuesSet" title="apparun.expressions.ParamsValuesSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamsValuesSet</span></code></a></p></td>
+<td><p>Represents a set of expressions for a set of parameters of an impact model.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apparun.expressions.parse_expr" title="apparun.expressions.parse_expr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_expr</span></code></a>(→ sympy.Expr)</p></td>
+<td><p>Parses an arithmetic expression using sympy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apparun.expressions.validate_expr" title="apparun.expressions.validate_expr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_expr</span></code></a>(→ bool)</p></td>
+<td><p>Check if an expression is a valid arithmetic expression that</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumConst">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamEnumConst</span></span><a class="headerlink" href="#apparun.expressions.ParamEnumConst" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamExpr</span></code></a></p>
+<p>Represents an constant enum type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumConst.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependencies_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamEnumConst.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate this expression based on the values of its dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dependencies_values</strong> – the values of the dependencies of this expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the evaluated value for this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumConst.is_complex">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#apparun.expressions.ParamEnumConst.is_complex" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the expression is a complex one, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumConst.raw_version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_version</span></span><a class="headerlink" href="#apparun.expressions.ParamEnumConst.raw_version" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the raw version of the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumConst.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apparun.expressions.ParamEnumConst.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamEnumExpr</span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamExpr</span></code></a></p>
+<p>Represents an enum type expression.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependencies_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate this expression based on the values of its dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dependencies_values</strong> – the values of the dependencies of this expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the evaluated value for this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.parse_sub_exprs">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_sub_exprs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic_core.core_schema.ValidationInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.parse_sub_exprs" title="Link to this definition">#</a></dt>
+<dd><p>Validator use to parse the sub expressions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.validate_options">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic_core.core_schema.ValidationInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.validate_options" title="Link to this definition">#</a></dt>
+<dd><p>Check the expression contains all the options of the parameter used in it
+with no extra options. Also check that each option has an associated sub expression.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.validate_param">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic_core.core_schema.ValidationInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.validate_param" title="Link to this definition">#</a></dt>
+<dd><p>Check the parameter used in the expression is an existing
+parameter of the impact model and that is an enum type parameter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.dependencies">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.dependencies" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the list of the parameters whose are the dependencies of this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.is_complex">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.is_complex" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the expression is a complex one, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.options">
+<span class="sig-name descname"><span class="pre">options</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><span class="pre">ParamExpr</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.options" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.param">
+<span class="sig-name descname"><span class="pre">param</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.param" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamEnumExpr.raw_version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_version</span></span><a class="headerlink" href="#apparun.expressions.ParamEnumExpr.raw_version" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the raw version of the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamExpr</span></span><a class="headerlink" href="#apparun.expressions.ParamExpr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for the expressions used as values for the parameters of
+an impact model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr.evaluate">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependencies_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamExpr.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate this expression based on the values of its dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dependencies_values</strong> – the values of the dependencies of this expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the evaluated value for this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr.parse">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../parameters/index.html#apparun.parameters.ImpactModelParams" title="apparun.parameters.ImpactModelParams"><span class="pre">apparun.parameters.ImpactModelParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><span class="pre">ParamExpr</span></a></span></span><a class="headerlink" href="#apparun.expressions.ParamExpr.parse" title="Link to this definition">#</a></dt>
+<dd><p>Parse an expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_expr</strong> – the expression to parse.</p></li>
+<li><p><strong>param</strong> – name of the parameter associated to this expression.</p></li>
+<li><p><strong>parameters</strong> – information about the parameters of the impact model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the parsed expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr.dependencies">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.expressions.ParamExpr.dependencies" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the list of the parameters whose are the dependencies of this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr.is_complex">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#apparun.expressions.ParamExpr.is_complex" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Abstractmethod<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the expression is a complex one, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamExpr.raw_version">
+<em class="property"><span class="k"><span class="pre">abstract</span></span><span class="w"> </span><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_version</span></span><a class="headerlink" href="#apparun.expressions.ParamExpr.raw_version" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the raw version of the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatConst">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamFloatConst</span></span><a class="headerlink" href="#apparun.expressions.ParamFloatConst" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamExpr</span></code></a></p>
+<p>Represents a float type constant.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatConst.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependencies_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamFloatConst.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate this expression based on the values of its dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dependencies_values</strong> – the values of the dependencies of this expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the evaluated value for this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatConst.is_complex">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#apparun.expressions.ParamFloatConst.is_complex" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the expression is a complex one, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatConst.raw_version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_version</span></span><a class="headerlink" href="#apparun.expressions.ParamFloatConst.raw_version" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the raw version of the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatConst.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#apparun.expressions.ParamFloatConst.value" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamFloatExpr</span></span><a class="headerlink" href="#apparun.expressions.ParamFloatExpr" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParamExpr</span></code></a></p>
+<p>Represents a float type expression.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependencies_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate this expression based on the values of its dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dependencies_values</strong> – the values of the dependencies of this expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the evaluated value for this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.validate_dependencies">
+<span class="sig-name descname"><span class="pre">validate_dependencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pydantic_core.core_schema.ValidationInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.validate_dependencies" title="Link to this definition">#</a></dt>
+<dd><p>Check all the dependencies of the expression are
+existing parameters of the impact model and are of type float.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>info</strong> – useful information used for validating data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.validate_expr">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.validate_expr" title="Link to this definition">#</a></dt>
+<dd><p>Check that the expression is a valid float expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>expr</strong> – the expression to validate.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.dependencies">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.dependencies" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the list of the parameters whose are the dependencies of this expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.expr">
+<span class="sig-name descname"><span class="pre">expr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.expr" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.is_complex">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.is_complex" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the expression is a complex one, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamFloatExpr.raw_version">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_version</span></span><a class="headerlink" href="#apparun.expressions.ParamFloatExpr.raw_version" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the raw version of the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">ParamsValuesSet</span></span><a class="headerlink" href="#apparun.expressions.ParamsValuesSet" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">pydantic.BaseModel</span></code></p>
+<p>Represents a set of expressions for a set of parameters of an impact model.
+Each expression in the set is associated to one and only one parameter.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet.build">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expressions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../parameters/index.html#apparun.parameters.ImpactModelParams" title="apparun.parameters.ImpactModelParams"><span class="pre">apparun.parameters.ImpactModelParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apparun.expressions.ParamsValuesSet" title="apparun.expressions.ParamsValuesSet"><span class="pre">ParamsValuesSet</span></a></span></span><a class="headerlink" href="#apparun.expressions.ParamsValuesSet.build" title="Link to this definition">#</a></dt>
+<dd><p>Builder function to create instance of this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expressions</strong> – a set of expressions, each expression is associated to one parameter.</p></li>
+<li><p><strong>parameters</strong> – parameters associated to the expressions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an instance of this class with the given expressions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet.dependencies_cycle">
+<span class="sig-name descname"><span class="pre">dependencies_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.expressions.ParamsValuesSet.dependencies_cycle" title="Link to this definition">#</a></dt>
+<dd><p>Detect if there is a dependencies cycle between the expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the list of the parameters whose expressions are creating a dependencies cycle</p>
+</dd>
+</dl>
+<p>or an empty list if there is no cycle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apparun.expressions.ParamsValuesSet.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluate the value of each expression, there must be no dependency cycle
+in the set. If there is a dependency cycle, a ValueError is raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the value of each expression, the keys are the name of the parameter associated to the expression.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet.dependencies_graph">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dependencies_graph</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">networkx.DiGraph</span></em><a class="headerlink" href="#apparun.expressions.ParamsValuesSet.dependencies_graph" title="Link to this definition">#</a></dt>
+<dd><p>Build the dependencies graph of the expressions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an oriented graph representing the dependencies between the expressions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apparun.expressions.ParamsValuesSet.expressions">
+<span class="sig-name descname"><span class="pre">expressions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#apparun.expressions.ParamExpr" title="apparun.expressions.ParamExpr"><span class="pre">ParamExpr</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#apparun.expressions.ParamsValuesSet.expressions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="apparun.expressions.parse_expr">
+<span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">parse_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#apparun.expressions.parse_expr" title="Link to this definition">#</a></dt>
+<dd><p>Parses an arithmetic expression using sympy.
+Raises an error if the expression is invalid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>expr</strong> – an expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a sympy expression object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="apparun.expressions.validate_expr">
+<span class="sig-prename descclassname"><span class="pre">apparun.expressions.</span></span><span class="sig-name descname"><span class="pre">validate_expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#apparun.expressions.validate_expr" title="Link to this definition">#</a></dt>
+<dd><p>Check if an expression is a valid arithmetic expression that
+can be used in an impact model. Allowed functions inside an
+expression are only functions of the modules math and numpy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>expr</strong> – an expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the expression is a valid arithmetic expression, else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../exceptions/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">apparun.exceptions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../impact_methods/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">apparun.impact_methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumConst"><code class="docutils literal notranslate"><span class="pre">ParamEnumConst</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumConst.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamEnumConst.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumConst.is_complex"><code class="docutils literal notranslate"><span class="pre">ParamEnumConst.is_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumConst.raw_version"><code class="docutils literal notranslate"><span class="pre">ParamEnumConst.raw_version</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumConst.value"><code class="docutils literal notranslate"><span class="pre">ParamEnumConst.value</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.parse_sub_exprs"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.parse_sub_exprs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.validate_options"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.validate_options()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.validate_param"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.validate_param()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.dependencies"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.dependencies</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.is_complex"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.is_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.options"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.options</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.param"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.param</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamEnumExpr.raw_version"><code class="docutils literal notranslate"><span class="pre">ParamEnumExpr.raw_version</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr"><code class="docutils literal notranslate"><span class="pre">ParamExpr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamExpr.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr.parse"><code class="docutils literal notranslate"><span class="pre">ParamExpr.parse()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr.dependencies"><code class="docutils literal notranslate"><span class="pre">ParamExpr.dependencies</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr.is_complex"><code class="docutils literal notranslate"><span class="pre">ParamExpr.is_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamExpr.raw_version"><code class="docutils literal notranslate"><span class="pre">ParamExpr.raw_version</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatConst"><code class="docutils literal notranslate"><span class="pre">ParamFloatConst</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatConst.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamFloatConst.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatConst.is_complex"><code class="docutils literal notranslate"><span class="pre">ParamFloatConst.is_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatConst.raw_version"><code class="docutils literal notranslate"><span class="pre">ParamFloatConst.raw_version</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatConst.value"><code class="docutils literal notranslate"><span class="pre">ParamFloatConst.value</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.validate_dependencies"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.validate_dependencies()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.validate_expr"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.validate_expr()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.dependencies"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.dependencies</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.expr"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.expr</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.is_complex"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.is_complex</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamFloatExpr.raw_version"><code class="docutils literal notranslate"><span class="pre">ParamFloatExpr.raw_version</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet.build"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet.build()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet.dependencies_cycle"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet.dependencies_cycle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet.evaluate"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet.evaluate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet.dependencies_graph"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet.dependencies_graph</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.ParamsValuesSet.expressions"><code class="docutils literal notranslate"><span class="pre">ParamsValuesSet.expressions</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.parse_expr"><code class="docutils literal notranslate"><span class="pre">parse_expr()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apparun.expressions.validate_expr"><code class="docutils literal notranslate"><span class="pre">validate_expr()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, CEA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

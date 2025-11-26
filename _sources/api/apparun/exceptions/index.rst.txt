@@ -1,0 +1,36 @@
+apparun.exceptions
+==================
+
+.. py:module:: apparun.exceptions
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   apparun.exceptions.InvalidExpr
+
+
+Module Contents
+---------------
+
+.. py:exception:: InvalidExpr(type: str, expr: str, ctx=None)
+
+   Bases: :py:obj:`Exception`
+
+
+   Exception raised when an expression is invalid.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:attribute:: ctx
+
+
+   .. py:attribute:: expr
+
+
+   .. py:attribute:: type
+
+

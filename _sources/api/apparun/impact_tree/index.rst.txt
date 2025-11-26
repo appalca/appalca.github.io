@@ -1,0 +1,175 @@
+apparun.impact_tree
+===================
+
+.. py:module:: apparun.impact_tree
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.impact_tree.ImpactTreeNode
+
+
+Module Contents
+---------------
+
+.. py:class:: ImpactTreeNode
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Impact Model tree node representing the impacts of an activity as well as its
+   children.
+
+
+   .. py:class:: Config
+
+      .. py:attribute:: arbitrary_types_allowed
+         :value: True
+
+
+
+
+   .. py:method:: compile_models()
+
+      Replace descendants symbols in node's model by their corresponding model.
+      Result is stored in "compiled_model" node's attribute.
+
+
+
+   .. py:method:: compute(transformed_params: Dict[str, Union[List[Union[str, float]], Union[str, float]]], direct_impacts: bool = False) -> apparun.score.LCIAScores
+
+      Compute node's impacts with given parameters values.
+      Multithreading is used to compute different impact methods in parallel.
+      :param transformed_params: parameters, transformed by ImpactModelParam's
+      transform method.
+      :param direct_impacts: if True, direct_impacts will be computed instead of
+      full impacts (i.e. sum of direct impacts and children direct impacts)
+      :return: a dict mapping impact's name with corresponding score, or list of
+      scores.
+
+
+
+   .. py:method:: from_dict(impact_model_tree_node: dict) -> ImpactTreeNode
+      :staticmethod:
+
+
+      Convert dict to ImpactTreeNode object.
+      :param impact_model_tree_node: dict containing construction parameters of the
+      node.
+      :return: constructed node
+
+
+
+   .. py:method:: name_already_in_tree(name: str) -> bool
+
+      Check if a node exists in descendants by comparing names.
+      :param name: name to check presence in descendants
+      :return: a boolean indicating if a descendant already has requested name.
+
+
+
+   .. py:method:: new_child(**args) -> ImpactTreeNode
+
+      Build a new node as a child.
+      :param args: construction parameters of new node.
+      :return: constructed node
+
+
+
+   .. py:method:: new_child_from_dict(child: dict) -> ImpactTreeNode
+
+      Build a new node as a child.
+      :param child: dict containing construction parameters of new node.
+      :return: constructed node
+
+
+
+   .. py:method:: node_name_to_symbol_name(node_name: str) -> str
+      :staticmethod:
+
+
+      Convert node name to symbol name by replacing everything which is not an
+      alphanumerical character by an underscore.
+      :param node_name: node's name
+      :return: symbol's name
+
+
+
+   .. py:method:: to_dict() -> dict
+
+      Convert self to dict.
+      :param compile: if True, all models in tree nodes will be compiled. ImpactModel
+      will be bigger, but its execution will be faster at first use.
+      :return: self as a dict
+
+
+
+   .. py:method:: validate_amount(amount: Union[float, int, str, sympy.Expr]) -> Union[sympy.Expr, float]
+      :classmethod:
+
+
+
+   .. py:method:: validate_exprs(exprs: Dict[str, str]) -> Dict[str, sympy.Expr]
+      :classmethod:
+
+
+
+   .. py:attribute:: amount
+      :type:  Optional[Union[sympy.Expr, float]]
+      :value: None
+
+
+
+   .. py:attribute:: children
+      :type:  Optional[List[ImpactTreeNode]]
+      :value: []
+
+
+
+   .. py:property:: combined_amount
+      :type: Union[float, sympy.Expr]
+
+
+
+   .. py:attribute:: direct_impacts
+      :type:  Optional[Dict[str, sympy.Expr]]
+
+
+   .. py:attribute:: models
+      :type:  Optional[Dict[str, sympy.Expr]]
+
+
+   .. py:property:: models_compiled
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: parent
+      :type:  Optional[ImpactTreeNode]
+      :value: None
+
+
+
+   .. py:attribute:: properties
+      :type:  apparun.tree_node.NodeProperties
+
+
+   .. py:attribute:: scaled_direct_impacts
+      :type:  Optional[Dict[str, sympy.Expr]]
+
+
+   .. py:property:: unnested_descendants
+      :type: List[ImpactTreeNode]
+
+
+      Walk recursively through node's children to return a list of all its
+      descendants.
+      :return: a list containing current node and all its descendants.
+
+
+

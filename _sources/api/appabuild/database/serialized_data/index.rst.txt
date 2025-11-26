@@ -1,0 +1,424 @@
+appabuild.database.serialized_data
+==================================
+
+.. py:module:: appabuild.database.serialized_data
+
+.. autoapi-nested-parse::
+
+   This module contains classes to make the interface between serialized data (such as
+   json and yaml).
+   Main purposes of those classes are to check serialized data schema and realize
+   operations on those fields.
+   Classes of this module are not environment-aware, i.e. they have no information about
+   LCA context (background databases, functional unit, LCA parameters...).
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   appabuild.database.serialized_data.yaml
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   appabuild.database.serialized_data.ActivityIdentifier
+   appabuild.database.serialized_data.SerializedActivity
+   appabuild.database.serialized_data.SerializedExchange
+   appabuild.database.serialized_data.Switch
+   appabuild.database.serialized_data.SwitchOption
+
+
+Module Contents
+---------------
+
+.. py:class:: ActivityIdentifier
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Contain a set of characteristics to identify an activity. An ActivityIdentifier is
+   considered as unresolved is uuid is not defined.
+   An unresolved ActivityIdentifier can be defined by its name and location.
+
+
+   .. py:method:: to_dict()
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:property:: code
+      :type: str
+
+
+      Brightway refers to uuid as 'code'. This property helps to harmonize with
+      Activity class's code attribute.
+      :return: object's uuid
+
+
+
+   .. py:attribute:: database
+      :type:  str
+
+
+   .. py:property:: is_unresolved
+      :type: bool
+
+
+      An ActivityIdentifier is considered as unresolved is uuid is not defined.
+      :return: True if object is unresolved.
+
+
+
+   .. py:attribute:: location
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: uuid
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:class:: SerializedActivity
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   SerializedActivity is the easiest way to import user datasets, as Activity
+   class can use SerializedActivity objects to create Brightway compatible datasets.
+
+
+   .. py:method:: check_name(parameters: List[str]) -> List[str]
+      :classmethod:
+
+
+
+   .. py:method:: to_dict()
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:method:: to_yaml(filepath: str, keep_uuid=False)
+
+      Convert self to yaml file.
+      :param filepath: filepath of the yaml file to create.
+      :param keep_uuid: specify if uuid has to be included in the yaml
+
+
+
+   .. py:attribute:: amount
+      :type:  Optional[float]
+      :value: 1
+
+
+      Amount of output flow generated for given amount of exchanges.
+
+
+
+   .. py:property:: code
+
+      Brightway refers to uuid as 'code'. This property helps to harmonize with
+      Activity class's code attribute.
+      :return: object's uuid
+
+
+
+   .. py:attribute:: comment
+      :type:  Optional[str]
+      :value: None
+
+
+      Free text for any context information about the dataset.
+
+
+
+   .. py:attribute:: data_quality
+      :type:  Optional[Dict[str, int]]
+      :value: None
+
+
+      Deprecated.
+
+
+
+   .. py:attribute:: database
+      :type:  str
+
+      Name of the user database.
+
+
+
+   .. py:attribute:: exchanges
+      :type:  List[SerializedExchange]
+
+      Emissions or consumptions generated when a unit of the activity is used.
+
+
+
+   .. py:attribute:: include_in_tree
+      :type:  Optional[bool]
+      :value: False
+
+
+      If True, activity will become a node in built ImpactModel.
+
+
+
+   .. py:attribute:: location
+      :type:  Optional[str]
+      :value: 'GLO'
+
+
+      Location of the activity. Default value is GLO for global.
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+      Name of the activity. Should be unique if include_in_tree is True, else, a
+      suffix will be generated.
+
+
+
+   .. py:attribute:: parameters
+      :type:  Optional[List[str]]
+      :value: []
+
+
+      Optional list of parameters necessary to execute this dataset.
+
+
+
+   .. py:attribute:: properties
+      :type:  Optional[Dict[str, Union[str, float, bool]]]
+
+      Properties will remain on impact model, and can be used by apparun to breakdown
+      the results according to life cycle phase, for exemple. Properties can be key/value
+      (ex: {"phase": "production"} or flags (ex: {production_phase: True}).
+
+
+
+   .. py:attribute:: type
+      :type:  Optional[str]
+      :value: None
+
+
+      According to Brightway, can be production, technosphere, or biosphere.
+
+
+
+   .. py:attribute:: unit
+      :type:  str
+
+      Unit of the amount.
+
+
+
+   .. py:attribute:: uuid
+      :type:  str
+
+      Must be unique in the user database.
+
+
+
+.. py:class:: SerializedExchange
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   SerializedExchange is the easiest way to import user datasets, as Exchange
+   class can use SerializedExchange objects to create Brightway compatible datasets.
+   Exchange are connection between an input and an output dataset. Contrarily to
+   Brightway, the later is not explicitly indicated and will always be affected to
+   the calling Activity.
+
+
+   .. py:method:: resolve_switch() -> List[SerializedExchange]
+
+      Generates one SerializedExchange per switch option (switch option being possible
+      value of corresponding categorical parameter).
+      One-hot encoded representation of the parameter is multiplied to exchange's
+      quantity, resulting in a exchange being toggled or not depending on the
+      categorical parameter's value during execution.
+      :return: one SerializedExchange per switch option.
+
+
+
+   .. py:method:: to_dict()
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:attribute:: amount
+      :type:  Optional[Union[float, str]]
+      :value: None
+
+
+      Quantity of input required to generate the output. Can be a fixed quantity or a
+      formula.
+
+
+
+   .. py:attribute:: comment
+      :type:  Optional[str]
+      :value: None
+
+
+      Free text for any context information about the exchange.
+
+
+
+   .. py:attribute:: database
+      :type:  str
+
+      Name of the user database.
+
+
+
+   .. py:attribute:: input
+      :type:  Optional[ActivityIdentifier]
+      :value: None
+
+
+      Identifier of the downstream Activity.
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+      Name of the exchange. Can be used to dynamically name ImpactModel node.
+
+
+
+   .. py:attribute:: parameters_matching
+      :type:  Optional[Dict[str, Union[float, str, Dict[str, int]]]]
+
+      Name or values of input's parameters can be dynamically changed. Key is the name of
+      the input parameter's name to change, and value the replacing variable. A float will
+      set the parameter to a fixed value, str will update parameter's name or affect it to
+      a formula, and dict is used to fix value of a categorical parameter.
+
+
+
+   .. py:attribute:: switch
+      :type:  Optional[Switch]
+      :value: None
+
+
+      Used to handle categorical parameters, allowing to map to different exchange
+      parameterization depending on parameter's value. In practice, will generate one
+      exchange per possible value by one-hot encoding the parameter.
+
+
+
+   .. py:attribute:: type
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: use_exchange_name
+      :type:  Optional[bool]
+      :value: False
+
+
+      Replace input's name by exchange's name. Useful if an Activity is used several
+      times as a node for ImpactModel tree.
+
+
+
+.. py:class:: Switch
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Is used to handle categorical parameters, allowing to map to different exchange
+   parameterization depending on parameter's value. In practice, will generate one
+   exchange per possible value (=switch option) when resolved by one-hot encoding the
+   parameter.
+
+
+   .. py:attribute:: name
+      :type:  str
+
+      Name of the corresponding categorical parameter.
+
+
+
+   .. py:attribute:: options
+      :type:  List[SwitchOption]
+
+      One option per possible corresponding categorical parameter value, use to replace
+      exchange's attribute values.
+
+
+
+.. py:class:: SwitchOption
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   For each attribute different than None, will replace exchange's attribute value.
+   For field description, please refer to SerializedExchange documentation, except for
+   name.
+
+
+   .. py:attribute:: amount
+      :type:  Optional[Union[float, str]]
+      :value: None
+
+
+
+   .. py:attribute:: input
+      :type:  Optional[Dict[str, str]]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+      Name of the corresponding categorical parameter's value.
+
+
+
+   .. py:attribute:: parameters_matching
+      :type:  Optional[Dict[str, Union[float, str, Dict[str, int]]]]
+
+
+   .. py:attribute:: type
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: unit
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:data:: yaml
+

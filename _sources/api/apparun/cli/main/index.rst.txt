@@ -1,0 +1,44 @@
+apparun.cli.main
+================
+
+.. py:module:: apparun.cli.main
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.cli.main.cli_app
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.cli.main.compute
+   apparun.cli.main.compute_nodes
+   apparun.cli.main.load_yaml
+   apparun.cli.main.model_params
+   apparun.cli.main.models
+   apparun.cli.main.results
+
+
+Module Contents
+---------------
+
+.. py:function:: compute(impact_model_name: str, params_file_path: str, output_file_path: Optional[str] = None)
+
+.. py:function:: compute_nodes(impact_model_name: str, params_file_path: str, output_file_path: Optional[str] = None)
+
+.. py:function:: load_yaml(filepath, mode)
+
+.. py:function:: model_params(impact_model_name: str)
+
+.. py:function:: models()
+
+.. py:function:: results(results_config_file_path: str)
+
+.. py:data:: cli_app
+
