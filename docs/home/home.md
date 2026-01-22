@@ -34,7 +34,7 @@ You may enjoy using Appa LCA if:
 - You want an alternative way to interact with Brightway and lca_algebraic
 
 ## How does it work?
-Appa Build is based on the excellent Brightway, a LCA Python library, and lca_algebraic, wich allows symbolic LCA calculation for Brightway.
+Appa Build is based on the excellent Brightway 2.5, a LCA Python library, and lca_algebraic, which allows symbolic LCA calculation for Brightway.
 Appa Build relies on the bw2data package to import the LCI database, LCIA methods and elementary flows.
 Appa Build uses lca_algebraic for partial LCA calculation: each static activity (i.e. activity without parametric exchange) is calculated up to the impact level.
 
