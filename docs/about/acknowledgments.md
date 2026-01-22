@@ -16,3 +16,4 @@ The authors would like to thank Bénédicte ROBIN for her participation in matur
 - Maxime PÉRALTA (CEA/List/DSCIN/LIIM)
 - Anne-Lore MONTAGNE (CEA/List/DILS/LIDEO)
 - Romain BOSSY (CEA/List/DSCIN/LIIM)
+- Madeleine ABERNOT (CEA/List/DSCIN/LIIM)

@@ -2,8 +2,7 @@
 
 ## Installation
 Appa Build and Appa Run are available on PyPI.
-Appa Build requires at least Python 3.10, while Appa Run requires at least Python 3.9.
-Tested and recommended version is Python 3.11.
+Tested and recommended Python version is 3.11.
 Since Appa Run is required by Appa Build, you can install both by using:
 ```
 pip install appabuild

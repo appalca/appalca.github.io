@@ -191,8 +191,6 @@ outputs:
 ## Background databases
 
 Background databases are databases than cannot be parameterized.
-Currently, only EcoInvent 3.9.1 is supported.
-Please refer to the [FAQ](../about/faq.md) section for more information.
 
 ## Let's build an impact model!
 
