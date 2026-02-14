@@ -138,13 +138,14 @@ outputs:
         appabuild_version: "0.2" #(8)!
     parameters: #(9)!
       - name: cuda_core #(10)!
-        type: float #(15)!
+        type: float #(11)!
         default: 512 #(12)!
-        pm_perc: 0.1 #(13)!
+        min: 256 #(16)!
+        max: 4096 #(17)!
       - name: architecture
-        type: enum #(14)!
+        type: enum #(15)!
         default: Maxwell
-        weights: #(10)!
+        weights: #(16)!
           Maxwell: 1
           Pascal: 1
       - name: usage_location
@@ -155,16 +156,15 @@ outputs:
           EU: 1
       - name: energy_per_inference
         type: float
-        default: 0.05
-        min: 0.01 #(16)!
-        max: 0.1 #(17)!
+        default: 110.0
+        pm_perc: 0.2 #(13)!
       - name: lifespan
         type: float
-        default: 2
+        default: 2.0
         pm: 1 #(18)!
       - name: inference_per_day
         type: float
-        default: 3600
+        default: 86400000.0
         pm_perc: 0 #(19)!
 :::
 
@@ -175,14 +175,14 @@ outputs:
 5. Name of the yaml file corresponding to the impact model (do not include file extension)
 6. If True, all symbolic expressions needed by Appa Run to generate any kind of results will be precomputed by Appa Build and stored in the impact model. This will result in larger impact model files and a longer building time. If False, those symbolic expressions will be computed by Appa Run when required, which will lead to more time during runtime (but only for the first computation).
 7. The following fields are informative and will be included in the impact model, and are meant to help the user of the impact model to better understand the LCA leading to the impact model, as well as to facilitate reproducibility.
-8. Appa Build version used to create the impact model. Note that this has to be entered manually at the moment. The Appa Build version can be found in setup.py. 
+8. Appa Build version used to create the impact model. Note that this has to be entered manually at the moment. The Appa Build version can be found in setup.py.
 9. Information about all free parameters needed by the FU.
 10. Name of the parameter. For float parameter, this name will be present in the amount expression of some exchanges. For enum parameter, this will correspond to the name of a switch.
 11. Type of the parameter, which can either be float or enum. Float parameters are used to parameterize the amount of exchange(s).
 12. Default value used by Appa Run if the user does not specify a new one.
 13. Used to determine the lower and upper bounds of the parameter, for features using Monte Carlo simulation. Pm_perc (plus/minus, in percent) dynamically sets the minimum and maximum values to default*(1-pm_perc) and default*(1+pm_perc), respectively.
 14. Type of the parameter, which can be either float or enum. Enum parameter can be used to include modularity in LCA, i.e. to modify the exchange's amount, exchange's input activity, or exchange's input activity's parameterization depending on the value of a variable.
-15. Contains two information: the possible values of the enum parameter (should correspond to the name of the switch's options), and their corresponding probability, for features such as Monte Carlo simulation. 
+15. Contains two information: the possible values of the enum parameter (should correspond to the name of the switch's options), and their corresponding probability, for features such as Monte Carlo simulation.
 16. The minimum limit of the parameter, used for features such as Monte Carlo simulation.
 17. The maximum limit of the parameter, used for features such as Monte Carlo simulation.
 18. Used to set the lower and upper bounds of the parameter, for features using Monte Carlo simulation. Pm (plus/minus) dynamically sets the minimum and maximum values as default-pm and default+pm, respectively.

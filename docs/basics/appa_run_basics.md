@@ -19,14 +19,23 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
 
 lifespan: 3 #(1)!
 architecture: Maxwell #(2)!
-cuda_core: [256, 512, 1024] #(3)!
-energy_per_inference: [0.05, 0.06, 0.065] #(4)!
+cuda_core: #(3)!
+    architecture:
+        Maxwell: 1344
+        Pascal: 1280
+usage_location: [FR, EU, EU] #(4)!
+inference_per_day: [86400000, 172800000, 259200000] #(5)!
+energy_per_inference:
+    architecture:
+        Maxwell: 0.0878 * cuda_core
+        Pascal: 0.0679 * cuda_core
 :::
 
 1. Float type parameter
 2. Enum type parameter. The value must match with one of the possible options.
-3. Parameters (float and enum) can also be given as a list, which will give a set of scores for each set of parameters. When list parameters coexist with single value parameters as, in this example, the single value is duplicated to the size of the list parameters. 
-4. When you use two list parameters, their size should match.
+3. It is possible to use expressions as values, for more details, see the section [Appa Run in depth](../in_depth/appa_run_in_depth.md).
+4. Parameters (float and enum) can also be given as a list, which will give a set of scores for each set of parameters. When list parameters coexist with single value parameters as, in this example, the single value is duplicated to the size of the list parameters.
+5. When you use at least two list parameters, their size should match.
 
 The following command calculates the scores. You need to tell Appa Run where the impact models are stored by setting the `APPARUN_IMPACT_MODELS_DIR` environment variable (here, to `samples/`).
 
@@ -42,7 +51,7 @@ Finally, `--output-file-path outputs/scores.yaml` is an optional argument to sav
 Here is what the command should print (and optionally save):
 
 ```
-{'scores': {'EFV3_CLIMATE_CHANGE': [6.814605183702477, 23.409114107243994, 124.77822686500075]}}
+{'scores': {'EFV3_CLIMATE_CHANGE': [234869.69128796642, 111981.06440540637, 167839.53117020638]}}
 ```
 
 ### Using Python API
@@ -55,8 +64,20 @@ The equivalent using the Python API is as follows, and should produce the same r
 
 scores = impact_model.get_scores(lifespan=3,
                                  architecture="Maxwell",
-                                 cuda_core=[256, 512, 1024],
-                                 energy_per_inference=[0.05, 0.06, 0.065])
+                                 cuda_core={
+                                    "architecture": {
+                                        "Maxwell": 1344,
+                                        "Pascal": 1280
+                                    }
+                                 },
+                                 usage_location: [FR, EU, EU],
+                                 inference_per_day: [86400000, 172800000, 259200000],
+                                 energy_per_inference={
+                                    "architecture": {
+                                        "Maxwell": "0.0878 * cuda_core",
+                                        "Pascal": "0.0679 * cuda_core"
+                                    }
+                                 })
 print(scores)
 :::
 
@@ -77,7 +98,7 @@ apparun compute-nodes nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-f
 
 Result:
 ```
-[NodeScores(name='ai_use_phase', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [1.420092, 1.7041104000000002, 1.8461196000000002]})), NodeScores(name='nvidia_gpu_chip_manufacturing', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [6.742999152294716, 23.323186869554682, 124.68513902417065]})), NodeScores(name='nvidia_ai_gpu_chip', parent='', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [8.163091152294715, 25.027297269554683, 126.53125862417065]}))]
+[NodeScores(name='ai_use_phase', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [234605.56041216006, 111716.93352960002, 167575.40029440002]})), NodeScores(name='nvidia_gpu_chip_manufacturing', parent='nvidia_ai_gpu_chip', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [264.13087580635846, 264.13087580635846, 264.13087580635846]})), NodeScores(name='nvidia_ai_gpu_chip', parent='', properties=NodeProperties(properties={}), lcia_scores=LCIAScores(scores={'EFV3_CLIMATE_CHANGE': [234869.69128796642, 111981.06440540637, 167839.53117020638]}))]
 ```
 
 
@@ -91,8 +112,20 @@ The equivalent using the Python API is as follows, and should produce the same r
 
 nodes_scores = impact_model.get_nodes_scores(lifespan=3,
                                              architecture="Maxwell",
-                                             cuda_core=[256, 512, 1024],
-                                             energy_per_inference=[0.05, 0.06, 0.065])
+                                             cuda_core={
+                                                "architecture": {
+                                                    "Maxwell": 1344,
+                                                    "Pascal": 1280
+                                                }
+                                             },
+                                             usage_location: [FR, EU, EU],
+                                             inference_per_day: [86400000, 172800000, 259200000],
+                                             energy_per_inference={
+                                                "architecture": {
+                                                    "Maxwell": "0.0878 * cuda_core",
+                                                    "Pascal": "0.0679 * cuda_core"
+                                                }
+                                             })
 print(nodes_scores)
 :::
 
@@ -136,6 +169,7 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
 6. Path to save plots as a pdf file. If this argument is not set, not pdf file will be generated.
 7. Path to save the table. If this argument is not set, not table file will be generated.
 8. Path to save plots as a png file. If this argument is not set, not png file will be generated.
+9. Width of the generated images.
 10. Height of the generated images.
 
 Here is a figure we can obtain:
