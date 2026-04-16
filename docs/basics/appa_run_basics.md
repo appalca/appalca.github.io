@@ -60,6 +60,10 @@ scores = impact_model.get_scores(lifespan=3,
 print(scores)
 :::
 
+:::{note}
+You may get warnings if the bounds of some parameters are not defined, or if the value of a parameter falls out of these bounds. They are not errors, the impact computation is done anyways.
+:::
+
 ## Get nodes scores
 
 If you set the flag `include_in_tree` to `True` in some activities used by the FU when constructing the impact model with Appa Build, you should have an impact model with different nodes organized as a tree.
