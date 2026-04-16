@@ -73,27 +73,33 @@ You can click on the <img src="../_static/plus.svg" height='16' width='16' /> to
 This file corresponds to the file required as the first argument by the _appabuild lca build_ CLI command. 
 
 :::{code-block} yaml
-:caption: appabuild_conf.yaml
+:caption: appabuild_conf_with_ei.yaml
 :lineno-start: 1
 
-project_name: 'sample_project' #(1)!
-databases: #(2)!
-  ecoinvent: #(3)!
-    name: ecoinvent_3.9.1_cutoff #(4)!
-    path: 'C:\\databases\\ecoinvent_3.9.1_cutoff\\datasets' #(5)!
-  foreground: #(6)!
-    name: user_database #(7)!
-    path: 'samples/datasets/user_database/' #(8)!
+project_name: 'sample_project_with_ei_bw25' #(1)!
+replace_bg: False #(2)!
+databases: #(3)!
+  ecoinvent: #(4)!
+    version: "3.11" #(5)!
+    system_model: "cutoff" #(6)!
+  foreground: #(7)!
+    name: user_database #(8)!
+    path: 'samples/datasets/user_database/' #(9)!
 :::
 
 1. This name is used by Brightway to initialize the environment. The location of the environment is specified by the `BRIGHTWAY_DIR` environment variable.
-2. Databases to import. At the moment this is quite static as you need one EcoInvent database and one foreground database.
-3. Background databases are databases that cannot contain parameters.
-4. Name given to the EcoInvent database. This name will be used in foreground datasets' exchanges.
-5. Must correspond to a folder containing a list of `.spold` files.
-6. Foreground database consists of a folder containing yaml/json datasets. Subfolders can be used.
-7. Name given to the foreground database. This name will be used in foreground datasets' exchanges.
-8. Folder containing yaml/json datasets. Note that when Appa Build is run to build an impact model, only the datasets needed for the FU will be imported.
+2. If True, Appa Build will delete and reinstall EcoInvent, the biosphere flows, the LCIA methods and the impact factors. Unless you encounter errors on those data, you should probably set it to False.
+3. Databases to import. At the moment this is quite static as you need one foreground database and optionally one EcoInvent database.
+4. Background databases are databases that cannot contain parameters. Only EcoInvent has been tested so far.
+5. Desired version of EcoInvent.
+6. Desired system model of EcoInvent.
+7. Foreground database consists of a folder containing yaml/json datasets. Subfolders can be used.
+8. Name given to the foreground database. This name will be used in foreground datasets' exchanges.
+9. Folder containing yaml/json datasets. Note that when Appa Build is run to build an impact model, only the datasets needed for the FU will be imported.
+
+:::{attention}
+If you use EcoInvent, you must additionally export the `BW_USER` and `BW_PASS` variable environments with your EcoInvent credentials so that Brightway can connect to the EcoInvent API.
+:::
 
 ## LCA configuration
 

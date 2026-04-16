@@ -77,19 +77,14 @@ To test your Appa Build installation, you can set the project directory with the
 export BRIGHTWAY2_DIR=brightway2_project/
 ```
 
-You will also need an EcoInvent database. The tested version is 3.9.1 cutoff.
-You must indicate the path of the folder containing the .spold datasets in `samples/conf/appalca_conf.yaml`.
-
-More information can be found in section [Appa Build Basics](appa_build_basics.md).
-
 Documentation about the CLI can be obtained by running the following command:
 ```
 appabuild --help
 ```
 
-Here is an example of the Appa Build CLI call to build the demo impact model:
+Here is an example of the Appa Build CLI call to build the demo impact model, without needing for any LCI database:
 ```
-appabuild lca build samples/conf/appalca_conf.yaml samples/conf/nvidia_ai_gpu_chip_lca_conf.yaml
+appabuild lca build samples/conf/appalca_conf_wo_ei.yaml samples/conf/nvidia_ai_gpu_chip_lca_conf.yaml
 ```
 
 Both arguments are covered in section [Appa Build basics](appa_build_basics.md).

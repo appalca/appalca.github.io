@@ -19,5 +19,5 @@ We currently only implemented an Enum for PEF v3.0 and v3.1 LCIA methods, and pl
 
 You can easily extend the mapping to other LCIA methods. If you do so, it may be a good idea of contribution and could be integrated into Appa LCA's source code.
 
-## Known issues
-We are aware of some issues and bugs. We list them here to keep you informed until we manage to solve them.
+## Issues
+If you encounter bugs or limitations, please open an issue [here](https://github.com/appalca/appabuild/issues) for Appa Build, and [here](https://github.com/appalca/apparun/issues) for Appa Run.
