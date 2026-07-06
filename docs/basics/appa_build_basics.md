@@ -121,57 +121,56 @@ scope:
     database: "user_database"
   methods: #(3)!
     - "EFV3_CLIMATE_CHANGE"
-outputs:
-  model:
-    path: "." #(4)!
-    name: "nvidia_ai_gpu_chip" #(5)!
-    compile: True #(6)!
-    metadata: #(7)!
-      author:
-        name: Maxime PERALTA
-        organization: CEA
-        mail: maxime.peralta@cea.fr
-      reviewer:
-        name: Mathias TORCASO
-        organization: CEA
-        mail: 
-      report:
-        link: https://appalca.github.io/
-        description: "A mock example of Appa LCA's impact model corresponding to a fictive AI chip accelerator based on NVIDIA GPU."
-        date: 03/11/2023
-        version: "1"
-        license: proprietary
-        appabuild_version: "0.2" #(8)!
-    parameters: #(9)!
-      - name: cuda_core #(10)!
-        type: float #(15)!
-        default: 512 #(12)!
-        pm_perc: 0.1 #(13)!
-      - name: architecture
-        type: enum #(14)!
-        default: Maxwell
-        weights: #(10)!
-          Maxwell: 1
-          Pascal: 1
-      - name: usage_location
-        type: enum
-        default: EU
-        weights:
-          FR: 1
-          EU: 1
-      - name: energy_per_inference
-        type: float
-        default: 0.05
-        min: 0.01 #(16)!
-        max: 0.1 #(17)!
-      - name: lifespan
-        type: float
-        default: 2
-        pm: 1 #(18)!
-      - name: inference_per_day
-        type: float
-        default: 3600
-        pm_perc: 0 #(19)!
+model:
+  path: "." #(4)!
+  name: "nvidia_ai_gpu_chip" #(5)!
+  compile: True #(6)!
+  metadata: #(7)!
+    author:
+      name: Maxime PERALTA
+      organization: CEA
+      mail: maxime.peralta@cea.fr
+    reviewer:
+      name: Mathias TORCASO
+      organization: CEA
+      mail: 
+    report:
+      link: https://appalca.github.io/
+      description: "A mock example of Appa LCA's impact model corresponding to a fictive AI chip accelerator based on NVIDIA GPU."
+      date: 03/11/2023
+      version: "1"
+      license: proprietary
+      appabuild_version: "0.2" #(8)!
+  parameters: #(9)!
+    - name: cuda_core #(10)!
+      type: float #(15)!
+      default: 512 #(12)!
+      pm_perc: 0.1 #(13)!
+    - name: architecture
+      type: enum #(14)!
+      default: Maxwell
+      weights: #(10)!
+        Maxwell: 1
+        Pascal: 1
+    - name: usage_location
+      type: enum
+      default: EU
+      weights:
+        FR: 1
+        EU: 1
+    - name: energy_per_inference
+      type: float
+      default: 0.05
+      min: 0.01 #(16)!
+      max: 0.1 #(17)!
+    - name: lifespan
+      type: float
+      default: 2
+      pm: 1 #(18)!
+    - name: inference_per_day
+      type: float
+      default: 3600
+      pm_perc: 0 #(19)!
 :::
 
 1. Functional Unit (FU) corresponds to the activity that produces the reference flow. The FU should be stored in the foreground database.
