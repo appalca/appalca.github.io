@@ -17,6 +17,8 @@ Appa Run imports impact models and provides interfaces to run them easily from a
   <figcaption>Appa LCA framework consists of two Python packages, Appa Build and Appa Run, which build and run impact models respectively.</figcaption>
 </figure>
 
+More information can be found in our [paper](https://www.sciencedirect.com/science/article/pii/S2666789426000966).
+
 ## What problems does it solve?
 Commercial LCA tools are typically not easy to integrate into design workflows. They are quite heavy pieces of code, they require licenses for the software itself and for the LCI databases. They do not always provide an API to interface with other software.
 On the other hand, some tools can solve this problem, but they typically only calculate the carbon impact, and are not designed to be dynamically connected with an LCA.
