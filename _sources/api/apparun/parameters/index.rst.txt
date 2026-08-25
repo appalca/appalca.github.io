@@ -1,0 +1,334 @@
+apparun.parameters
+==================
+
+.. py:module:: apparun.parameters
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.parameters.EnumParam
+   apparun.parameters.FloatParam
+   apparun.parameters.ImpactModelParam
+   apparun.parameters.ImpactModelParams
+   apparun.parameters.ImpactModelParamsValues
+
+
+Module Contents
+---------------
+
+.. py:class:: EnumParam
+
+   Bases: :py:obj:`ImpactModelParam`
+
+
+   Impact model enum parameter.
+   Contains a default, list of options and associated weights for monte carlo run.
+   runs.
+
+
+   .. py:method:: corresponds(symbol_name: str) -> bool
+
+
+   .. py:method:: draw_to_distrib(samples: numpy.ndarray) -> List[str]
+
+
+   .. py:method:: full_option_name(option: str) -> str
+
+      Return option with parameter name as a prefix.
+      :param option: enum option.
+      :return: option name with parameter name as a prefix.
+
+
+
+   .. py:method:: look_up_table() -> Dict[str, Dict[str, int]]
+
+      Map every option to its one hot encoded vector, i.e. a dict with dummies names
+      and associated value (1 if corresponding to current option, 0 otherwise).
+      :return: a nested dict with all option and corresponding one hot encoded vector.
+
+
+
+   .. py:method:: transform(values: Union[str, List[str]]) -> Dict[str, Union[float, numpy.array]]
+
+      Transform option, or list of options to be readily usable by ImpactModel.
+      Value(s) one hot encoded, then mapped to a dict with parameter name as a key.
+      :param values:
+      :return: a dict mapping parameter name and transformed values.
+
+
+
+   .. py:method:: update_default(new_value: str, weights_to_default: bool = False)
+
+      Change default value of the parameter, and optionally update the weights to match
+      the new value only (which can be useful for uncertainty analysis).
+      :param new_value: new default value
+      :param weights_to_default: if True, the weights will be assigned to the new value
+      only.
+
+
+
+   .. py:method:: update_weights(new_weights: dict[str, float])
+
+      Change the weights of the parameter.
+      :param new_weights: new weights. Keys are enum options, values are corresponding
+      probability of occurrence.
+
+
+
+   .. py:property:: dummies_names
+
+      Give dummies names of all possible options.
+      A dummy name is the option with parameter name as a prefix.
+      :return: a list containing dummies names for all possible options.
+
+
+
+   .. py:property:: options
+
+
+   .. py:attribute:: type
+      :type:  str
+      :value: 'enum'
+
+
+
+   .. py:attribute:: weights
+      :type:  Dict[str, float]
+
+
+.. py:class:: FloatParam(**kwargs)
+
+   Bases: :py:obj:`ImpactModelParam`
+
+
+   Impact model float parameter.
+   Contains a default, min and max values, as well as a distribution for monte carlo
+   runs.
+   Supported distributions is "linear".
+
+
+   .. py:method:: corresponds(symbol_name: str) -> bool
+
+
+   .. py:method:: draw_to_distrib(samples: numpy.ndarray) -> List[float]
+
+
+   .. py:method:: transform(values: Union[float, List[float]]) -> Dict[str, Union[float, numpy.array]]
+
+      Transform float value, or list of float values to be readily usable by
+      ImpactModel.
+      Value(s) are mapped to a dict with parameter name as a key.
+      :param values:
+      :return: a dict mapping parameter name and transformed values.
+
+
+
+   .. py:method:: update_bounds()
+
+      Compute min and max attributes from default attribute if pm, or pm_perc attributes
+      is not None.
+
+
+
+   .. py:method:: update_default(new_value: float)
+
+      Change default value of the parameter, and compute new min and max values if they
+      are defined using pm or pm_perc.
+      :param new_value: new default value
+
+
+
+   .. py:attribute:: distrib
+      :type:  Optional[str]
+      :value: 'linear'
+
+
+
+   .. py:attribute:: max
+      :type:  Optional[float]
+      :value: None
+
+
+
+   .. py:attribute:: min
+      :type:  Optional[float]
+      :value: None
+
+
+
+   .. py:attribute:: pm
+      :type:  Optional[float]
+      :value: None
+
+
+
+   .. py:attribute:: pm_perc
+      :type:  Optional[float]
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :type:  str
+      :value: 'float'
+
+
+
+.. py:class:: ImpactModelParam
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Impact model parameter.
+
+
+   .. py:class:: Config
+
+      .. py:attribute:: arbitrary_types_allowed
+         :value: True
+
+
+
+
+   .. py:method:: corresponds(symbol_name: str) -> bool
+
+
+   .. py:method:: draw_to_distrib(samples) -> Union[List[str], List[float]]
+
+
+   .. py:method:: from_dict(impact_model_param: dict) -> ImpactModelParam
+      :staticmethod:
+
+
+      Convert dict to ImpactModelParam object. Subclass must be specified in 'type'
+      field.
+      :param impact_model_param: dict containing construction parameters of the param.
+      :return: constructed param
+
+
+
+   .. py:method:: name_is_valid() -> bool
+
+      Check if parameter's name is considered as valid.
+      Parameter name should only be composed of letters, numbers, underscores, and
+      contain at least one letter.
+      :return: if parameter's name is valid
+
+
+
+   .. py:method:: to_dict() -> dict
+
+      Convert self to dict.
+      :return: self as a dict
+
+
+
+   .. py:method:: update_default(new_value: Union[float, str])
+
+      Change default value of the parameter, and compute new bounds if relevant.
+      :param new_value: new default value
+
+
+
+   .. py:attribute:: default
+      :type:  Optional[Union[str, float, sympy.Expr, dict]]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+.. py:class:: ImpactModelParams(**args)
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:method:: draw_to_distrib(samples: numpy.ndarray) -> Dict[str, Union[List[float], List[str]]]
+
+
+   .. py:method:: find_corresponding_parameter(symbol_name: str, must_find_one: Optional[bool] = True) -> Union[ImpactModelParam, List[ImpactModelParam]]
+
+
+   .. py:method:: from_list(parameters) -> ImpactModelParams
+      :staticmethod:
+
+
+
+   .. py:method:: get_default_values(parameter_names: List) -> Dict
+
+
+   .. py:method:: get_missing_parameter_names(parameters: Union[List, Dict]) -> List
+
+
+   .. py:method:: get_parameter_by_name(parameter_name: str) -> Optional[ImpactModelParam]
+
+
+   .. py:method:: set_sobol_problem()
+
+
+   .. py:method:: sobol_draw(n) -> numpy.ndarray
+
+
+   .. py:method:: to_list(sorted_by_name: Optional[bool] = False) -> List[Dict]
+
+      Convert each parameter of parameters attributes to a dict, return them as a list,
+      optionally sorted by parameter's name
+      :param sorted_by_name: sort parameters list by parameter's name if True
+      :return: list of parameter, themselves as dict
+
+
+
+   .. py:method:: uniform_draw(n) -> numpy.ndarray
+
+
+   .. py:method:: update_defaults(defaults: Dict[str, Union[str, float]], weights_to_default: bool = False)
+
+      Change default value of the parameters contained in argument, and compute new
+      bounds if relevant.
+      :param defaults: dict containing parameter name as key and new default as
+      value
+      :param weights_to_default: if True, the weights of the enum parameters will be
+      assigned to the new value only.
+
+
+
+   .. py:property:: names
+
+
+   .. py:attribute:: parameters
+      :type:  List[ImpactModelParam]
+
+
+   .. py:attribute:: sobol_problem
+      :type:  Optional[Dict]
+      :value: None
+
+
+
+.. py:class:: ImpactModelParamsValues
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   A set of values for the parameters of an impact model.
+
+   ATTENTION!! Use the method from dict to build instance of this class.
+
+
+   .. py:method:: from_dict(parameters: ImpactModelParams, values: Dict[str, Union[float, int, str, dict, List[Union[float, int, str, dict]]]]) -> ImpactModelParamsValues
+      :classmethod:
+
+
+
+   .. py:method:: items()
+
+
+   .. py:attribute:: values
+      :type:  Dict[str, List[Union[float, int, str]]]
+
+

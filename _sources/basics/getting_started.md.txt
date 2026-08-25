@@ -1,0 +1,106 @@
+# Getting started
+
+## Installation
+Appa Build and Appa Run are available on PyPI.
+Tested and recommended Python version is 3.11.
+Since Appa Run is required by Appa Build, you can install both by using:
+```
+pip install appabuild
+```
+
+If you only need Appa Run, you can use:
+```
+pip install apparun
+```
+
+We recommend using virtualenv to limit the risks of package dependency conflicts, that are likely to occur with Appa Build, as Brightway requires a specific version of *numpy* to run.
+
+### Installation with source code
+
+You may need to install Appa Build and/or Appa Run from source if you intend to modify the source or change some package versions in requirements.txt.
+
+### Appa Run
+
+Clone the repository first:
+
+```
+git clone https://github.com/appalca/apparun
+cd apparun
+```
+
+It is recommended to use a virtualenv before installing Appa Run package dependencies. You can then use:
+
+```
+pip install -r requirements.txt
+```
+
+If you want to use Appa Run to run Appa Build, or to use its CLI, you need to build the package:
+If necessary, you can install wheel using `pip install wheel` and hatchling using `pip install hatchling`.
+
+```
+python -m hatchling build
+pip install dist/*.whl --progress-bar off
+```
+
+### Appa Build
+
+Clone the repository first:
+
+```
+git clone https://github.com/appalca/appabuild
+cd appabuild
+```
+
+To install the dependencies of Appa Build (using the desired Python installation), you will need to specify the path of the packaged Appa Run: 
+
+```
+pip install ../apparun/dist/apparun-X.X.X-py3-none-any.whl -r requirements.txt
+```
+
+Replacing `X.X.X` with the appropriate version. 
+
+If you want to use the Appa Build CLI, you need to build the package:
+If necessary, you can install wheel using `pip install wheel` and hatchling using `pip install hatchling`.
+
+```
+python -m hatchling build
+pip install dist/*.whl --progress-bar off
+``` 
+
+## Usage
+Appa Build and Appa Run most basic interface are their command line interfaces (CLIs).
+The following CLI commands will allow you to verify that both packages are properly installed by respectively building and running a sample impact model.
+
+### Appa Build
+To test your Appa Build installation, you can set the project directory with the ```BRIGHTWAY2_DIR``` environment variable.
+```
+export BRIGHTWAY2_DIR=brightway2_project/
+```
+
+Documentation about the CLI can be obtained by running the following command:
+```
+appabuild --help
+```
+
+Here is an example of the Appa Build CLI call to build the demo impact model, without needing for any LCI database:
+```
+appabuild lca build samples/conf/appalca_conf_wo_ei.yaml samples/conf/nvidia_ai_gpu_chip_lca_conf.yaml
+```
+
+Both arguments are covered in section [Appa Build basics](appa_build_basics.md).
+
+### Appa Run
+You will need an environment variable to specify where the impact models are located.
+```
+export APPARUN_IMPACT_MODELS_DIR=samples/impact_models/
+```
+
+Documentation about the CLI can be obtained by running the following command:
+```
+apparun --help
+```
+
+Here is an example of Appa Run CLI call to use the demo impact model:
+```
+apparun compute nvidia_ai_gpu_chip samples/conf/parameters.yaml --output-file-path outputs/scores.yaml
+```

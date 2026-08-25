@@ -1,0 +1,17 @@
+apparun.gui.panels
+==================
+
+.. py:module:: apparun.gui.panels
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/apparun/gui/panels/base/index
+   /api/apparun/gui/panels/output_dynamic/index
+   /api/apparun/gui/panels/output_static/index
+
+

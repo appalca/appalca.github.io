@@ -1,0 +1,81 @@
+apparun.score
+=============
+
+.. py:module:: apparun.score
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.score.LCIAScores
+
+
+Module Contents
+---------------
+
+.. py:class:: LCIAScores
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   Scores for each impact method.
+
+
+   .. py:method:: sum(lcia_scores: List[LCIAScores]) -> LCIAScores
+      :staticmethod:
+
+
+      Sum element-wise all scores for each method.
+      :param lcia_scores: LCIA scores to sum up.
+      :return: summed LCIA scores
+
+
+
+   .. py:method:: to_normalised(method: Optional[apparun.impact_methods.MethodUniqueScore] = MethodUniqueScore.EF30, filenorm: Optional[str] = None) -> LCIAScores
+
+      Computes normalisation of LCIAScores using .csv file with impact categories and normalisation factors.
+      :param: method: allows to use default MethodUniqueScore.EF30 or EF31 normalisation factors.
+      :param: filenorm: allows to give a personal .csv file with normalisation factors.
+      :return: LCIAScores after normalisation.
+
+
+
+   .. py:method:: to_unique_score(is_normalised: Optional[bool] = False, is_weighted: Optional[bool] = False, method: Optional[apparun.impact_methods.MethodUniqueScore] = MethodUniqueScore.EF30, filenorm: Optional[str] = None, fileweight: Optional[str] = None) -> LCIAScores
+
+      Computes sum of LCIAScores impact category scores into unique score. Possible to apply normalisation
+      and/or weighting before aggregating scores.
+      :param: is_normalised: if True, apply normalisation before sum into unique score.
+      :param: is_weighted: if True, apply weighting (after normalisation) before sum into unique score.
+      :param: method: allows to use default MethodUniqueScore.EF30 or EF31 normalisation and weighting factors.
+      :param: filenorm: allows to give a personal .csv file with normalisation factors.
+      :param: fileweight: allows to give a personal .csv file with weighting factors.
+
+
+
+   .. py:method:: to_unpivoted_df() -> pandas.DataFrame
+
+
+   .. py:method:: to_weighted(method: Optional[apparun.impact_methods.MethodUniqueScore] = MethodUniqueScore.EF30, fileweight: Optional[str] = None) -> LCIAScores
+
+      Computes normalisation of LCIAScores using .csv file with impact categories and normalisation factors.
+      :param: method: allows to use default MethodUniqueScore.EF30 or EF31 weighting factors.
+      :param: fileweight: allows to give a personal .csv file with weighting factors.
+      :return: LCIAScores after normalisation.
+
+
+
+   .. py:property:: method_names
+      :type: Set[str]
+
+
+      Get all LCIA methods assessed.
+      :return: LCIA methods assessed
+
+
+
+   .. py:attribute:: scores
+      :type:  Optional[Dict[str, Union[float, List[float]]]]
+
+

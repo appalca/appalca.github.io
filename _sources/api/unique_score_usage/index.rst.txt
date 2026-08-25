@@ -1,0 +1,40 @@
+unique_score_usage
+==================
+
+.. py:module:: unique_score_usage
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   unique_score_usage.node_scores
+   unique_score_usage.score
+   unique_score_usage.score
+   unique_score_usage.score
+   unique_score_usage.score_init
+   unique_score_usage.unique_node_scores
+   unique_score_usage.unique_score
+   unique_score_usage.unique_scores
+
+
+Module Contents
+---------------
+
+.. py:data:: node_scores
+
+.. py:data:: score
+
+.. py:data:: score
+
+.. py:data:: score
+
+.. py:data:: score_init
+
+.. py:data:: unique_node_scores
+
+.. py:data:: unique_score
+
+.. py:data:: unique_scores
+

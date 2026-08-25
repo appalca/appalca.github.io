@@ -1,0 +1,69 @@
+apparun.api.app
+===============
+
+.. py:module:: apparun.api.app
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.api.app.app
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.api.app.ComputeParams
+   apparun.api.app.GetModelParams
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.api.app.compute
+   apparun.api.app.compute_nodes
+   apparun.api.app.get_model_params
+   apparun.api.app.get_models
+
+
+Module Contents
+---------------
+
+.. py:class:: ComputeParams
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:attribute:: impact_model_name
+      :type:  str
+
+
+   .. py:attribute:: params
+      :type:  Dict[str, Union[str, float, List[Union[str, float]]]]
+
+
+.. py:class:: GetModelParams
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:attribute:: impact_model_name
+      :type:  str
+
+
+.. py:function:: compute(params: ComputeParams)
+
+.. py:function:: compute_nodes(params: ComputeParams)
+
+.. py:function:: get_model_params(params: GetModelParams)
+
+.. py:function:: get_models()
+
+.. py:data:: app
+

@@ -1,0 +1,59 @@
+custom_gui
+==========
+
+.. py:module:: custom_gui
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   custom_gui.BatchScenarioComparisonDynamicOutputPanel
+   custom_gui.PoliteMarkdown
+   custom_gui.ScenarioFromFilePanel
+
+
+Module Contents
+---------------
+
+.. py:class:: BatchScenarioComparisonDynamicOutputPanel(**args)
+
+   Bases: :py:obj:`apparun.gui.panels.output_dynamic.ScenarioComparisonDynamicOutputPanel`
+
+
+   .. py:method:: run(entry_data, impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: type
+      :type:  Literal['batch_scenario_comparison_dynamic_output_panel']
+
+
+.. py:class:: PoliteMarkdown
+
+   Bases: :py:obj:`apparun.gui.panels.base.StaticOutputPanel`
+
+
+   .. py:method:: run(impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: message
+      :type:  str
+
+
+   .. py:attribute:: type
+      :type:  Literal['polite_markdown']
+
+
+.. py:class:: ScenarioFromFilePanel(**args)
+
+   Bases: :py:obj:`apparun.gui.panels.base.InputScenarioFormPanel`
+
+
+   .. py:method:: run()
+
+
+   .. py:attribute:: type
+      :type:  Literal['input_scenario_from_file_panel']
+
+

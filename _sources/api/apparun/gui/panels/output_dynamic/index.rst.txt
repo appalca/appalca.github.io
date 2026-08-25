@@ -1,0 +1,57 @@
+apparun.gui.panels.output_dynamic
+=================================
+
+.. py:module:: apparun.gui.panels.output_dynamic
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.gui.panels.output_dynamic.ScenarioComparisonDynamicOutputPanel
+
+
+Module Contents
+---------------
+
+.. py:class:: ScenarioComparisonDynamicOutputPanel(**args)
+
+   Bases: :py:obj:`apparun.gui.panels.base.DynamicOutputPanel`
+
+
+   .. py:method:: compute_from_impact_model(entry_data, impact_model)
+
+
+   .. py:method:: fetch_from_lca_data(entry_data, lca_data)
+      :abstractmethod:
+
+
+
+   .. py:method:: run(entry_data, impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: by_property
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: hue
+      :type:  str
+
+
+   .. py:attribute:: result
+      :type:  Optional[apparun.results.ImpactModelResult]
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :type:  Literal['scenario_comparison_dynamic_output_panel']
+
+
+   .. py:attribute:: y
+      :type:  str
+
+

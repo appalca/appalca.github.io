@@ -1,0 +1,51 @@
+apparun.exceptions
+==================
+
+.. py:module:: apparun.exceptions
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   apparun.exceptions.InvalidExpr
+   apparun.exceptions.InvalidFileError
+
+
+Module Contents
+---------------
+
+.. py:exception:: InvalidExpr(type: str, expr: str, ctx=None)
+
+   Bases: :py:obj:`Exception`
+
+
+   Exception raised when an expression is invalid.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:attribute:: ctx
+
+
+   .. py:attribute:: expr
+
+
+   .. py:attribute:: type
+
+
+.. py:exception:: InvalidFileError(file: str)
+
+   Bases: :py:obj:`Exception`
+
+
+   Exception raised when the number of normalisation impact
+   categories is not equal to impact model impact categories.
+
+   Initialize self.  See help(type(self)) for accurate signature.
+
+
+   .. py:attribute:: file
+
+

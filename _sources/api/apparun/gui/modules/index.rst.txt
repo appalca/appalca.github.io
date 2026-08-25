@@ -1,0 +1,128 @@
+apparun.gui.modules
+===================
+
+.. py:module:: apparun.gui.modules
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.gui.modules.PandasDataFrame
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.gui.modules.GUI
+   apparun.gui.modules.Module
+
+
+Module Contents
+---------------
+
+.. py:class:: GUI
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:method:: gen_titles_modules()
+
+
+   .. py:method:: run()
+
+
+   .. py:method:: setup_layout()
+
+
+   .. py:attribute:: favicon_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: modules
+      :type:  List[Module]
+
+
+   .. py:attribute:: name
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:class:: Module(**args)
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:method:: build_input_panel(panel: Optional[Dict[Any]] = None) -> Optional[apparun.gui.panels.base.InputPanel]
+      :classmethod:
+
+
+
+   .. py:method:: build_output_panels(panels: List[Dict[Any]]) -> List[apparun.gui.panels.base.OutputPanel]
+      :classmethod:
+
+
+
+   .. py:method:: run()
+
+
+   .. py:attribute:: cols
+      :type:  Optional[Callable]
+      :value: None
+
+
+
+   .. py:attribute:: impact_model
+      :type:  Optional[apparun.impact_model.ImpactModel]
+      :value: None
+
+
+
+   .. py:attribute:: impact_model_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:property:: input_col
+
+
+   .. py:attribute:: input_panel
+      :type:  Optional[apparun.gui.panels.base.InputPanel]
+      :value: None
+
+
+
+   .. py:attribute:: lca_data
+      :type:  Optional[PandasDataFrame]
+      :value: None
+
+
+
+   .. py:attribute:: lca_data_path
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:attribute:: name
+      :type:  Optional[str]
+      :value: None
+
+
+
+   .. py:property:: output_col
+
+
+   .. py:attribute:: output_panels
+      :type:  List[apparun.gui.panels.base.OutputPanel]
+
+
+.. py:data:: PandasDataFrame
+

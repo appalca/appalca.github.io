@@ -1,0 +1,33 @@
+apparun.gui.panels.output_static
+================================
+
+.. py:module:: apparun.gui.panels.output_static
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.gui.panels.output_static.Markdown
+
+
+Module Contents
+---------------
+
+.. py:class:: Markdown
+
+   Bases: :py:obj:`apparun.gui.panels.base.StaticOutputPanel`
+
+
+   .. py:method:: run(impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: message
+      :type:  str
+
+
+   .. py:attribute:: type
+      :type:  Literal['markdown']
+
+

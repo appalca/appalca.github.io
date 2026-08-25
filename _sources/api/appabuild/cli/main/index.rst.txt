@@ -1,0 +1,19 @@
+appabuild.cli.main
+==================
+
+.. py:module:: appabuild.cli.main
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   appabuild.cli.main.cli_app
+
+
+Module Contents
+---------------
+
+.. py:data:: cli_app
+

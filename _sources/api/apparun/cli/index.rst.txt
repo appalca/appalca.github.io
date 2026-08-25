@@ -1,0 +1,15 @@
+apparun.cli
+===========
+
+.. py:module:: apparun.cli
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/apparun/cli/main/index
+
+

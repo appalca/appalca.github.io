@@ -1,0 +1,187 @@
+apparun.gui.panels.base
+=======================
+
+.. py:module:: apparun.gui.panels.base
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   apparun.gui.panels.base.ACTION_ADD
+   apparun.gui.panels.base.ACTION_CLEAR
+   apparun.gui.panels.base.INPUT_PANELS
+   apparun.gui.panels.base.OUTPUT_PANELS
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   apparun.gui.panels.base.DynamicOutputPanel
+   apparun.gui.panels.base.InputPanel
+   apparun.gui.panels.base.InputScenarioFormPanel
+   apparun.gui.panels.base.OutputPanel
+   apparun.gui.panels.base.Panel
+   apparun.gui.panels.base.StaticOutputPanel
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   apparun.gui.panels.base.get_input_panel
+   apparun.gui.panels.base.get_output_panel
+   apparun.gui.panels.base.register_panel
+   apparun.gui.panels.base.registered_input_panels
+   apparun.gui.panels.base.registered_output_panels
+
+
+Module Contents
+---------------
+
+.. py:class:: DynamicOutputPanel
+
+   Bases: :py:obj:`OutputPanel`
+
+
+   .. py:method:: compute_from_impact_model(entry_data, impact_model)
+
+
+   .. py:method:: fetch_from_lca_data(entry_data, lca_data)
+
+
+   .. py:method:: get_results(entry_data, impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: result
+      :type:  Optional[apparun.results.ImpactModelResult]
+      :value: None
+
+
+
+   .. py:attribute:: type
+      :type:  Literal['dynamic_output_panel']
+
+
+.. py:class:: InputPanel(**args)
+
+   Bases: :py:obj:`Panel`
+
+
+   .. py:method:: submit()
+
+
+   .. py:attribute:: name
+      :type:  Optional[str]
+      :value: None
+
+
+
+.. py:class:: InputScenarioFormPanel(**args)
+
+   Bases: :py:obj:`InputPanel`
+
+
+   .. py:method:: run()
+
+
+   .. py:attribute:: fields
+      :type:  Optional[List[Dict[str, Any]]]
+      :value: []
+
+
+
+   .. py:attribute:: type
+      :type:  Literal['input_scenario_form_panel']
+
+
+.. py:class:: OutputPanel
+
+   Bases: :py:obj:`Panel`
+
+
+   .. py:method:: run(**args)
+
+
+   .. py:attribute:: type
+      :type:  Literal['output_panel']
+
+
+.. py:class:: Panel
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+
+   .. py:method:: spawn()
+
+
+   .. py:attribute:: st_component
+      :type:  Callable
+      :value: None
+
+
+
+   .. py:property:: state
+
+
+.. py:class:: StaticOutputPanel
+
+   Bases: :py:obj:`OutputPanel`
+
+
+   .. py:method:: run(impact_model: apparun.impact_model.ImpactModel = None, lca_data: pandas.DataFrame = None)
+
+
+   .. py:attribute:: type
+      :type:  Literal['static_output_panel']
+
+
+.. py:function:: get_input_panel(panel_type: str)
+
+   Get a registered InputPanel class by type.
+   :param panel_type: type of the desired input panel.
+   :return: registered InputPanel class corresponding to the type.
+
+
+.. py:function:: get_output_panel(panel_type: str)
+
+   Get a registered OutputPanel class by type.
+   :param panel_type: type of the desired output panel.
+   :return: registered OutputPanel class corresponding to the type.
+
+
+.. py:function:: register_panel(panel_type: str)
+
+   This decorator registers a new Panel class in PANELS registry.
+   :param panel_type: new Panel's type name
+   :return: new Panel class
+
+
+.. py:function:: registered_input_panels() -> List[str]
+
+   Get a list of registered InputPanel types.
+   :return: list of registered InputPanel types.
+
+
+.. py:function:: registered_output_panels() -> List[str]
+
+   Get a list of registered OutputPanel types.
+   :return: list of registered OutputPanel types.
+
+
+.. py:data:: ACTION_ADD
+   :value: 'add'
+
+
+.. py:data:: ACTION_CLEAR
+   :value: 'clear'
+
+
+.. py:data:: INPUT_PANELS
+
+.. py:data:: OUTPUT_PANELS
+

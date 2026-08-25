@@ -1,0 +1,47 @@
+appabuild.logger
+================
+
+.. py:module:: appabuild.logger
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   appabuild.logger.file_handler
+   appabuild.logger.formatter
+   appabuild.logger.logger
+   appabuild.logger.stream_handler
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   appabuild.logger.loc_to_str
+   appabuild.logger.log_validation_error
+
+
+Module Contents
+---------------
+
+.. py:function:: loc_to_str(loc: Tuple[int | str, Ellipsis]) -> str
+
+   Transform a loc path from an ErrorDetails (pydantic) into a human-readable path.
+
+
+.. py:function:: log_validation_error(e: pydantic.ValidationError)
+
+   Write a ValidationError (pydantic) in the logs.
+
+
+.. py:data:: file_handler
+
+.. py:data:: formatter
+
+.. py:data:: logger
+
+.. py:data:: stream_handler
+
